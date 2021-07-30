@@ -27,8 +27,10 @@ print(M)
 #  [-0.25  -0.    -1.     0.25 ]
 #  [ 0.875  0.5    0.5   -0.375]]
 
-# Calcula (1/2A^T)-1
+# Calcula (1/2*A^T)^-1
 M2 = np.linalg.inv(0.5 * A.transpose())
+# ou
+M3 = 2*M.transpose()
 
 print(M2)
 
@@ -135,11 +137,8 @@ print(M)
 import pandas as pd
 
 # Cria as matrizes
-A = pd.DataFrame([[2, 0], [6, 7]])
-B = pd.DataFrame([[0, 4], [2, -8]])
 C = pd.DataFrame([[-6, 9, -7], [7, -3, -2]])
 D = pd.DataFrame([[-6, 4, 0], [1, 1, 4], [-6, 0, 6]])
-E = pd.DataFrame([[6, 9, -9], [-1, 0, -4], [-6, 0, -1]])
 
 # Calcula DC
 M = D.dot(C)
