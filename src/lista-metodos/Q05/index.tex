@@ -1,0 +1,163 @@
+
+\noindent \textcolor{COLOR1}{Questão 05)} Exercícios com python.
+\\
+
+a) Responda a questão 2 e a questão 4(b) usando Python. Especifique os comandos utilizados em cada uma e as respostas (ou os erros) obtidas\footnote{Utilizou-se a \textit{library} Pandas para cálculo de todas as operações}.
+\\
+
+2-a) $AB-BA$
+\\
+
+\begin{lstlisting}
+import pandas as pd
+
+# Cria as matrizes
+A = pd.DataFrame([[2, 0], [6, 7]])
+B = pd.DataFrame([[0, 4], [2, -8]])
+
+# Calcula AB-BA
+M=A.dot(B) - B.dot(A)
+
+# Imprime valor
+print(M)
+
+#     0   1
+# 0 -24 -20
+# 1  58  24
+\end{lstlisting}
+
+
+2-b) $2C-D$. Efetua-se a subtração apenas das linhas que são possíveis retornando NaN (not a number) nas que não são possíveis.
+\\
+
+\begin{lstlisting}
+import pandas as pd
+
+C = pd.DataFrame([[-6, 9, -7], [7, -3, -2]])
+D = pd.DataFrame([[-6, 4, 0], [1, 1, 4], [-6, 0, 6]])
+
+# Calcula 2C-D (calculo pode ser feito diretamente)
+M = 2*C-D
+
+# Imprime valor
+print(M)
+
+#       0     1     2
+# 0  -6.0  14.0 -14.0
+# 1  13.0  -7.0  -8.0
+# 2   NaN   NaN   NaN
+\end{lstlisting}
+
+2-c) $(2D^T-3E^T)^T$.
+\\
+
+\begin{lstlisting}
+import pandas as pd
+
+# Cria as matrizes
+D = pd.DataFrame([[-6, 4, 0], [1, 1, 4], [-6, 0, 6]])
+E = pd.DataFrame([[6, 9, -9], [-1, 0, -4], [-6, 0, -1]])
+    
+# Calcula (2D^T-3E^T)
+M = 2*D.T-3*E.T
+# Calcula a transposta de M
+MT = M.T
+# Imprime valor
+print(MT)
+    
+#     0   1   2
+# 0 -30 -19  27
+# 1   5   2  20
+# 2   6   0  15
+\end{lstlisting}
+
+
+2-d) $D^2-DE$.
+\\
+
+\begin{lstlisting}
+import pandas as pd
+
+# Cria as matrizes
+D = pd.DataFrame([[-6, 4, 0], [1, 1, 4], [-6, 0, 6]])
+E = pd.DataFrame([[6, 9, -9], [-1, 0, -4], [-6, 0, -1]])
+    
+# Calcula D^2-DE
+M = D.dot(D)-D.dot(E)
+# Imprime valor
+print(M)
+    
+#     0   1   2
+# 0  80  34 -22
+# 1 -10  -4  45
+# 2  72  30 -12
+\end{lstlisting}
+
+
+2-d) $(DC)^T$. Erro quando calcula a multiplicação entre D e C
+\\
+
+\begin{lstlisting}
+import pandas as pd
+
+# Cria as matrizes
+A = pd.DataFrame([[2, 0], [6, 7]])
+B = pd.DataFrame([[0, 4], [2, -8]])
+C = pd.DataFrame([[-6, 9, -7], [7, -3, -2]])
+D = pd.DataFrame([[-6, 4, 0], [1, 1, 4], [-6, 0, 6]])
+E = pd.DataFrame([[6, 9, -9], [-1, 0, -4], [-6, 0, -1]])
+
+# Calcula DC
+M = D.dot(C)
+# Calcula M^T
+MT = M.T
+# Imprime valor
+print(MT)
+
+# Error in M = D.dot(C)
+# raise ValueError("matrices are not aligned")
+# ValueError: matrices are not aligned
+\end{lstlisting}
+
+
+b) Realize o seguinte experimento para tentar ter uma ideia de quão comum é encontrar matrizes cujo produto comuta. Em Python, digite as seguintes linhas de comando:
+\\
+
+\begin{lstlisting}
+import numpy as np
+c=0
+
+for i in range(10000):
+    A=np.random.randint(-5,5,size=(3,3))
+    B=np.random.randint(-5,5,size=(3,3))
+    C=A@B==B@A
+    if C.all():
+        c=c+1
+print(c)    
+\end{lstlisting}
+
+
+Na primeira linha é o \textit{import} da \textit{library}, na segunda atribuição de valor a uma variável inteira, na terceira o ínicio do loop até 10000, na quarta e quinta duas matrizes randômicas de tamanho $3\times 3$ para as variáveis A e B, na sexta a comparação de igualdade entre os produtos A@B e B@A (verificando a comutação), na sétima a condição de que se ambos forem iguais a variável C é incrementada em 1, na oitava linha o valor de c é impresso.
+\\
+
+\textcolor{COLOR2}{A variável c poderá ter valores entre 0 e 10000, pois o loop é executado 10000 vezes, dependendo apenas se o produto A@B é igual a B@A ou não. As matrizes A e B são geradas randômicamente e podem ter valores entre -5 e 5 e a comutação pode não ocorrer em todos os casos.}
+\\
+
+c) Realize o seguinte experimento para tentar ter uma ideia de quão comum é encontrar matrizes invertíveis. Em Python, digite as seguintes linhas de comando:
+\\
+
+\begin{lstlisting}
+import numpy as np
+c=0
+for i in range(10000):
+    A=np.random.randint(-5,5,size=(4,4))
+    if np.linalg.det(A) != 0:
+        c+=1
+
+print(c)
+\end{lstlisting}
+
+Na primeira linha é o \textit{import} da \textit{library}, na segunda atribuição de valor a uma variável inteira, na terceira o ínicio do loop até 10000, na quarta e quinta uma matriz randômica de tamanho $4\times 4$ para a variável A, na sexta a condição de que se o determinante for diferente de 0 a variável c é incrementada em 1, na sétima linha o valor de c é impresso.
+\\
+
+\textcolor{COLOR2}{A variável c poderá ter valores entre 0 e 10000, pois o loop é executado 10000 vezes, dependendo apenas se o determinante for diferente de 0 ou não. As matrizes A são geradas randômicamente e podem ter valores entre -5 e 5.}

@@ -1,0 +1,92 @@
+\newcommand{\mAA}{
+    \begin{bmatrix}
+        a_{11} & a_{12} \\
+        a_{21} & a_{22}
+    \end{bmatrix}
+}
+\newcommand{\mBB}{
+    \begin{bmatrix}
+        b_{11} & b_{12} \\
+        b_{21} & b_{22}
+    \end{bmatrix}
+}
+\newcommand{\mM}{
+    \begin{bmatrix}
+        0  & 1 \\
+        -1 & 0
+    \end{bmatrix}
+}
+
+\noindent \textcolor{COLOR1}{Questão 03)} Mostre que se $A$ e $B$ são matrizes que comutam com a matriz $M=\mM$.
+\\
+
+Temos a matriz $A = \mAA$ e a matriz $B = \mBB$. Assim sendo:
+\\
+
+\[
+    AM = \mAA \cdot \mM =
+    \begin{bmatrix}
+        -a_{12} & a_{11} \\
+        -a_{22} & a_{21}
+    \end{bmatrix}
+\]
+
+
+\[
+    MA = \mM \cdot \mAA =
+    \begin{bmatrix}
+        a_{21}  & a_{22}  \\
+        -a_{11} & -a_{12}
+    \end{bmatrix}
+\]
+\\
+
+A partir disso, podemos encontrar:
+\\
+
+\[
+    \begin{cases}
+        -a_{12} = a_{21}  \\
+        a_{11} = a_{22}   \\
+        -a_{22} = -a_{11} \\
+        a_{21} = -a_{12}
+    \end{cases}
+\]
+\\
+
+Pode-se simplificar para a condição de que $a_{11} = a_{22} = r$, $a_{12} = s$ e $a_{21} = -s$. Similarmente, para a matriz $B$, temos $b_{11} = b_{22} = x$, $b_{12} = y$ e $b_{21} = -y$:
+\\
+
+\[
+    A =
+    \begin{bmatrix}
+        r  & s \\
+        -s & r
+    \end{bmatrix},\hspace{1em}
+    B =
+    \begin{bmatrix}
+        x  & y \\
+        -y & x
+    \end{bmatrix}
+\]
+\\
+
+multiplicando-as, encontramos:
+\\
+
+\begin{equation}\label{eq:eq01}
+    AB =
+    \begin{bmatrix}
+        rx-sy  & ry+sx  \\
+        -sx-ry & -sy+rx
+    \end{bmatrix},\hspace{1em}
+    BA =
+    \begin{bmatrix}
+        rx-sy  & sx+ry  \\
+        -ry-sx & -sy+rx
+    \end{bmatrix}
+\end{equation}
+\\
+
+\textcolor{COLOR2}{A partir da Equação \ref{eq:eq01} é possivel chegar a conclusão de que $AB = BA = M$.}
+\\

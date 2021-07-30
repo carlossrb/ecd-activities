@@ -1,0 +1,202 @@
+
+\noindent \textcolor{COLOR1}{Questão 02)} Considere as seguintes matrizes:
+\\
+\newcommand{\mA}{
+    \begin{bmatrix}
+        2 & 0 \\
+        6 & 7
+    \end{bmatrix}}
+\newcommand{\mB}{
+    \begin{bmatrix}
+        0 & 4  \\
+        2 & -8
+    \end{bmatrix}}
+\newcommand{\mC}{
+    \begin{bmatrix}
+        -6 & 9  & -7 \\
+        7  & -3 & -2
+    \end{bmatrix}}
+\newcommand{\mD}{
+    \begin{bmatrix}
+        -6 & 4 & 0 \\
+        1  & 1 & 4 \\
+        -6 & 0 & 6
+    \end{bmatrix}
+}
+\newcommand{\mE}{
+    \begin{bmatrix}
+        6  & 9 & -9 \\
+        -1 & 0 & -4 \\
+        -6 & 0 & -1
+    \end{bmatrix}
+}
+
+\[
+    A =
+    \mA,\hspace{1em}
+    B =
+    \mB,\hspace{1em}
+    C =
+    \mC
+\]
+\newline
+
+\[
+    D =
+    \mD,\hspace{1em}
+    E =
+    \mE
+\]
+\\
+
+Efetue as seguintes operações ou justifique porque elas não podem ser realizadas:
+\\
+
+% Respostas
+a) $AB-BA$
+\\
+
+\[
+    AB =
+    \begin{bmatrix}
+        0  & 8   \\
+        14 & -32
+    \end{bmatrix},\hspace{1em}
+    BA =
+    \begin{bmatrix}
+        24  & 28  \\
+        -44 & -56
+    \end{bmatrix}
+\]
+\\
+
+Assim sendo:
+\\
+
+\begin{equation}
+    AB - BA =
+    \begin{bmatrix}
+        -24 & -20 \\
+        58  & 24
+    \end{bmatrix}
+\end{equation}
+\\
+
+b) $2C-D$
+\\
+
+\[
+    2C = 2 \cdot
+    \mC =
+    \begin{bmatrix}
+        -12 & 18 & -14 \\
+        14  & -6 & -4
+    \end{bmatrix} -
+    \mD
+\]
+\\
+
+
+\textcolor{COLOR2}{Assim sendo, \textbf{\underline{não}} é possível efetuar essa operação, já que uma matrix é de dimensão $2\times3$ ($2C=M_{i,j}$) e outra, $3\times3$ ($D_{i, j}$). A subtração só é possível com $i$ e $j$ iguais em ambas as matrizes.}
+\\
+
+c) $(2D^T-3E^T)^T$
+\\
+
+\[
+    2D^T = 2 \cdot
+    \mD =
+    \begin{bmatrix}
+        -12 & 8 & 0  \\
+        2   & 2 & 8  \\
+        -12 & 0 & 12
+    \end{bmatrix}^T =
+    \begin{bmatrix}
+        -12 & 2 & -12 \\
+        8   & 2 & 0   \\
+        0   & 8 & 12
+    \end{bmatrix}
+\]
+\\
+
+\[
+    3E^T = 3 \cdot
+    \mE =
+    \begin{bmatrix}
+        -18 & 27 & -27 \\
+        -3  & 0  & -12 \\
+        -18 & 0  & -3
+    \end{bmatrix}^T =
+    \begin{bmatrix}
+        18  & -3  & -18 \\
+        27  & 0   & 0   \\
+        -27 & -12 & -3
+    \end{bmatrix}
+\]
+\\
+
+\begin{equation}
+    (2D^T-3E^T)^T =
+    \begin{bmatrix}
+        -30 & -19 & 27 \\
+        5   & 2   & 20 \\
+        6   & 0   & 15
+    \end{bmatrix}
+\end{equation}
+\\
+
+d) $D^2-DE$
+\\
+
+\[
+    D^2 =
+    \mD^2 =
+    \mD \cdot
+    \mD =
+    \begin{bmatrix}
+        40  & -20 & 16 \\
+        -29 & 5   & 28 \\
+        0   & -24 & 36
+    \end{bmatrix}
+\]
+\\
+
+\[
+    DE =
+    \mD\cdot
+    \mE
+    =
+    \begin{bmatrix}
+        -40 & -54 & -38 \\
+        19  & 9   & -17 \\
+        -72 & -54 & -48
+    \end{bmatrix}
+\]
+\\
+
+Assim sendo:
+\\
+
+\begin{equation}
+    D^2-DE =
+    \begin{bmatrix}
+        80  & 34 & -22 \\
+        -10 & -4 & 45  \\
+        72  & 30 & -12
+    \end{bmatrix}
+\end{equation}
+\\
+
+d) $(DC)^T$
+\\
+
+\[
+    DC =
+    \mD \cdot
+    \mC
+\]
+\\
+
+
+\textcolor{COLOR2}{\textbf{\underline{Não}} é possível efetuar essa operação, já que uma matrix é de dimensão $3\times3$ ($D_{i,j}$) e outra, $2\times3$ ($C_{i, j}$) e essa multiplicação não é válida porque em $D$, $j=3$ e em $C$, $i=2$. Para ser compatível esses valores devem ser iguais.}
+\\
