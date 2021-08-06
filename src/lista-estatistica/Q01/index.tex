@@ -1,0 +1,141 @@
+
+\noindent \textcolor{COLOR1}{Questão 01)} Um inquérito a 100 pessoas em Salvador sobre as suas idades resultou no quadro seguinte:
+\\
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c}
+        \rowcolor{pagecolor!50!COLOR1}
+        \hline
+        Escalão Etário & Frequência absoluta \\ \hline\hline
+        $[0,20]$       & 20                  \\\hline
+        $]20,40]$      & 25                  \\\hline
+        $]40,60]$      & 40                  \\\hline
+        $]60,80]$      & 10                  \\\hline
+        $]80,100]$     & 5                   \\\hline
+    \end{tabular}
+\end{table}
+
+a) Obtenha a tabela de frequências completa, incluindo a frequência absoluta acumulada, relativa e relativa
+acumulada.
+\\
+
+A partir dos dados informados na tabela, obtém-se os seguintes resultados:
+\\
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \rowcolor{pagecolor!50!COLOR1}
+        \hline
+        Escalão Etário & Freq. Abs & Freq. Rel (\%) & Freq. Abs. Acum & Freq. Rel. Acum (\%) \\ \hline\hline
+        $[0,20]$       & 20        & 20             & 20              & 20                   \\\hline
+        $]20,40]$      & 25        & 25             & 45              & 45                   \\\hline
+        $]40,60]$      & 40        & 40             & 85              & 85                   \\\hline
+        $]60,80]$      & 10        & 10             & 95              & 95                   \\\hline
+        $]80,100]$     & 5         & 5              & 100             & 100                  \\\hline
+    \end{tabular}
+\end{table}
+
+
+b) Calcule, para a idade:
+\\
+
+\begin{enumerate}[i]
+    \item A média: \\
+
+          A média pode ser dada pelo valor médio nos intervalos de classe multiplicados pela frequência relativa.
+          \\
+
+          \[
+              \bar{x} = \sum_{i=1}^{n} x_i \cdot \frac{f_i}{100}
+          \]
+
+          Onde $x_i$ é a idade média em cada intervalo, $f_i$ é a frequência relativa, e $\bar{x}$ é a média.
+          \\
+
+          \begin{equation}
+              \bar{x}= 10 \times 0,2+30\times 0,25+50\times 0,4+70\times 0,1+90\times 0,05 = 41 \text{ anos}
+          \end{equation}
+
+    \item A mediana: \\
+
+          A mediana pode ser definida somando os dois números do meio e dividindo por dois em valores ordenados. Quando a quantidade de números $N$ que estamos avaliando for par ou escolhendo o número do meio caso N seja ímpar.
+
+          Para o caso específico de intervalos de classe, com dados agrupados, podemos fazer uma regra de três com a diferença entre metade do tamanho da amostra $\frac{n}{2} = 50$ e o valor da frequência absoluta acumulada $f_{ac}$ no intervalo anterior $]20,40]=45$, juntamente ao valor da frequência absoluta $f_{ab}=40$ e a amplitude do intervalo $]40,60]\rightarrow h=60-40=20$. Após isso, soma-se o encontrado com o limite inferior da sua classe pertencente ($L_{min}=40$). Matemáticamente, pode-se representar como:
+          \\
+
+          \[
+              \text{mediana} = L_{min} + \frac{\left(\dfrac{n}{2}-f_{ac}\right)}{f_{ab}}\cdot h
+          \]
+          \\
+
+          \begin{equation}
+              \text{mediana} = 40 + \frac{(50-45)\cdot 20}{40} = 42,5
+          \end{equation}
+
+    \item A moda:
+          \\
+
+          A moda pode ser definida como a média dos valores mais frequentes. Com essa definição, observa-se inicialmente que o intervalo de classe $[40,60]$ é o mais frequente. Pela fórmula de Czuber, podemos obter a moda como:
+
+          \[
+              \text{moda} = L_{min} + \frac{\varDelta_1}{\varDelta_1 + \varDelta_2} \cdot h
+          \]
+
+          Onde $\varDelta_1$ é a diferença entre a frequência da classe modal e a classe anterior e $\varDelta_2$ é a diferença entre a frequência da classe modal e a classe seguinte.
+          \\
+          \[\varDelta_1 = 40 - 25 = 15; \]
+          \[\varDelta_2 = 40 - 10 = 30; \]
+          \[h= 60-40=20 \]
+
+          \begin{equation}
+              \text{moda} = 40 + \frac{15}{15+30} \cdot 20 \approx  42,67
+          \end{equation}
+\end{enumerate}
+
+c) Obtenha o boxplot. Interprete o boxplot.
+\\
+
+Para montar o boxplot, é necessário primeiro obter os dados dos primeiro e terceiro quartis, além de uma medida de dispersão que pode ser dada como a diferença entre o terceiro e primeiro quartis.
+\\
+
+Para o cálculo dos quartis, as equações são similares à mediana (que é o segundo quartil):
+\\
+
+\[
+    q_1 = L_{min} + \frac{\left(\dfrac{n}{4}-f_{ac}\right)}{f_{ab}}\cdot h = 20 + \frac{(25-20)\cdot 20}{25} = 24
+\]
+
+\[
+    q_3 = L_{min} + \frac{\left(3\cdot\dfrac{n}{4}-f_{ac}\right)}{f_{ab}}\cdot h = 20 + \frac{(75-45)\cdot 20}{40} = 45
+\]
+\\
+
+Com os quartis calculados, obtém-se a dispersão e os límites do boxplot:
+\\
+
+\[
+    d_q = q_3 - q_1 = 45 - 24 = 21
+\]
+
+\[
+    L_s = q_3 + 1,5\cdot d_q = 45 +1,5\cdot 21 = 76,5
+\]
+
+\[
+    L_i = q_1 - 1,5\cdot d_q = 20 - 1,5\cdot 21 = -7,5
+\]
+\\
+
+Como o limite inferior de idade na amostra é $0$, então $L_i=0$.
+\\
+
+A partir desses valores, podemos montar o boxplot como:
+\input{Q01/boxplot.ticks.tex}
+
+
+No boxplot podemos observar uma assimatria que se manifesta na maior concentração de pessoas com idades entre 24 e 45 anos (primeiro e terceiro quartis), com maior prevalencia para idades próximas à mediana. Os valores acima de 76,6 anos podem ser interpretados como outliers, já que estão acima desse limite superior. Do ponto de vista estatístico isso pode ser considerado um erro de observação ou arredondamento. Contudo, não necessariamente se pode afirmar que os dados na tabela de classes apresentam esses problemas, pois é completamente possível ter uma faixa da população com essa idade, mesmo sendo atípica.
+\\
+
+d) Qual a percentagem de pessoas que têm idade inferior a 50 anos?
