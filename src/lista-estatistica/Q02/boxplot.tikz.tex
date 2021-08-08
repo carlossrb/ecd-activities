@@ -1,0 +1,80 @@
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}
+            [
+                % boxplot/draw direction=y,
+                ytick={1,2,3,4,5},
+                yticklabels={Energia (Kcal), Proteínas (g), Lipídios(g), Cálcio (mg), Ferro (mg)},
+                width=0.6\textwidth,
+                xmin=-50,
+                xmax=1000,
+            ]
+            \addplot+[
+                color=deepblue,
+                mark=triangle*,
+                mark options={deepblue},
+                fill = pagecolor!50!COLOR1,
+                boxplot prepared={
+                        median=183,
+                        upper quartile=361.25,
+                        lower quartile=36.75,
+                        upper whisker=770,
+                        lower whisker=10
+                    },
+            ] table [row sep=\\,y index=0] {900\\};
+            \addplot+[
+                color=deepblue,
+                mark=triangle*,
+                mark options={deepblue},
+                fill = pagecolor!50!COLOR1,
+                boxplot prepared={
+                        median=3.1,
+                        upper quartile=18.750,
+                        lower quartile=1.125,
+                        upper whisker=22,
+                        lower whisker=1
+                    },
+            ] coordinates {};
+            \addplot+[
+                color=deepblue,
+                mark=asterisk,
+                mark options={deepblue},
+                fill = pagecolor!50!COLOR1,
+                boxplot prepared={
+                        median=0.950,
+                        upper quartile=13.375,
+                        lower quartile=0.275,
+                        upper whisker=21,
+                        lower whisker=0
+                    },
+            ] table [row sep=\\,y index=0] {25\\ 80\\ 100\\};
+            \addplot+[
+                color=deepblue,
+                mark=star,
+                mark options={deepblue},
+                fill = pagecolor!50!COLOR1,
+                boxplot prepared={
+                        median=28,
+                        upper quartile=125.75,
+                        lower quartile=13.5,
+                        upper whisker=250,
+                        lower whisker=0
+                    },
+            ] table [row sep=\\,y index=0] {800\\ 805\\};
+            \addplot+[
+                color=deepblue,
+                mark=triangle*,
+                mark options={deepblue},
+                fill = pagecolor!50!COLOR1,
+                boxplot prepared={
+                        median=1,
+                        upper quartile=1.75,
+                        lower quartile=0.275,
+                        upper whisker=1.8,
+                        lower whisker=0.1
+                    },
+            ] table [row sep=\\,y index=0] {2\\};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}

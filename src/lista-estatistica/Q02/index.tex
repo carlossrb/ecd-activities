@@ -1,3 +1,45 @@
 
-\noindent \textcolor{COLOR1}{Questão 02)} Um inquérito a 100 pessoas em Salvador sobre as suas idades resultou no quadro seguinte:
+\noindent \textcolor{COLOR1}{Questão 02)}  Uma análise às características de 20 alimentos, utilizando o software IBM SPSS 20, resultou nos
+seguintes resultados:
+\\
+
+\input{Q02/boxplot.tikz.tex}
+
+\begin{longtable}{l|c|c|c|c|c}
+    \hline
+    \rowcolor{pagecolor!50!COLOR1}
+                    & Energia (Kcal) & Proteínas (g) & Lipídios (g) & Cálcio (mg) & Ferro (mg) \\ \hline\hline
+    N - Valid       & 20             & 20            & 20           & 20          & 20         \\ \hline
+    N - Missing     & 0              & 0             & 0            & 0           & 0          \\ \hline
+    Mean            & 240,80         & 8,550         & 13,775       & 135,505     & 1,427      \\ \hline
+    Median          & 183,00         & 3,100         & 0,950        & 28,00       & 1,000      \\ \hline
+    Std. Deviation  & 246,687        & 9,2488        & 28,3894      & 235,9819    & 1,5640     \\ \hline
+    Percentile (25) & 36,75          & 1,125         & 0,275        & 13,500      & 0,275      \\ \hline
+    Percentile (50) & 183,00         & 3,100         & 0,950        & 28,00       & 1,000      \\ \hline
+    Percentile (75) & 361,25         & 18,750        & 13,375       & 125,750     & 1,750      \\ \hline
+\end{longtable}
+
+
+a) Cite e classifique as variáveis em estudo.
+\\
+
+Em termos gerais, tem-se alimentos com valor energético bastante diverso. Isso é visto no \textit{boxplot}, onde temos casos variando de algo próximo de zero (limite inferior) a oitocentos (limite superior). Há um \textit{outlier} (azeite) que tem valor de energia próximo de mil. Ao menos metade dos alimentos apresentam valores energéticos no intervalo de 36 a 360 Kcal, que são os quartis 1 e 3. Além disso, tem-se o Cálcio que também apresenta valores com grande variação e com dois alimentos com elevado potencial (\textit{outliers}). Em relação Ferro, Proteínas e Lipídios, há pouca variação de valores. Isso fica evidente pelo \textit{boxplot} dessas variáveis. Há alimentos atípicos com valores de lipídios fora do limite superior, ainda assim.
+\\
+
+b) Qual das variáveis apresenta uma maior dispersão? Qual a medida utilizada para responder a tal pergunta?
+\\
+
+Tem-se bem claramente, em primeiro e segunto lugares, que a Energia e o Cálcio são as duas variáveis que apresentam maior dispersão. A medida utilizada para responder a essa pergunta é o Desvio Padrão, que em ambos os casos ultrapassa o valor de 200.
+\\
+
+c) É correto dizer que a quantidade média de cálcio é superior à quantidade média de proteínas? Porquê?
+\\
+
+Não. Temos médias representadas com unidades de medidas diferentes. Enquanto as proteínas são representadas em gramas, a quantidade de cálcio é representada em miligramas. Para tanto, se o valor de cálcio for convertido em gramas é possível ver que ele é bem menor que a quantidade de proteínas.
+\\
+
+d) A partir da tabela e figura acima, escreva um breve parágrafo com a interpretação e comparação dos resultados.
+\\
+
+O estudo apresenta resultados com unidades de medidas diferentes (g e mg) e isso pode confundir a priori caso se queira comparar valores de diferentes variáveis entre si. Atentando-se a esse detalhe, observa-se que as proteínas e lipídios são os dois que apresentam maiores valores numéricos. O ferro apresenta valores bastante baixos em todos os alimentos. E o cálcio, por fim, tem quantidades relativamente menores (dados em miligramas) e bem variável nos alimentos, indo de 0 a quase 1,000 miligramas. Em termos energéticos, vemos também uma grande variabilidade de valores bem evidentes no \textit{boxplot}.
 \\
