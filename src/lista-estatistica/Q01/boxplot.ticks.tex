@@ -1,60 +1,59 @@
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 \begin{center}
-    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1.5,xscale=1.5]
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=1.5,xscale=1.5]
 
         %Shape: Axis 2D 
-        \draw [color={deepblue}  ,draw opacity=1 ][line width=1.5]  (0,300.21) -- (115,300.21)(8.6,0) -- (8.6,308.6) (108,295.21) -- (115,300.21) -- (108,305.21) (3.6,7) -- (8.6,0) -- (13.6,7)  ;
+        \draw[->] [color={deepblue}  ,draw opacity=1 ][line width=1.5] (0,0) -- (100,0);
+        \draw[->] [color={deepblue}  ,draw opacity=1 ][line width=1.5] (8,-8) -- (8,300)
+        node[left] {$pop$};
+
         %Shape: Rectangle
-        \draw  [color={COLOR2}  ,draw opacity=1 ][fill={rgb, 255:red, 179; green, 28; blue, 28 }  ,fill opacity=0.07 ] (42,228) .. controls (40.9,228) and (40,227.1) .. (40,226) -- (40,167) .. controls (40,165.9) and (40.9,165) .. (42,165) -- (68,165) .. controls (69.1,165) and (70,165.9) .. (70,167) -- (70,226) .. controls (70,227.1) and (69.1,228) .. (68,228) -- cycle ;
-        %Shape: Rectangle [id:dp2709639952076024] 
         \draw   (-30,-30) -- (250,-30) -- (250,330) -- (-30,330) -- cycle ;
-        %Shape: Boxed Line 
-        \draw [color={deepblue}  ,draw opacity=1 ]   (70,172.5) -- (40,172.5) ;
+
+        %Shape: Rectangle
+        \draw  [color={COLOR2}  ,draw opacity=1 ][fill={rgb, 255:red, 179; green, 28; blue, 28 }  ,fill opacity=0.07 ] (42,151.25) .. controls (40.9,151.25) and (40,150.35) .. (40,149.25) -- (40,68) .. controls (40,66.9) and (40.9,66) .. (42,66) -- (68,66) .. controls (69.1,66) and (70,66.9) .. (70,68) -- (70,149.25) .. controls (70,150.35) and (69.1,151.25) .. (68,151.25) -- cycle ;
+        %Line 
+        \draw [color={deepblue}  ,draw opacity=1 ]   (70,117) -- (40,117) ;
+
         %Straight Lines 
-        \draw [color={COLOR2}  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (55,300) -- (55,227.88) ;
-        \draw [shift={(55,300)}, rotate = 450] [color={COLOR2}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
-        %Curve Lines 
-        \draw    (73,165.41) .. controls (106.81,164.48) and (82.04,151.02) .. (107.38,150.04) ;
-        \draw [shift={(109,150)}, rotate = 539.06] [line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
-        %Shape: Brace
-        \draw   (81,300.38) .. controls (85.67,300.38) and (88,298.05) .. (88,293.38) -- (88,274.55) .. controls (88,267.88) and (90.33,264.55) .. (95,264.55) .. controls (90.33,264.55) and (88,261.22) .. (88,254.55)(88,257.55) -- (88,235.71) .. controls (88,231.04) and (85.67,228.71) .. (81,228.71) ;
+        \draw [color={COLOR2}  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (55,275) -- (55,151.25) ;
+        \draw [shift={(55,275)}, rotate = 450] [color={COLOR2}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
         %Straight Lines 
-        \draw [color={COLOR2}  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (55,164.5) -- (55,70.5) ;
-        \draw [shift={(55,70.5)}, rotate = 450] [color={COLOR2}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
-        %Straight Lines
-        \draw    (73,227) .. controls (74.67,225.33) and (76.33,225.33) .. (78,227) .. controls (79.67,228.67) and (81.33,228.67) .. (83,227) .. controls (84.67,225.33) and (86.33,225.33) .. (88,227) .. controls (89.67,228.67) and (91.33,228.67) .. (93,227) .. controls (94.67,225.33) and (96.33,225.33) .. (98,227) -- (106,227) ;
-        \draw [shift={(108,227)}, rotate = 180] [line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
-        %Straight Lines
-        \draw    (73,173) .. controls (74.67,171.33) and (76.33,171.33) .. (78,173) .. controls (79.67,174.67) and (81.33,174.67) .. (83,173) .. controls (84.67,171.33) and (86.33,171.33) .. (88,173) .. controls (89.67,174.67) and (91.33,174.67) .. (93,173) .. controls (94.67,171.33) and (96.33,171.33) .. (98,173) -- (106,173) ;
-        \draw [shift={(108,173)}, rotate = 180] [line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
-        %Shape
-        \draw   (80,164.96) .. controls (84.67,164.96) and (87,162.63) .. (87,157.96) -- (87,128.21) .. controls (87,121.54) and (89.33,118.21) .. (94,118.21) .. controls (89.33,118.21) and (87,114.88) .. (87,108.21)(87,111.21) -- (87,78.46) .. controls (87,73.79) and (84.67,71.46) .. (80,71.46) ;
+        \draw [color={COLOR2}  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (55,66) -- (55,0) ;
+        \draw [shift={(55,0)}, rotate = 450] [color={COLOR2}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
 
         % Text Node
-        \draw (110,172.49) node [anchor=west] [font=\footnotesize]  {$mediana\ =\ q_{2}$};
+        \draw [-{To[scale=1.5]}](75,117) -- (110,117) node [anchor=west]  [font=\footnotesize]  {$mediana\ =\ q_{2}$};
         % Text Node
-        \draw (100,265.08) node [anchor=west] [font=\footnotesize]  {$limite\ inferior\ =\ L_{i}$};
+        \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+        (70,151.25) -- (70,275) node [midway,xshift=2.5cm] {\footnotesize
+            $limite\ superior\ =\ L_{s}$};
         % Text Node
-        \draw (8,303.61) node [anchor=west]  [font=\footnotesize]  {$0$};
+        \draw (8,5) node [anchor=west]  [font=\footnotesize]  {$0$};
         % Text Node
-        \draw (110,226.53) node [anchor=west] [font=\footnotesize]  {$primeiro\ quartil\ =\ q_{1}$};
+        \draw [-{To[scale=1.5]}](75,151.25) -- (110,151.25) node [anchor=west]  [font=\footnotesize]  {$terceiro\ quartil\ =\ q_{1}$};
         % Text Node
-        \draw (110,149.53) node [anchor=west]  [font=\footnotesize]  {$terceiro\ quartil\ =\ q_{3}$};
+        \draw [-{To[scale=1.5]}](75,66) -- (110,66) node [anchor=west]  [font=\footnotesize]  {$primeiro\ quartil\ =\ q_{1}$};
         % Text Node
-        \draw (100,117.53) node [anchor=west] [font=\footnotesize]  {$limite\ superior\ =\ L_{s}$};
+        \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+        (70,0.65) -- (70,66) node [midway,xshift=2.5cm] {\footnotesize
+            $limite\ inferior\ =\ L_{i}$};
         % Text Node
-        \draw (8,13) node [anchor=west]  [font=\footnotesize]  {$100$};
+        \draw (8,275) node [anchor=west]  [font=\footnotesize]  {$100$};
         % Text Node
-        \draw (8,71) node [anchor=west] [font=\footnotesize]  {$76,5$};
+        \draw (8,151.25) node [anchor=west] [font=\footnotesize]  {$55$};
         % Text Node
-        \draw (8,165) node [anchor=west] [font=\footnotesize]  {$45$};
+        \draw (8,117) node [anchor=west] [font=\footnotesize]  {$42,5$};
         % Text Node
-        \draw (8,173) node [anchor=west] [font=\footnotesize]  {$42,5$};
+        \draw (8,66) node [anchor=west] [font=\footnotesize]  {$24$};
         % Text Node
-        \draw (8,228) node [anchor=west] [font=\footnotesize]  {$24$};
-        % Text Node
-        \draw (80,22.4) [color={COLOR2}  ,draw opacity=1 ] node [anchor=north west][inner sep=0.75pt]  [font=\small]  {Boxplot - Variação de idade};
-
+        \draw (100,275) [color={COLOR2}  ,draw opacity=1 ] node [anchor=north west][inner sep=0.75pt]  [font=\small]  {Boxplot - Variação de idade};
+        % ticks
+        \foreach \y in {15,30,...,105} {%
+                \draw [color={deepblue}] ($(6,\y*2.75) $) -- ($(10,\y*2.75)$)
+                node [left] [font=\tiny, color={deepblue}, xshift=-1.5pt] {$\y$};
+            }
     \end{tikzpicture}
 
 \end{center}

@@ -108,7 +108,7 @@ Para o cálculo dos quartis, as equações são similares à mediana (que é o s
 \]
 
 \[
-    q_3 = L_{min} + \frac{\left(3\cdot\dfrac{n}{4}-f_{ac}\right)}{f_{ab}}\cdot h = 20 + \frac{(75-45)\cdot 20}{40} = 45
+    q_3 = L_{min} + \frac{\left(3\cdot\dfrac{n}{4}-f_{ac}\right)}{f_{ab}}\cdot h = 40 + \frac{(75-45)\cdot 20}{40} = 55
 \]
 \\
 
@@ -116,26 +116,45 @@ Com os quartis calculados, obtém-se a dispersão e os límites do boxplot:
 \\
 
 \[
-    d_q = q_3 - q_1 = 45 - 24 = 21
+    d_q = q_3 - q_1 = 55 - 24 = 31
 \]
 
 \[
-    L_s = q_3 + 1,5\cdot d_q = 45 +1,5\cdot 21 = 76,5
+    L_s = q_3 + 1,5\cdot d_q = 45 +1,5\cdot 31 = 101,5
 \]
 
 \[
-    L_i = q_1 - 1,5\cdot d_q = 20 - 1,5\cdot 21 = -7,5
+    L_i = q_1 - 1,5\cdot d_q = 24 - 1,5\cdot 31 = -22,5
 \]
 \\
 
-Como o limite inferior de idade na amostra é $0$, então $L_i=0$.
+Como o limite inferior de idade na amostra é $0$, então $L_i=0$. Assim como o limite superior é $100$, então $L_s=100$.
 \\
 
 A partir desses valores, podemos montar o boxplot como:
 \input{Q01/boxplot.ticks.tex}
 
-
-No boxplot podemos observar uma assimatria que se manifesta na maior concentração de pessoas com idades entre 24 e 45 anos (primeiro e terceiro quartis), com maior prevalencia para idades próximas à mediana. Os valores acima de 76,6 anos podem ser interpretados como outliers, já que estão acima desse limite superior. Do ponto de vista estatístico isso pode ser considerado um erro de observação ou arredondamento. Contudo, não necessariamente se pode afirmar que os dados na tabela de classes apresentam esses problemas, pois é completamente possível ter uma faixa da população com essa idade, mesmo sendo atípica.
+No boxplot podemos observar uma assimatria que se manifesta na maior concentração de pessoas com idades entre 24 e 55 anos (primeiro e terceiro quartis), com maior prevalencia para idades próximas à mediana. Nesse intervalo de dados, \textbf{não há nenhum valor} além do limite superior nem inferior. Quando isso ocorre, esses valores são tidos como outliers. Do ponto de vista estatístico eles podem ser considerados um erro de observação ou arredondamento. Contudo, não necessariamente se pode afirmar tal relação, pois a situação ainda é possível além do limite superior, mesmo sendo atípica.
 \\
 
 d) Qual a percentagem de pessoas que têm idade inferior a 50 anos?
+\\
+
+Tem-se a soma das frequências relativas dos dois primeiros intervalos de classe, juntamente com metade da frequência do terceiro. Isto é:
+\\
+
+\[
+    f_{rel} = f_{rel}^{[0,20]}+f_{rel}^{]20,40]}+\frac{f_{rel}^{]40,60]}}{2}= 20\% + 25\% + 20\% = 65\%
+\]
+\\
+
+e) Quantas pessoas têm idades entre 40 e 80 anos?
+\\
+
+Para essa questão, basta apenas somar os valores da frequência absoluta do terceiro e quarto intervalos:
+\\
+
+\[
+    f_{abs} = f_{abs}^{]40,60]}+f_{abs}^{]60,80]}= 40+10 = 50\text{ pessoas}
+\]
+\\
