@@ -27,33 +27,34 @@ Usando eliminação de gauss, tem-se:
 \[
     M=
     \begin{bmatrix}
-        1  & -2 & 5 \\
-        4  & 5  & 8 \\
-        -3 & 3  & 0
+        1  & -2 & 5  \\
+        4  & -5 & 8  \\
+        -3 & 3  & -3
     \end{bmatrix}
     R_2 - 4R_1 \to R_2
     \begin{bmatrix}
         1  & -2 & 5   \\
-        0  & 13 & -12 \\
+        0  & 3  & -12 \\
         -3 & 3  & -3
     \end{bmatrix}
     R_3 - (-3)R_1 \to  R_3
     \begin{bmatrix}
         1 & -2 & 5   \\
-        0 & 13 & -12 \\
+        0 & 3  & -12 \\
         0 & -3 & 12
     \end{bmatrix}
 \]
 \\
 
 \[
-    R_3 - \frac{-3}{13}R_2 \to R_3
+    R_3 - (-1) R_2 \to R_3
     \begin{bmatrix}
-        1 & -2 & 5               \\
-        0 & 13 & -12             \\
-        0 & 0  & \sfrac{120}{13}
+        1 & -2 & 5   \\
+        0 & 3  & -12 \\
+        0 & 0  & 0
     \end{bmatrix}
 \]
 \\
 
-A partir disso, obtemos o seu posto, isto é, o número de linhas não-nulas quando a matriz é escalonada $p(M) = 3$. Ainda, para a matriz aumentada teremos que qualquer número real para os valores de $b_1$, $b_2$ e $b_3$ satizfazem a condição de que seu posto seja também $p(M|B) = 3$. Assim sendo, o sistema é um sistema possível, já que temos uma solução única, ou seja $p(M|B) = p(M)$. Além disso, é também determinado, com $p(M)=n$, sendo $n$ o número de variáveis. Na condição de que o sistema apresentasse $p(M)=p(M|B)<n$ ele seria consistente e indeterminado, ou seja, haveria infinitas soluções. No caso de $p(M|B)>p(M)$ o sistema seria inconsistente e não seria possível de ser resolvido.
+A partir disso, obtemos o seu posto, isto é, o número de linhas não-nulas quando a matriz é escalonada $p(M) = 2$. Ainda, para a matriz aumentada teremos que \textbf{qualquer número real para os valores de $b_1$, $b_2$ e $b_3$ satizfazem a condição de que seu posto seja também $p(M|B) = 3$}. Assim sendo, o sistema é um sistema possível, já que temos uma solução única, ou seja $p(M|B) = p(M)$. Além disso, é também determinado, com $p(M)=n$, sendo $n$ o número de variáveis. Na condição de que o sistema apresentasse $p(M)=p(M|B)<n$ ele seria consistente e indeterminado, ou seja, haveria infinitas soluções. No caso de $p(M|B)>p(M)$ o sistema seria inconsistente e não seria possível de ser resolvido.
+\\
