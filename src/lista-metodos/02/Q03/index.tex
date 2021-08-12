@@ -1,0 +1,150 @@
+
+\noindent \textcolor{COLOR1}{Questão 03)} A Regra de Cramer é um método para determinar a solução de um sistema linear
+$Ax = b$ de n equações e n incógnitas quando a matriz dos coeficientes A é invertível.
+\\
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \textbf{Regra de Cramer}: Se $Ax = b$ é um sistema de n equações lineares em n incógnitas tal que $det(A)\neq 0$, então a única solução do sistema é dada por:
+        \[
+            x_1 = \frac{det(A_1)}{det(A)}, \hspace{0.4em}
+            x_2 = \frac{det(A_2)}{det(A)}, \hspace{0.4em} \dots, \hspace{0.4em}
+            x_n = \frac{det(A_n)}{det(A)}
+        \]
+        \\
+
+        onde $A_j$ é a matriz obtida substituindo as entradas da $j-ésima$ coluna de $A$ pelas entradas da matriz $b$.
+    }%
+}
+\\
+\\
+
+a) Mostre a Regra de Cramer no caso em que $A$ é uma matriz quadrada de ordem 2.
+\\
+
+Tem-se então:
+\\
+
+
+\[
+    \begin{cases}
+        a_1x_1 +a_2x_2  =  b_1 \\
+        a_3x_1  +a_4x_2  =  b_2
+    \end{cases}
+\]
+\\
+
+Onde podemos obter a matriz dos coeficientes:
+\[
+    A=
+    \begin{bmatrix}
+        a_1 & a_2 \\
+        a_3 & a_4
+    \end{bmatrix}
+\]
+\\
+
+o determinante de $A$ é igual a:
+\\
+
+\[
+    \det(A) =
+    \left|\begin{matrix}
+        a_1 & a_2 \\
+        a_3 & a_4
+    \end{matrix}\right|
+    =-a_2\cdot a_3+a_1\cdot a_4
+\]
+\\
+
+Os determinantes de $A_1$ e $A_2$ são iguais a:
+\\
+
+\[
+    \det(A_1) =
+    \left|\begin{matrix}
+        b_1 & a_2 \\
+        b_2 & a_4
+    \end{matrix}\right|
+    =a_4\cdot b_1-a_2\cdot b_2
+\]
+
+\[
+    \det(A_2) =
+    \left|\begin{matrix}
+        a_1 & b_1 \\
+        a_3 & b_2
+    \end{matrix}\right|
+    =-a_3\cdot b_1+a_1\cdot b_2
+\]
+\\
+
+Obtem-se então a solução do sistema:
+\\
+
+\[
+    \begin{cases}
+        x_1 = \frac{-a_4\cdot b_1+a_2\cdot b_2}{a_2\cdot a_3-a_1\cdot a_4} \\
+        x_2 = \frac{a_3\cdot b_1-a_1\cdot b_2}{a_2\cdot a_3-a_1\cdot a_4}
+    \end{cases}
+\]
+\\
+
+b) Use a Regra de Cramer para resolver $x'$ e $y'$ em termos de $x$ e $y$
+\\
+
+
+\[
+    \begin{cases}
+        x= \frac{3}{5}x' -\frac{4}{5}y' \\
+        y = \frac{4}{5}x'  +\frac{3}{5}y'
+    \end{cases}
+\]
+\\
+
+A matriz dos coeficientes:
+\\
+
+\[
+    A=
+    \begin{bmatrix}
+        \frac{3}{5} & \frac{-4}{5} \\
+        \frac{4}{5} & \frac{3}{5}
+    \end{bmatrix}
+\]
+
+\[
+    det(A)=1
+\]
+\\
+
+\[
+    \det(A_1) =
+    \left|\begin{matrix}
+        x & \sfrac{-4}{5} \\
+        y & \sfrac{3}{5}
+    \end{matrix}\right|
+    = \frac{3x+4y}{5}
+\]
+\\
+
+\[
+    \det(A_2) =
+    \left|\begin{matrix}
+        \sfrac{3}{5} & x \\
+        \sfrac{4}{5} & y
+    \end{matrix}\right|
+    = \frac{-4x+3y}{5}
+\]
+\\
+
+Assim sendo, a solução do sistema é:
+\\
+
+\begin{equation}
+    \begin{aligned}
+         & x' = \sfrac{\frac{3x+4y}{5}}{1} = \frac{3x+4y}{5}   \\
+         & y' = \sfrac{\frac{-4x+3y}{5}}{1} = \frac{-4x+3y}{5}
+    \end{aligned}
+\end{equation}
+

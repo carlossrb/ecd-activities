@@ -56,5 +56,19 @@ Usando eliminação de gauss, tem-se:
 \]
 \\
 
-A partir disso, obtemos o seu posto, isto é, o número de linhas não-nulas quando a matriz é escalonada $p(M) = 2$. Ainda, para a matriz aumentada teremos que \textbf{qualquer número real para os valores de $b_1$, $b_2$ e $b_3$ satizfazem a condição de que seu posto seja também $p(M|B) = 3$}. Assim sendo, o sistema é um sistema possível, já que temos uma solução única, ou seja $p(M|B) = p(M)$. Além disso, é também determinado, com $p(M)=n$, sendo $n$ o número de variáveis. Na condição de que o sistema apresentasse $p(M)=p(M|B)<n$ ele seria consistente e indeterminado, ou seja, haveria infinitas soluções. No caso de $p(M|B)>p(M)$ o sistema seria inconsistente e não seria possível de ser resolvido.
+A partir disso, obtemos o seu posto, isto é, o número de linhas não-nulas quando a matriz está escalonada $p(M) = 2$. Ainda, para a matriz aumentada teremos que a única condição de consistência é caso o seu posto seja também 2. Nessa situação, o sistema será possível e com infinitas soluções, já que o número de variáveis é igual a 3 e $p(M)=p(M|B)<n$. Caso tenhamos $p(M|B)=3$ o sistema será inconsistente. Para a consistência, temos:
+\\
+
+\[
+    (M|B) =
+    \begin{bmatrix}[ccc|c]
+        1 & -2 & 5   & b_1          \\
+        0 & 3  & -12 & -4b_1+b_2    \\
+        0 & 0  & 0   & -b_1+b_2+b_3
+    \end{bmatrix}
+\]
+\\
+
+Onde devemos atender na terceira linha $-b_1+b_2+b_3=0$ para que o sistema seja possível e indeterminado.
+% \textbf{qualquer número real para os valores de $b_1$, $b_2$ e $b_3$ satizfazem a condição de que seu posto seja também $p(M|B) = 3$}. Assim sendo, o sistema é um sistema possível, já que temos uma solução única, ou seja $p(M|B) = p(M)$. Além disso, é também determinado, com $p(M)=n$, sendo $n$ o número de variáveis. Na condição de que o sistema apresentasse $p(M)=p(M|B)<n$ ele seria consistente e indeterminado, ou seja, haveria infinitas soluções. No caso de $p(M|B)>p(M)$ o sistema seria inconsistente e não seria possível de ser resolvido.
 \\
