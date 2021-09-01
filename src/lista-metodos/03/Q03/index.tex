@@ -1,0 +1,68 @@
+
+\noindent \textcolor{COLOR1}{Questão 03)} Se $A$ é uma matriz arbitrária de tamanho $m\times n$, o espaço nulo de $A$ é definido como sendo o subespaço vetorial de $\mathbb{R}^n$ formado pelas soluções do sistema homogêneo $Ax = 0$. A dimensão do espaço nulo de $A$ é chamada de nulidade de $A.$
+\\
+
+\begin{enumerate}
+    \item Se $A$ é a matriz
+          \[A=
+              \begin{bmatrix}
+                  2 & 3  & -1 & 1 \\
+                  3 & -1 & 1  & 2
+              \end{bmatrix}
+          \]
+          Determine a nulidade de $A$ e uma base para o espaço nulo de $A$.
+          \\
+
+          Primeiramente, reduz-se a matriz aumentada do sistema homogêneo $Ax = 0$ a forma escalonada:
+          \\
+
+          \[A=
+              \begin{bmatrix}[cccc|c]
+                  2 & 3              & -1           & 1            & 0 \\
+                  0 & \sfrac{-11}{2} & \sfrac{5}{2} & \sfrac{1}{2} & 0
+              \end{bmatrix}
+          \]
+          \\
+
+          Sabemos que o posto da matriz é dado pela quantidade de linhas não nulas da matriz escalonada. Isto é, tem-se um $p(A)=2$. A nulidade é dada pelo número de colunas da matriz $A$ escalonada subtraído pelo posto da matriz. Ou seja, $nulidade(A) = 4 - p(A) = 2$.
+          \\
+
+          Para encontrar uma base de $A$, resolve-se o sistema escalonado $A x = 0$ obtendo $x$:
+          \\
+
+          \[
+              \begin{cases}
+                  x_1=-\frac{2}{11}x_3-\frac{7}{11}x_4  \\
+                  x_2 = \frac{5}{11}x_3+\frac{1}{11}x_4 \\
+                  x_3 = x_3                             \\
+                  x_4 = x_4
+              \end{cases}
+          \]
+          \\
+
+          e isso implica no mesmo que reorganizar em:
+          \\
+
+          \[
+              x_3 \cdot
+              \begin{bmatrix}
+                  \sfrac{-2}{11} \\
+                  \sfrac{5}{11}  \\
+                  1              \\
+                  0
+              \end{bmatrix} +
+              x_4 \cdot
+              \begin{bmatrix}
+                  \sfrac{-7}{11} \\
+                  \sfrac{1}{11}  \\
+                  0              \\
+                  1
+              \end{bmatrix}
+          \]
+          \\
+
+          A base para o espaço nulo de $A$ é formada pelos vetores entre colchetes, ou seja, $\{(\sfrac{-2}{11}, \sfrac{5}{11},1,0),(\sfrac{-7}{11},\sfrac{1}{11},0,1)\}$\\
+
+    \item Verifique que o vetor $v = (-10, 1, -1, 16)$ pertence ao espaçoo nulo de $A$ e determine as coordenadas deste vetor na base que você encontrou no item anterior.
+
+\end{enumerate}
