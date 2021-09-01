@@ -63,6 +63,22 @@
 
           A base para o espaço nulo de $A$ é formada pelos vetores entre colchetes, ou seja, $\{(\sfrac{-2}{11}, \sfrac{5}{11},1,0),(\sfrac{-7}{11},\sfrac{1}{11},0,1)\}$\\
 
-    \item Verifique que o vetor $v = (-10, 1, -1, 16)$ pertence ao espaçoo nulo de $A$ e determine as coordenadas deste vetor na base que você encontrou no item anterior.
+    \item Verifique que o vetor $v = (-10, 1, -1, 16)$ pertence ao espaço nulo de $A$ e determine as coordenadas deste vetor na base que você encontrou no item anterior.
+          \\
 
+          Para isso, devemos resolver o sistema $(-10, 1, -1, 16) =\alpha_1(\sfrac{-2}{11}, \sfrac{5}{11},1,0)+\alpha_2(\sfrac{-7}{11},\sfrac{1}{11},0,1) $ obtendo os valores de $\alpha$:
+          \\
+
+          \[
+              \begin{cases}
+                  -\frac{2}{11}\alpha_1 - \frac{7}{11}\alpha_2 = -10 \\
+                  \frac{5}{11}\alpha_1 + \frac{1}{11}\alpha_2 = 1    \\
+                  \alpha_1 + 0\alpha_2 = -1                          \\
+                  0\alpha_1 + 1\alpha_2 = 16
+              \end{cases}
+          \]
+          \\
+
+          O que claramente nos dá os valores de $\alpha_1=-1$ e $\alpha_2=16$. Assim, $[v]_S=(-1,16)$.
 \end{enumerate}
+
