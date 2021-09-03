@@ -13,15 +13,45 @@
           Determine a nulidade de $A$ e uma base para o espaço nulo de $A$.
           \\
 
-          Primeiramente, reduz-se a matriz aumentada do sistema homogêneo $Ax = 0$ a forma escalonada:
+          Primeiramente, reduz-se a matriz aumentada do sistema homogêneo $Ax = 0$ a forma escalonada reduzida por linhas:
           \\
 
           \[A=
               \begin{bmatrix}[cccc|c]
-                  2 & 3              & -1           & 1            & 0 \\
-                  0 & \sfrac{-11}{2} & \sfrac{5}{2} & \sfrac{1}{2} & 0
+                  2 & 3  & -1 & 1 & 0 \\
+                  3 & -1 & 1  & 2 & 0
+              \end{bmatrix}
+              \frac{1}{2}R_1\to R_1
+              \begin{bmatrix}[cccc|c]
+                  1 & \sfrac{3}{2} & \sfrac{-1}{2} & \sfrac{1}{2} & 0 \\
+                  3 & -1           & 1             & 2            & 0
+              \end{bmatrix}
+              \frac{1}{3}R_2\to R_2
+          \]
+          \[
+              \begin{bmatrix}[cccc|c]
+                  1 & \sfrac{3}{2}  & \sfrac{-1}{2} & \sfrac{1}{2} & 0 \\
+                  1 & \sfrac{-1}{3} & \sfrac{1}{3}  & \sfrac{2}{3} & 0
+              \end{bmatrix}
+              R_2-R_1\to R_2
+              \begin{bmatrix}[cccc|c]
+                  1 & \sfrac{3}{2}   & \sfrac{-1}{2} & \sfrac{1}{2} & 0 \\
+                  0 & \sfrac{-11}{6} & \sfrac{5}{6}  & \sfrac{2}{6} & 0
               \end{bmatrix}
           \]
+          \[-\frac{6}{11}R_2\to R_2
+              \begin{bmatrix}[cccc|c]
+                  1 & \sfrac{3}{2} & \sfrac{-1}{2}  & \sfrac{1}{2}   & 0 \\
+                  0 & 1            & \sfrac{-5}{11} & \sfrac{-1}{11} & 0
+              \end{bmatrix}
+              R_1-\frac{3}{2}R_2\to R_1
+          \]
+          \begin{equation}
+              A=\begin{bmatrix}[cccc|c]
+                  1 & 0 & \sfrac{2}{11}  & \sfrac{7}{11}  & 0 \\
+                  0 & 1 & \sfrac{-5}{11} & \sfrac{-1}{11} & 0
+              \end{bmatrix}
+          \end{equation}
           \\
 
           Sabemos que o posto da matriz é dado pela quantidade de linhas não nulas da matriz escalonada. Isto é, tem-se um $p(A)=2$. A nulidade é dada pelo número de colunas da matriz $A$ escalonada subtraído pelo posto da matriz. Ou seja, $nulidade(A) = 4 - p(A) = 2$.
