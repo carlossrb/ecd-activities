@@ -1,0 +1,58 @@
+
+\noindent \textcolor{COLOR1}{Questão 02)} Sabe-se que $5\%$ das pessoas que começam uma dieta têm disturbio alimentar. Ao selecionar, ao acaso,
+$50$ pessoas em dieta, determine:
+\\
+
+a) A probabilidade de que pelo menos uma pessoa sofra de distúrbio alimentar;
+\\
+
+Para resolver este problema, podemos tomar a distribuição binomial como modelo a ser utilizado. A probabilidade de disturbio alimentar é dada como $p=\frac{5}{100}=\frac{1}{20}$ e $n=50$. Definindo $X$ como o número de pessoas com distúrbio alimentar, $X \thicksim  b(n=50;p=\frac{1}{20})$.
+\\
+
+\[
+    P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}
+\]
+\[
+    P(X\geqslant 1)=\binom{50}{x}\biggl(\frac{1}{20}\biggr)^x\biggl(1-\frac{1}{20}\biggr)^{50-x}, \hspace{0.5cm} x=1,2,3,\dots ,50
+\]
+\\
+
+Isso é o mesmo que $P(X\geqslant 1)=1-P(X=0)$. Para o valor de $P(X=0)$, temos:\\
+
+\[
+    P(X=0)=\binom{50}{0}\biggl(\frac{1}{20}\biggr)^0\biggl(1-\frac{1}{20}\biggr)^{50}\approx 0,0769
+\]
+\[
+    P(X\geqslant 1)=1-0,0769 \approx 0,9231
+\]
+
+Ou seja, \textcolor{COLOR2}{$92,31\%$}.
+\\
+
+Obtém-se com Python os valores para a distribuição binomial com o seguinte código e plota-se o gráfico dessa distribuição:\\
+
+\begin{lstlisting}
+from scipy.stats import binom
+
+n = 50
+p = 0.05
+x = range(0, n + 1)
+    
+a = binom.pmf(x, n, p)
+for i, o in enumerate(a):
+    print("{} {:.4f}".format(i,o*100))
+\end{lstlisting}
+
+\input{Q02/binomial.tikz.tex}
+
+
+b) O número médio e o desvio padrão das pessoas com distúrbio alimentar.\\
+
+A média e o desvio padrão são calculados como:\\
+
+\[
+    E(X) = np = 50\times\frac{1}{20} = \textcolor{COLOR2}{2,5}
+\]
+\[
+    \sigma = \sqrt{Var(X)} = \sqrt{npq} = \sqrt{50 \times \frac{1}{20} \times \biggl(1-\frac{1}{20}\biggr)} \approx \textcolor{COLOR2}{1,54}
+\]
