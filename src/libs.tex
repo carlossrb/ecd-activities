@@ -51,3 +51,6 @@
 \renewcommand\fbox{\fcolorbox{deepblue}{pagecolor!90!deepblue}}
 \setlength{\fboxsep}{0.4em}
 
+\pgfmathdeclarefunction{gauss}{2}{\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
