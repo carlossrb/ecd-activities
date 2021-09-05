@@ -2,4 +2,79 @@
 \noindent \textcolor{COLOR1}{Questão 03)} Para a população masculina de um determinado país, com idades entre $18$ e $74$ anos, a pressão sistólica tem distribuição aproximadamente normal com média $129$ mmHg e desvio padrão $19.8$ mmHg. Considere que os níveis da pressão são normais quando menores que $130$ mmHg.
 \\
 
-a) Qual a probabilidade de um homem dessa população possuir pressão sistólica normal?
+a) Qual a probabilidade de um homem dessa população possuir pressão sistólica normal?\\
+
+Para isso, esse homem deve ter níveis de pressão abaixo de $130$ mmHg. Usando a distribuição normal como modelo, tem-se:
+\\
+
+\[
+    X \sim N(\mu = 129; \sigma^2=19,8^2)
+\]
+\\
+
+Onde $X$ é a pressão sistólica. Para ela sendo $P(X<130)$, tem-se:
+\\
+
+\[
+    P(X<130)=P\biggl(\frac{X-129}{19,8}<\frac{130-129}{19,8}\biggr) = P\biggl(Z<\frac{1}{19,8}\biggr)\approx \textcolor{COLOR2}{0,5201}
+\]
+\\
+
+O resultado foi obtido com python, com o seguinte código:\\
+
+\begin{lstlisting}
+from scipy.stats import norm
+
+
+x = norm(129,19.8).cdf(130) # Sem padronizar
+z = norm(0,1).cdf(1/19.8) # Padronizada em Z
+    
+print(x," ", z)
+    
+# 0.5201400375890497
+\end{lstlisting}
+
+b)  Qual a probabilidade de um homem dessa população possuir hipertensão moderada (pressão sistólica entre $160$ e $179$ mmHg)?\\
+
+Para este caso, tem-se:
+\\
+
+\[
+    P(160\leqslant X\leqslant 179)=P\biggl(\frac{160-129}{19,8}\leqslant\frac{X-129}{19,8}\leqslant\frac{179-129}{19,8}\biggr)
+\]
+\[
+    P\biggl(\frac{31}{19,8}\leqslant Z\leqslant\frac{50}{19,8}\biggr) = P\biggl(0\leqslant Z \leqslant \frac{50}{19,8}\biggr)-P\biggl(0\leqslant Z \leqslant \frac{31}{19,8}\biggr) \approx \textcolor{COLOR2}{0,0529}
+\]
+\\
+
+O resultado foi obtido com python, com o seguinte código:\\
+
+\begin{lstlisting}
+from scipy.stats import norm
+
+# A partir de menos infinito
+z1 = norm(0, 1).cdf(50 / 19.8)
+z2 = norm(0, 1).cdf(31 / 19.8)
+    
+print(z1 - z2)
+    
+# 0.05293376095968105
+\end{lstlisting}
+
+c)  Selecionando ao acaso 1000 homens dessa população, quantos seriam diagnosticados com hipertensão moderada (pressão sistólica entre $160$ e $179$ mmHg)?\\
+
+Tendo já obtido os valores de pressão sistólica para um conjunto ao qual pertece esses 1000 homens, basta apenas realizar a multiplicação:
+\\
+
+\[
+    n=1000\times P(160\leqslant X\leqslant 179) \approx \textcolor{COLOR2}{53}
+\]
+
+d) Qual a probabilidade de um homem dessa população possuir pressão sistólica igual a $180$ mmHg?\\
+
+Como o modelo de distribuição é contínuo $\int_{a}^{b} f(x)\,dx $, onde as probabilidades são dadas como áreas sob a curva gaussiana, um ponto infinitesimal $dx$ específico terá uma área aproximadamente igual a 0. Ou seja, \textcolor{COLOR2}{$P(X=180)=0$}. \\
+
+e) Qual a pressão sistólica que deixa acima $80\%$ dos indivíduos?\\
+
+
+
