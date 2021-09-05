@@ -76,5 +76,52 @@ Como o modelo de distribuição é contínuo $\int_{a}^{b} f(x)\,dx $, onde as p
 
 e) Qual a pressão sistólica que deixa acima $80\%$ dos indivíduos?\\
 
+Para $P(Z<z_0)=0,2$, onde $0,2$ corresponde a área acumulada na curva normal. Então, precisamos encontrar o valor de $z_0$, para em seguida achar o de $x_0$. Fazendo a transformação inversa da curva normal, tem-se:
+\\
+
+\[
+    z_0=\frac{x_0-\mu}{\sigma}\to x_0 = z_0\sigma+\mu
+\]
+\\
+
+O resultado pode ser obtido com o python e é igual a $112,34$ mmHg.
+\\
+
+\begin{lstlisting}
+from scipy.stats import norm
+mu = 129
+sigma = 19.8
+z0 = norm.ppf(0.2)
+    
+print(z0*sigma+mu)
+    
+# 112.33589957525629
+\end{lstlisting}
+
+\pgfmathdeclarefunction{gauss}{2}{\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+\begin{center}
+    \begin{tikzpicture}
+        \draw (3,-0.3) node [anchor=west] [font=\footnotesize]  {$z_0\approx-0.842\to x_0\approx112,34$ mmHg};
+        \draw [-{To[scale=1.5]}](4,1) -- (3,1) node [anchor=east]  [font=\footnotesize]  {$P(Z<z_0)=0,2$};
+        \begin{axis}[no markers,
+                domain=0:10, samples=100,
+                title={Curva normal parametrizada},
+                axis lines*=center,
+                height=8cm, width=15cm,
+                xtick=\empty, ytick=\empty,
+                enlargelimits=false, clip=false, axis on top,
+                line width=1.5pt,
+            ]
+            \addplot [
+                domain=-5:5,
+                color=deepblue,
+                smooth,
+                line width=1.0pt,
+            ] {gauss(0,1)} \closedcycle;
+            \addplot [fill=pagecolor!50!COLOR1, draw=none, domain=-5:-0.84] {gauss(0,1)} \closedcycle;
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
 
 
