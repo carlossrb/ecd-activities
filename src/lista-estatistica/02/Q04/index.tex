@@ -3,3 +3,117 @@
 \\
 
 a) Qual a estimativa pontual do tempo médio que o medicamento demora a fazer efeito?
+\\
+
+A estimativa pontual já está dispoinível no enunciado. Ela equivale a \textcolor{COLOR2}{$\overbar{X}=60$ minutos}.
+\\
+
+b) Obtenha um intervalo com $98\%$ de confiança para o tempo médio que o medicamento demora a fazer efeito.
+\\
+
+Por se tratar de uma amostra pequea $n<30$, será utilizada a distribuição de t-student como modelo proposto. A quantidade de graus de liberdade é dada por $n-1=19$. O nível de confiança é definido como $1-\alpha = 0,98$.\\
+
+Utilizando python, obtém-se então os valores de $t_0$ e $t_1$ onde que são os limites inferior e superior do intervalo de confiança e onde se espera encontrar o valor estimado do tempo médio com uma confiança de $98\%$.\\
+
+\begin{lstlisting}
+from scipy.stats import t
+
+#Para uma distribuicao bicaudal simetrica
+
+alpha = 0.02
+n=20
+df=n-1
+    
+a0 = alpha/2
+a1 = 1 - t0
+    
+a = t(df).ppf((a0, a1))
+    
+print(a)
+    
+# [-2.53948319  2.53948319]
+\end{lstlisting}
+
+A partir desses valores de $t\approx2,539$, $\overbar{X}=60$ min, $S=\sqrt{100}$ min, calculamos o intervalo de confiança como:\\
+
+\[
+    \begin{split}
+        &Ic(\mu; 1-\alpha) = \biggl[\overbar{X}+\textcolor{deepblue}{t_0\frac{S}{\sqrt{n}}};\overbar{X}+\textcolor{deepblue}{t_1\frac{S}{\sqrt{n}}}\biggr]\\
+        &Ic(\mu; 0,98) = \biggl[60-2,539\frac{10}{\sqrt{20}};60+2,539\frac{10}{\sqrt{20}}\biggr]\\
+        &\textcolor{COLOR2}{Ic(\mu; 0,98) = [54,322;65,678]}
+    \end{split}
+\]
+\\
+
+Onde a parcela em \textcolor{deepblue}{azul} representa o erro amostral associado.\\
+
+c) Com base no intervalo de confiança obtido em (b), qual o erro amostral da estimativa pontual?\\
+
+Conforme definido na questão anterior, o erro amostral pode ser calculado como:\\
+
+\[
+    Err = t_0\frac{S}{\sqrt{n}} = \textcolor{COLOR2}{5,6784\ min}
+\]
+\\
+
+d) Estes pesquisadores decidiram recolher uma segunda amostra com $40$ pacientes, resultando num tempo médio de $50$ minutos e desvio padrão de $90$ minutos. Qual deverá ser o tamanho da amostra para que o erro cometido ao estimarmos o tempo médio que o medicamento demora a fazer efeito, não seja superior a $10$ minutos, com probabilidade $0.95$?\\
+
+A partir da expressão do erro amostral, podemos deduzir uma equação para obter o tamanho da amostra. Além disso, é necessário calcular o $z_0$, dado a probabilidade de $0,95$ e erro máx de $Err=10$ min.\\
+\\
+
+\begin{equation}
+    Err = t_0\frac{S}{\sqrt{n}} \to n\geqslant \biggl(\frac{z_0}{Err}\biggr)^2 S^2
+\end{equation}
+\\
+
+Para o cálculo $z_0$, com auxílio do python:\\
+
+\begin{lstlisting}
+from scipy.stats import norm
+    
+alpha = 0.05
+            
+a0 = alpha/2
+a1 = 1 - z0
+    
+a = norm.ppf((a0,a1))
+            
+print(a)
+    
+# [-1.95996398  1.95996398]
+\end{lstlisting}
+
+Substituindo os valores na Equação 1, obtemos:\\
+
+\[
+    n\geqslant \biggl(\frac{1.96}{10}\biggr)^290^2 \geqslant 312\ \text{pacientes}
+\]
+\\
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (3.8,-0.3) node [anchor=west] [font=\footnotesize]  {$z_0\approx-1.96$};
+        \draw (9,-0.3) node [anchor=west] [font=\footnotesize]  {$z_0\approx1.96$};
+        \draw (5.5,3) node [anchor=west] [font=\footnotesize]  {$1-\alpha=0.95$};
+        \draw [-{To[scale=1.5]}](3.5,0.5) -- (3,0.5) node [anchor=east]  [font=\footnotesize]  {$\sfrac{\alpha}{2}=0.025$};
+        \begin{axis}[no markers,
+                domain=0:10, samples=100,
+                title={Curva normal parametrizada},
+                axis lines*=center,
+                axis y line=none,
+                height=8cm, width=15cm,
+                xtick=\empty, ytick=\empty,
+                enlargelimits=false, clip=false, axis on top,
+                line width=1.5pt,
+            ]
+            \addplot [
+                domain=-5:5,
+                color=deepblue,
+                smooth,
+                line width=1.0pt,
+            ] {gauss(0,1)} \closedcycle;
+            \addplot [fill=pagecolor!50!COLOR2, draw=none, domain=-5:-1.959963] {gauss(0,1)} \closedcycle;
+            \addplot [fill=pagecolor!50!COLOR2, draw=none, domain=1.959963:5] {gauss(0,1)} \closedcycle;
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
