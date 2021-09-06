@@ -25,7 +25,7 @@ n=20
 df=n-1
     
 a0 = alpha/2
-a1 = 1 - t0
+a1 = 1 - a0
     
 a = t(df).ppf((a0, a1))
     
@@ -39,7 +39,7 @@ A partir desses valores de $t\approx2,539$, $\overbar{X}=60$ min, $S=\sqrt{100}$
 \[
     \begin{split}
         &Ic(\mu; 1-\alpha) = \biggl[\overbar{X}+\textcolor{deepblue}{t_0\frac{S}{\sqrt{n}}};\overbar{X}+\textcolor{deepblue}{t_1\frac{S}{\sqrt{n}}}\biggr]\\
-        &Ic(\mu; 0,98) = \biggl[60-2,539\frac{10}{\sqrt{20}};60+2,539\frac{10}{\sqrt{20}}\biggr]\\
+        &Ic(\mu; 0,98) = \biggl[60-2,539\times\frac{10}{\sqrt{20}};60+2,539\times\frac{10}{\sqrt{20}}\biggr]\\
         &\textcolor{COLOR2}{Ic(\mu; 0,98) = [54,322;65,678]}
     \end{split}
 \]
@@ -62,7 +62,7 @@ A partir da expressão do erro amostral, podemos deduzir uma equação para obte
 \\
 
 \begin{equation}
-    Err = t_0\frac{S}{\sqrt{n}} \to n\geqslant \biggl(\frac{z_0}{Err}\biggr)^2 S^2
+    Err = z_0\frac{S}{\sqrt{n}} \to n\geqslant \biggl(\frac{z_0}{Err}\biggr)^2 S^2
 \end{equation}
 \\
 
@@ -74,7 +74,7 @@ from scipy.stats import norm
 alpha = 0.05
             
 a0 = alpha/2
-a1 = 1 - z0
+a1 = 1 - a0
     
 a = norm.ppf((a0,a1))
             
@@ -86,7 +86,7 @@ print(a)
 Substituindo os valores na Equação 1, obtemos:\\
 
 \[
-    n\geqslant \biggl(\frac{1,96}{10}\biggr)^290^2 \to n \geqslant \textcolor{COLOR2}{312\ \text{pacientes}}
+    n\geqslant \biggl(\frac{1,96}{10}\biggr)^2\times 90^2 \to n \geqslant \textcolor{COLOR2}{312\ \text{pacientes}}
 \]
 \\
 
