@@ -28,8 +28,80 @@ Com auxxílio da Equação 1, podemos encontrar o valor de $n$:
 \\
 
 \[
-    n\geqslant \biggl(\frac{2.326}{5}\biggr)^2 \cdot 100 \geqslant \textcolor{COLOR2}{22\ \text{pacientes}}
+    n\geqslant \biggl(\frac{2.326}{5}\biggr)^2 \cdot 100 \to n\geqslant \textcolor{COLOR2}{22\ \text{pacientes}}
 \]
 \\
 
 b) Foi recolhida uma segunda amostra de $30$ pacientes (grupo B) e obteve-se um tempo médio de $50$ minutos e uma variância de $90$ minutos. Verifique se o tempo médio do grupo A é inferior ao do grupo B. Considere um nível de confiança de $95\%$.
+\\
+
+Deve-se testar as seguintes hipóteses:
+
+\begin{enumerate}
+    \item $H_0\to \mu_a - \mu_b\geqslant 0$: O tempo médio do grupo A é superior ou igual ao do grupo B.
+    \item $H_a\to \mu_a - \mu_b< 0$: O tempo médio do grupo A é inferior ao do grupo B.
+\end{enumerate}
+
+Trata-se de um teste unilateral à esquerda em que podemos utilizar a distribuição de t-student com o total de graus de liberdade definido como $n_l=n_a+n_b-2$ e um nível de significância $\alpha=5\%$.\\
+
+\begin{equation}
+    T = \frac{(\overbar{X_a}-\overbar{X_b})-(\mu_a-\mu_b)}{
+    \sqrt{\frac{(n_a-1)S^2_{a}+(n_b-1)S^2_{b}}{n_a+n_b-2}}
+    \times
+    \sqrt{\frac{1}{n_a}+\frac{1}{n_b}}
+    }
+    \sim t_{n_a+n_b-2}
+\end{equation}
+\\
+
+Utilizando do python, calcula-se a região de rejeição do teste:
+\\
+
+\begin{lstlisting}
+from scipy.stats import t
+
+na = 20
+nb = 30
+alpha = 0.05
+df = na + nb - 2
+    
+a = t(df).ppf(alpha)
+    
+print(a)
+    
+# -1.6772241953450402
+\end{lstlisting}
+
+Por se tratar de uma distribuição unilateral, temos que a região de rejeição é dada como $RR = (-\infty; -1,677)$.\\
+
+Para o cálculo da estatística de testes, utilizamos a Equação 2 com auxílio do python:\\
+
+\begin{lstlisting}
+from math import sqrt
+
+xa = 60
+xb = 50
+na = 20
+nb = 30
+vara = 100
+varb = 90
+sa = sqrt(vara)
+sb = sqrt(varb)
+    
+den = na + nb - 2
+dev = sqrt(((na - 1) * vara + (nb - 1) * varb) / den)
+sroot = sqrt((1 / na) + (1 / nb))
+t = (xa - xb) / (dev * sroot)
+print(t)
+    
+# 3.573740145180839
+\end{lstlisting}
+
+Por fim, tem-se as condições das regras de decisão:
+
+\begin{enumerate}
+    \item Sendo $t\in RR$, $H_0$ é rejeitada.
+    \item Sendo $t\notin RR$, $H_0$ \textbf{não} é rejeitada.
+\end{enumerate}
+
+Logo, como $t\approx 3,57$ e não está na região de rejeição, $RR = (-\infty; -1,677)$, \textcolor{COLOR2}{\textbf{não} devemos rejeitar $H_0$}. Por outro lado, \textcolor{COLOR2}{devemos rejeitar a hipótese alternativa $H_a$}.\\
