@@ -1,0 +1,35 @@
+
+\noindent \textcolor{COLOR1}{Questão 05)} Um grupo de pesquisadores pretende estudar o tempo médio que um certo medicamento demora a fazer efeito. Com base numa amostra de $20$ pacientes obteve-se um tempo médio de $60$ minutos e uma variância de $100$ minutos.
+\\
+
+a) Qual o tamanho da amostra necessário para que o erro cometido na estimação seja no máximo $5$ minutos, com probabilidade $0,98$.
+\\
+
+O procedimento é semelhante ao da questão anterior letra d, porém com alguns valores diferentes.\\
+
+Da mesma forma, se calcula o valor de $z_0$ com auxílio do python.\\
+
+\begin{lstlisting}
+from scipy.stats import norm
+        
+alpha = 0.02
+                
+a0 = alpha/2
+a1 = 1 - z0
+        
+a = norm.ppf((a0,a1))
+                
+print(a)
+        
+# [-2.32634787  2.32634787]
+\end{lstlisting}
+
+Com auxxílio da Equação 1, podemos encontrar o valor de $n$:
+\\
+
+\[
+    n\geqslant \biggl(\frac{2.326}{5}\biggr)^2 \cdot 100 \geqslant \textcolor{COLOR2}{22\ \text{pacientes}}
+\]
+\\
+
+b) Foi recolhida uma segunda amostra de $30$ pacientes (grupo B) e obteve-se um tempo médio de $50$ minutos e uma variância de $90$ minutos. Verifique se o tempo médio do grupo A é inferior ao do grupo B. Considere um nível de confiança de $95\%$.
