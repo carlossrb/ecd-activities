@@ -1,114 +1,174 @@
 
-\noindent \textcolor{COLOR1}{Questão 03)} Se $A$ é uma matriz arbitrária de tamanho $m\times n$, o espaço nulo de $A$ é definido como sendo o subespaço vetorial de $\mathbb{R}^n$ formado pelas soluções do sistema homogêneo $Ax = 0$. A dimensão do espaço nulo de $A$ é chamada de nulidade de $A.$
+\noindent \textcolor{COLOR1}{Questão 03)} Considere a matriz:
 \\
 
-\begin{enumerate}
-    \item Se $A$ é a matriz
-          \[A=
-              \begin{bmatrix}
-                  2 & 3  & -1 & 1 \\
-                  3 & -1 & 1  & 2
-              \end{bmatrix}
-          \]
-          Determine a nulidade de $A$ e uma base para o espaço nulo de $A$.
-          \\
+\[A=
+    \begin{bmatrix}
+        7  & -2 & 0  \\
+        -2 & 6  & -2 \\
+        0  & -2 & 5
+    \end{bmatrix}
+\]\\
 
-          Primeiramente, reduz-se a matriz aumentada do sistema homogêneo $Ax = 0$ a forma escalonada reduzida por linhas:
-          \\
+a) Determine os autovalores de $A$ uma base ortonormal do autoespaço associado ao autovalor dominante de $A$.\\
 
-          \[A=
-              \begin{bmatrix}[cccc|c]
-                  2 & 3  & -1 & 1 & 0 \\
-                  3 & -1 & 1  & 2 & 0
-              \end{bmatrix}
-              \frac{1}{2}R_1\to R_1
-              \begin{bmatrix}[cccc|c]
-                  1 & \sfrac{3}{2} & \sfrac{-1}{2} & \sfrac{1}{2} & 0 \\
-                  3 & -1           & 1             & 2            & 0
-              \end{bmatrix}
-              \frac{1}{3}R_2\to R_2
-          \]
-          \[
-              \begin{bmatrix}[cccc|c]
-                  1 & \sfrac{3}{2}  & \sfrac{-1}{2} & \sfrac{1}{2} & 0 \\
-                  1 & \sfrac{-1}{3} & \sfrac{1}{3}  & \sfrac{2}{3} & 0
-              \end{bmatrix}
-              R_2-R_1\to R_2
-              \begin{bmatrix}[cccc|c]
-                  1 & \sfrac{3}{2}   & \sfrac{-1}{2} & \sfrac{1}{2} & 0 \\
-                  0 & \sfrac{-11}{6} & \sfrac{5}{6}  & \sfrac{2}{6} & 0
-              \end{bmatrix}
-          \]
-          \[-\frac{6}{11}R_2\to R_2
-              \begin{bmatrix}[cccc|c]
-                  1 & \sfrac{3}{2} & \sfrac{-1}{2}  & \sfrac{1}{2}   & 0 \\
-                  0 & 1            & \sfrac{-5}{11} & \sfrac{-1}{11} & 0
-              \end{bmatrix}
-              R_1-\frac{3}{2}R_2\to R_1
-          \]
-          \begin{equation}
-              A=\begin{bmatrix}[cccc|c]
-                  1 & 0 & \sfrac{2}{11}  & \sfrac{7}{11}  & 0 \\
-                  0 & 1 & \sfrac{-5}{11} & \sfrac{-1}{11} & 0
-              \end{bmatrix}
-          \end{equation}
-          \\
+Sabemos que o valor de $A-\lambda I$ será:\\
 
-          Sabemos que o posto da matriz é dado pela quantidade de linhas não nulas da matriz escalonada. Isto é, tem-se um $p(A)=2$. A nulidade é dada pelo número de colunas da matriz $A$ escalonada subtraído pelo posto da matriz. Ou seja, $nulidade(A) = 4 - p(A) = 2$.
-          \\
+\[
+    A-\lambda I =
+    \begin{bmatrix}
+        7-\lambda & -2        & 0         \\
+        -2        & 6-\lambda & -2        \\
+        0         & -2        & 5-\lambda
+    \end{bmatrix}
+\]\\
 
-          Para encontrar uma base de $A$, resolve-se o sistema escalonado $A x = 0$ obtendo $x$:
-          \\
+Segunda etapa, encontra-se o determinante dessa matriz para saber os $\lambda_n$:\\
 
-          \[
-              \begin{cases}
-                  x_1=-\frac{2}{11}x_3-\frac{7}{11}x_4  \\
-                  x_2 = \frac{5}{11}x_3+\frac{1}{11}x_4 \\
-                  x_3 = x_3                             \\
-                  x_4 = x_4
-              \end{cases}
-          \]
-          \\
+\[
+    det(A-\lambda I) = (\lambda-3)(\lambda-6)(\lambda-9)
+\]\\
 
-          e isso implica no mesmo que reorganizar em:
-          \\
+Assim, os valores de $\lambda$ são $(\lambda_1, \lambda_2, \lambda_3)=(3,6,9)$ que são substituídos na matriz $A$ e resolvida como um sistema homogêneo:\\
 
-          \[
-              x_3 \cdot
-              \begin{bmatrix}
-                  \sfrac{-2}{11} \\
-                  \sfrac{5}{11}  \\
-                  1              \\
-                  0
-              \end{bmatrix} +
-              x_4 \cdot
-              \begin{bmatrix}
-                  \sfrac{-7}{11} \\
-                  \sfrac{1}{11}  \\
-                  0              \\
-                  1
-              \end{bmatrix}
-          \]
-          \\
+Para $\lambda_2=9$, temos então:\\
 
-          A base para o espaço nulo de $A$ é formada pelos vetores entre colchetes, ou seja, $\{(\sfrac{-2}{11}, \sfrac{5}{11},1,0),(\sfrac{-7}{11},\sfrac{1}{11},0,1)\}$\\
+\[
+    \begin{bmatrix}
+        7-9 & -2  & 0   \\
+        -2  & 6-9 & -2  \\
+        0   & -2  & 5-9
+    \end{bmatrix} = \begin{bmatrix}
+        -2 & -2 & 0  \\
+        -2 & -3 & -2 \\
+        0  & -2 & -4
+    \end{bmatrix}
+\]
 
-    \item Verifique que o vetor $v = (-10, 1, -1, 16)$ pertence ao espaço nulo de $A$ e determine as coordenadas deste vetor na base que você encontrou no item anterior.
-          \\
+\[
+    \begin{bmatrix}
+        -2 & -2 & 0  \\
+        -2 & -3 & -2 \\
+        0  & -2 & -4
+    \end{bmatrix}\cdot\begin{Bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{Bmatrix} = \begin{Bmatrix}
+        0 \\
+        0 \\
+        0
+    \end{Bmatrix}
+\]\\
 
-          Para isso, devemos resolver o sistema $(-10, 1, -1, 16) =\alpha_1(\sfrac{-2}{11}, \sfrac{5}{11},1,0)+\alpha_2(\sfrac{-7}{11},\sfrac{1}{11},0,1) $ obtendo os valores de $\alpha$:
-          \\
+Resolvendo o sistema de equações lineares (a matriz aumentada) com eliminação de gauss, temos:\\
 
-          \[
-              \begin{cases}
-                  -\frac{2}{11}\alpha_1 - \frac{7}{11}\alpha_2 = -10 \\
-                  \frac{5}{11}\alpha_1 + \frac{1}{11}\alpha_2 = 1    \\
-                  \alpha_1 + 0\alpha_2 = -1                          \\
-                  0\alpha_1 + 1\alpha_2 = 16
-              \end{cases}
-          \]
-          \\
+\[
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & -2 & 0 \\
+        0 & 1 & 2  & 0 \\
+        0 & 0 & 0  & 0
+    \end{bmatrix}
+\]\\
 
-          O que claramente nos dá os valores de $\alpha_1=-1$ e $\alpha_2=16$. Assim, $[v]_S=(-1,16)$.
-\end{enumerate}
+O que significa que:\\
+
+\[
+    \begin{split}
+        &x_1 = 2x_3\\
+        &x_2 = -2x_3\\
+        &x_3 = x_3
+    \end{split}
+\]
+\\
+
+A solução é dada como $\{x_3(2,-2, 1)\}$ o que ao tomar $x_3=1$, ter-se-á $v_3=(2,-2, 1)$. A norma de $v_3\to \|v_3\|=3$. Assim $(\sfrac{2}{3}, \sfrac{-2}{3}, \sfrac{1}{3})$.\\
+
+
+b)Com ajuda do Python realize 5 iterações do método das potências aplicado à matriz $A$, começando com $x_0=(1,0,0)$ Compare a aproximação resultante com o valor exato do autovalor dominante e o autovetor unitário correspondente. Observação: Especifique os comandos utilizados em Python.
+
+
+\begin{lstlisting}
+import numpy as np
+from math import sqrt
+
+#Calcula a norma do vetor
+def norm(vet):
+    sum = 0
+    for v in vet:
+        sum += v[0]**2
+    return sqrt(sum)
+
+A = np.array([[7, -2, 0],
+        [-2, 6, -2],
+        [0, -2, 5]])
+
+xi = np.array([[1], [0], [0]])
+print(f"x0:\n{xi}\n")
+
+for i in range(5):
+    Ax = A @ xi #multiplicacao da matriz por um vetor i
+    print(f"Ax{i+1}:\n{Ax}") #imprime o resultado da multiplicacao
+    xi = Ax/norm(Ax) #divide o vetor por sua norma
+    print(f"x{i+1}:\n{xi}") #imprime o resultado da divisao
+    print(f"Autovalor na iteracao {i+1} e: {norm(Ax)}\n") #imprime 
+    o autovalor
+
+# x0:
+# [[1]
+#  [0]
+#  [0]]
+
+# Ax1:
+# [[ 7]
+#  [-2]
+#  [ 0]]
+# x1:
+# [[ 0.96152395]
+#  [-0.27472113]
+#  [ 0.        ]]
+# Autovalor na iteracao 1 e: 7.280109889280518
+
+# Ax2:
+# [[ 7.28010989]
+#  [-3.57137466]
+#  [ 0.54944226]]
+# x2:
+# [[ 0.89573556]
+#  [-0.43941744]
+#  [ 0.06760268]]
+# Autovalor na iteracao 2 e: 8.12752137946034
+
+# Ax3:
+# [[ 7.14898378]
+#  [-4.56318114]
+#  [ 1.2168483 ]]
+# x3:
+# [[ 0.83437796]
+#  [-0.53258167]
+#  [ 0.14202178]]
+# Autovalor na iteracao 3 e: 8.568040094092964
+
+# Ax4:
+# [[ 6.90580904]
+#  [-5.14828952]
+#  [ 1.77527225]]
+# x4:
+# [[ 0.78522432]
+#  [-0.58538574]
+#  [ 0.20185715]]
+# Autovalor na iteracao 4 e: 8.794695848686912
+
+# Ax5:
+# [[ 6.6673417 ]
+#  [-5.48647736]
+#  [ 2.18005723]]
+# x5:
+# [[ 0.74867875]
+#  [-0.61607897]
+#  [ 0.24479959]]
+# Autovalor na iteracao 5 e: 8.905477454667345
+\end{lstlisting}
+
+O autovalor dominante encontrado deu muito próximo do valor calculado manualmente. Ja o autovetor, seria necessaria mais iterações para melhorar sua precisão.\\
 
