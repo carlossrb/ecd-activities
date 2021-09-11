@@ -54,3 +54,70 @@ Assim:\\
 \\
 
 Sendo assim, \textcolor{COLOR2}{não é uma transformação linear}, já que $T(U+v)=0$ e $T(U)+T(V) = 2T(U)$, sendo $V=-U$.\\
+
+b) Se $B$ é uma matriz fixa de tamanho $2\times 3$, $T: M_2(\mathbb{R})\to M_{2\times 3}(\mathbb{R})$ com $T(U)=UB$:\\
+
+Temos as três matrizes:\\
+
+\[
+    B=\begin{bmatrix}
+        b_{11} & b_{12} & b_{13} \\
+        b_{21} & b_{22} & b_{23}
+    \end{bmatrix}, \quad
+    U=\begin{bmatrix}
+        u_{11} & u_{12} \\
+        u_{21} & u_{22}
+    \end{bmatrix}, \quad
+    V=\begin{bmatrix}
+        v_{11} & v_{12} \\
+        v_{21} & v_{22}
+    \end{bmatrix}
+\]
+\\
+
+Assim sendo, temos:\\
+
+\[
+    T(U) = \begin{bmatrix}
+        u_{11}b_{11} + u_{12}b_{21} & u_{11}b_{12} + u_{12}b_{22} & u_{11}b_{13} + u_{12}b_{23} \\
+        u_{21}b_{11} + u_{22}b_{21} & u_{21}b_{12} + u_{22}b_{22} & u_{21}b_{13} + u_{22}b_{23}
+    \end{bmatrix}
+\]
+\\
+
+1) Para a multiplicação por uma contante $\alpha$:
+\\
+
+\[
+    \begin{split}
+        &T(\alpha U) = \begin{bmatrix}
+            \alpha (u_{11}b_{11} +  u_{12}b_{21}) & \alpha (u_{11}b_{12} + u_{12}b_{22}) & \alpha (u_{11}b_{13} +  u_{12}b_{23}) \\
+            \alpha (u_{21}b_{11} +  u_{22}b_{21}) & \alpha (u_{21}b_{12} + u_{22}b_{22}) & \alpha (u_{21}b_{13} +  u_{22}b_{23})
+        \end{bmatrix}\\
+        &T(\alpha U) = \alpha\begin{bmatrix}
+            u_{11}b_{11} + u_{12}b_{21} & u_{11}b_{12} + u_{12}b_{22} & u_{11}b_{13} + u_{12}b_{23} \\
+            u_{21}b_{11} + u_{22}b_{21} & u_{21}b_{12} + u_{22}b_{22} & u_{21}b_{13} + u_{22}b_{23}
+        \end{bmatrix}\\
+        &T(\alpha U) = \alpha T(U)
+    \end{split}
+\]
+\\
+
+2) Para a adição de uma matriz $V$:\\
+
+\[
+    \begin{split}
+        &T(U+V) = \begin{bmatrix}
+            (u_{11}+v_{11})b_{11} + (u_{12}+v_{12})b_{21} & \cdots & (u_{11}+v_{11})b_{13} + (u_{12}+v_{12})b_{23} \\
+            (u_{21}+v_{21})b_{11} + (u_{22}+v_{22})b_{21} & \cdots & (u_{21}+v_{21})b_{13} + (u_{22}+v_{22})b_{23}
+        \end{bmatrix}\\
+        &T(U+V) = \begin{bmatrix}
+            (u_{11}b_{11}+u_{12}b_{21}) + (v_{11}b_{11}+v_{12}b_{21}) & \cdots & (u_{11}b_{13}+u_{12}b_{23}) + (v_{11}b_{13}+v_{12}b_{23}) \\
+            (u_{21}b_{11}+u_{22}b_{21}) + (v_{21}b_{11}+v_{22}b_{21}) & \cdots & (u_{21}b_{13}+u_{22}b_{23}) + (v_{21}b_{13}+v_{22}b_{23})
+        \end{bmatrix}\\
+        &T(U+V)= T(U)+T(V)
+    \end{split}
+\]
+\\
+
+Sendo assim, \textcolor{COLOR2}{é uma transformação linear}, já que ambas as condições são satisfeitas.\\
