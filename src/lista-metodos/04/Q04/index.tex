@@ -1,0 +1,79 @@
+
+\noindent \textcolor{COLOR1}{Questão 04)} Seja $V$ um espaço vetorial real com produto interno e $u, v, w$ vetores de $V$ tais que:
+\\
+
+
+\[
+    \langle u,v\rangle=2 \hspace{1em} \langle v,w\rangle=-3 \hspace{1em} \langle u,w\rangle=5 \hspace{1em} \| u\|=6 \hspace{1em} \| v\|=2 \hspace{1em} \| w\|=7
+\]
+\\
+
+Calcule:
+\\
+
+a) $\langle 2v-w,u+3w\rangle$:
+\\
+\[
+    \begin{split}
+        \langle 2v-w,u+3w\rangle= \langle 2v,u+3w\rangle - \langle w, u + 3w\rangle\\
+        2\langle v,u\rangle + 2\langle v,3w\rangle - \langle w,u\rangle - \langle w,3w\rangle\\
+        2\langle v,u\rangle + 6\langle v,w\rangle - \langle w,u\rangle - 3\langle w,w\rangle\\
+        2\cdot2 +6\cdot (-3) - 5 - 3\cdot 7^2 = -166
+    \end{split}
+\]
+\\
+
+b) $\langle u - v - 2w, 4u + v\rangle$:
+\\
+\[
+    \begin{split}
+        \langle u - v - 2w, 4u + v\rangle = \langle u,4u + v\rangle - \langle v,4u + v\rangle - \langle 2w,4u + v\rangle \\
+        \langle u,4u\rangle + \langle u,v\rangle - \langle v,4u\rangle - \langle v,v\rangle - \langle 2w,4u\rangle - \langle 2w,v\rangle\\
+        4\langle u,u\rangle + \langle u,v\rangle - 4\langle v,u\rangle - \langle v,v\rangle - 8\langle w,u\rangle - 2\langle w,v\rangle\\
+        4\cdot6^2 + 2 - 4\cdot 2 - 2^2 - 8\cdot 5 -2\cdot(-3) = 100
+    \end{split}
+\]
+\\
+
+c) $d(u,v)$:
+\\
+\[
+    \begin{split}
+        d(u,v)=\|u-v\| = \sqrt{(u-v)(u-v)}\\
+        \sqrt{\|u\|^2 - \langle u,v\rangle -\langle v,u\rangle +\|v\|^2}\\ \sqrt{36-4+4} = 6
+    \end{split}
+\]
+\\
+
+d) $\|u - 2v + 4w\|$:
+\\
+\[
+    \begin{split}
+        \|u - 2v + 4w\| = \sqrt{(u - 2v + 4w)(u - 2v + 4w)}\\
+        \sqrt{\|u\|^2-4\langle u,v\rangle + 8\langle u,w\rangle + 4\|v\|^2 - 16\langle v,w\rangle + 16\|w\|^2}\\
+        \sqrt{6^2-4\cdot2+8\cdot5+4\cdot2^2-16\cdot(-3)+16\cdot7^2} = \sqrt{916}
+    \end{split}
+\]
+\\
+
+e) O cosseno do ângulo entre os vetores $u$ e $v$:
+\\
+\[
+    \begin{split}
+        \cos\theta = \frac{\langle u,v\rangle}{\|u\|\|v\|}\\
+        \cos\theta = \frac{2}{6\cdot2} = \frac{1}{6}
+    \end{split}
+\]
+\\
+
+f) O cosseno do ângulo entre os vetores $u + v$ e $v - w$:
+\\
+\[
+    \begin{split}
+        \cos\theta = \frac{\langle u + v,v - w\rangle}{\|u + v\|\|v - w\|}\\
+        \frac{\langle u, v\rangle + \langle v,v\rangle - \langle u,w\rangle-\langle v,w\rangle}{\sqrt{(u+v)^2}\cdot \sqrt{(v-w)^2}}\\
+        \frac{2+4-5+3}{\sqrt{6^2+2\cdot 2+2^2}\cdot \sqrt{2^2-2(-3)+7^2}}\\
+        \frac{4}{\sqrt{44}\cdot \sqrt{59}} = \frac{4}{\sqrt{2596}}
+    \end{split}
+\]
+\\
