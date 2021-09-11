@@ -1,5 +1,38 @@
 
-\noindent \textcolor{COLOR1}{Questão 04)} Seja $V$ um espaço vetorial real com produto interno e $u, v, w$ vetores de $V$ tais que:
+\noindent \textcolor{COLOR1}{Questão 04)} Se $A$ é uma matriz de ordem $n$ diagonalizável, mostre que:
 \\
-a
+
+a)  $det(A)$ é igual ao produto dos autovalores de $A$:
 \\
+
+Com um matriz qualquer $A$, tem-se:
+
+\[
+    A=\begin{bmatrix}
+        a & 0 & 0 \\
+        0 & b & 0 \\
+        0 & 0 & c
+    \end{bmatrix}
+\]
+\\
+
+O valor do \textcolor{COLOR2}{determinante de $A$ é igual ao produto dos autovalores de $A$}. Ja que $det(A)=a\times b\times c\to A:(a-\lambda_1)(b-\lambda_2)(c-\lambda_3)=0$. o que nos traz $\lambda_1 = a,\lambda_2=b\lambda_3=c$.\\
+
+b) $tr(A)$ é igual à soma dos autovalores de $A$:\\
+
+Com um matriz qualquer $A$, tem-se:
+
+\[
+    A=\begin{bmatrix}
+        a & 0 & 0 \\
+        0 & b & 0 \\
+        0 & 0 & c
+    \end{bmatrix}
+\]
+\\
+
+O valor do \textcolor{COLOR2}{da soma dos autovalores de $A$ é igual ao traço de $A$}. Ja que $tr(A)=a+ b+ c\to A:(a-\lambda_1)(b-\lambda_2)(c-\lambda_3)=0$. o que nos traz $\lambda_1 = a,\lambda_2=b\lambda_3=c$.\\
+
+c) Se $A$ é invertível, então $A^{-1}$ é diagonalizável.\\
+
+Nesse caso, para diagonalizar $A$ é necessario existir uma matriz $B$ (invertível) para que $B^{-1}AB$ seja diagonal. Considerando $A$ invertível, pode-se encontrar uma matriz diagonal com $BA^{-1}B$ que será inversa de $B^{-1}AB$.\\
