@@ -21,9 +21,80 @@ O valor de $Y$ para $x = 4$ foi perdido, mas antes foram obtidos os seguintes re
 \]
 \\
 a) Escreva a reta de regressão estimada através do método dos mínimos quadrados.\\
-as
+
+Precisaremos encontrar os valores de $\overbar{x}\ \overbar{Y}\ \widehat{\beta_1} \ \text{e}\ \widehat{\beta_0}$ para assim formar a reta de regressão $Y=\widehat{\beta_1}x + \widehat{\beta_0}$:
 \\
-b) Acha que conseguiu um bom ajuste? Use o coeficiente de determinação.\\
-c) Qual o valor da quantidade de vidro produzida no ponto de reciclagem que prevê ocorrer em 28 dias sem o despejar?\\
-d) Teste se o declive da reta de regressão obtida em (a) é zero, usando um nível de significância de $10\%$. Como interpreta a não rejeição dessa hipótese?\\
-e) Qual o erro de previsão quando o ponto de reciclagem não é despejado durante 10 dias?\\
+
+\[
+    \begin{split}
+        & \overbar{x} = \frac{1}{8} \sum_{i=1}^{8}x_i = \frac{84}{8} = 10,5     \\
+        & \overbar{Y} = \frac{1}{8} \sum_{i=1}^{8}Y_i = \frac{4800}{8} = 600\\
+        & \widehat{\beta_1} = \frac{\sum_{i=1}^{8}x_iY_i - n\overbar{x}\overbar{Y}}{\sum_{i=1}^{8}x^2_i - n\overbar{x}^2} = \frac{79700 - 8\times10,5\times600}{1404 - 8\times10,5^2} \approx 56,1303\\
+        & \widehat{\beta_0} = \overbar{Y} - \widehat{\beta_1} \overbar{x} = 600 - 56,1303 \approx 10,6322\\
+        & \textcolor{COLOR2}{Y = 56,1303x + 10,6322}
+    \end{split}
+\]
+\\
+
+\noindent b) Acha que conseguiu um bom ajuste? Use o coeficiente de determinação.\\
+
+Tem-se que o coeficiente de determinação é $R^2$ é dado como:\\
+
+\[
+    R^2 = \frac{\bigl(\widehat{\beta_1}^2\bigr)\sum_{i=1}^{8}x_i^2-n\overbar{x}^2}{\sum_{i=1}^{8}Y_i^2-n\overbar{Y}^2} = \frac{56,1303^2\times(1404-8\times 10,5^2)}{4548000-8\times600^2} \textcolor{COLOR2}{\approx 0,986}
+\]
+\\
+
+Dado o valor de $R^2$ obtido muito próximo de 1, pode-se afirmar que o ajuste foi bem sucedido.\\
+
+\noindent c) Qual o valor da quantidade de vidro produzida no ponto de reciclagem que prevê ocorrer em 28 dias sem o despejar?\\
+
+Não é possível extrapolar valores fora do intervalo usado para o ajuste. Assim sendo, para 28 dias, \textcolor{COLOR2}{não se pode prever o valor de $Y$ produzido.}\\
+
+
+\noindent d) Teste se o declive da reta de regressão obtida em (a) é zero, usando um nível de significância de $10\%$. Como interpreta a não rejeição dessa hipótese?\\
+
+Temos as seguintes hipóteses:
+\begin{itemize}
+    \item $H_0: \beta_1 = 0$
+    \item $H_a: \beta_1 \neq 0$
+\end{itemize}
+
+Cálculo da variância do erro:
+
+\[
+    \begin{split}
+        &\widehat{\sigma}^2 = \frac{1}{n-2}\biggl\{ \biggl(\sum_{i=1}^{8}Y_i^2 - nY^2\biggr)- \bigl(\widehat{\beta_1}\bigr)^2\biggl(\sum_{i=1}^{8}x_i^2 - n\overbar{x}^2\biggr)\biggr\}\\
+        &\widehat{\sigma}^2 = \frac{1}{6}\{(4548000-8\times600^2) - 56,1303^2\times(1404-8\times 10,5^2)\} \approx 3896,8797
+    \end{split}
+\]
+
+Cálculo da estatística de teste $T$:
+
+\[
+    \begin{split}
+        &T = \frac{\widehat{\beta_1} - \beta_1 }{\sqrt{\frac{\widehat{\sigma}^2}{\sum_{i=1}^{8}x_i^2 - n\overbar{x}^2}}} \sim t_{n-2}\\ \\
+        &T = \frac{56,1303 - 0}{\sqrt{\frac{3896,8797}{1404-8\times10,5^2}}} \sim t_{6} \approx 20,5356
+    \end{split}
+\]
+
+Para a região crítica com $gl=6$ e $10\%$ de significância, temos o valor de $t_0 = 1,943$ (tabelado ou no python). Assim sendo, a região de rejeição será:
+
+
+\[
+    RR = ]-\infty; -1,943[U]1,943;+\infty[
+\]
+\\
+
+Então, como o valor de $T$ obtido é $20,5356$, está dentro da região de rejeição, \textcolor{COLOR2}{devemos rejeitar a hipótese nula $H_0$}. Isso quer dizer que o valor de $\beta_1$ é considerável na inclinação e não pode ser desconsiderado.\\
+
+\noindent e) Qual o erro de previsão quando o ponto de reciclagem não é despejado durante 10 dias?\\
+
+Para o caso, basta achar o valor previsto pelo ajuste e subtrair pelo valor real medido:
+
+\begin{itemize}
+    \item Estimado $\to Y^e_{10} = 56,1303x_{10} + 10,6322 = 56,1303\times10 + 10,6322 = 571,9352$\\
+    \item Tabelado $\to Y^t_{10} = 650$\\
+    \item Diferença $\to \|  \Delta Y_{10}\|  = 571,9352 - 650 = \textcolor{COLOR2}{78,0648}$\\
+\end{itemize}
+
