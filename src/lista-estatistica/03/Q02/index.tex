@@ -1,3 +1,61 @@
 
 \noindent \textcolor{COLOR1}{Questão 02)} Considere o conjunto de dados ``Wage'' do pacote ``ISLR2'' do software R. Considere a variável ``health\_ins'' como variável resposta e as variáveis ``age'', ``maritl'', ``race'', ``education'', ``jobclass'', ``health'' e ``logwage'' como variáveis explicativas. Ajuste uma regressão logística, escreva o modelo final e interprete os coeficientes obtidos.
 \\
+
+Rodando o seguinte script, temos:
+\\
+
+\begin{lstlisting}
+install.packages("ISLR2")
+library(ISLR2)
+
+summary(glm(health_ins ~ age + maritl + race + education + jobclass
+ + health + logwage, data = Wage, family = binomial))
+\end{lstlisting}
+
+\begin{lstlisting}
+    Call:
+glm(formula = health_ins ~ age + maritl + race + education + 
+    jobclass + health + logwage, family = binomial, data = Wage)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.0259  -0.8050  -0.5755   0.9413   2.8857  
+
+Coefficients:
+                         beta Std. Error z value Pr(>|z|)    
+(Intercept)              12.345276   0.768926  16.055  < 2e-16 ***
+age                      -0.016221   0.004311  -3.763 0.000168 ***
+maritl2. Married          0.277127   0.119370   2.322 0.020255 *  
+maritl3. Widowed         -0.171424   0.575412  -0.298 0.765767    
+maritl4. Divorced        -0.129080   0.204525  -0.631 0.527960    
+maritl5. Separated        0.277519   0.320369   0.866 0.386354    
+race2. Black              0.059940   0.144589   0.415 0.678468    
+race3. Asian              0.316402   0.181673   1.742 0.081579 .  
+race4. Other              0.111366   0.366256   0.304 0.761078    
+education2. HS Grad      -0.406558   0.150140  -2.708 0.006772 ** 
+education3. Some College -0.517576   0.165375  -3.130 0.001750 ** 
+education4. College Grad -0.463202   0.172532  -2.685 0.007259 ** 
+education5. Advanced Deg -0.308215   0.205246  -1.502 0.133179    
+jobclass2. Information   -0.349047   0.091890  -3.799 0.000146 ***
+health2. >=Very Good     -0.144779   0.096927  -1.494 0.135256    
+logwage                  -2.618243   0.175277 -14.938  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3693.5  on 2999  degrees of freedom
+Residual deviance: 3182.7  on 2984  degrees of freedom
+AIC: 3214.7
+
+Number of Fisher Scoring iterations: 4
+\end{lstlisting}
+
+tem-se então a equação de regressão logística que é:
+\\
+\begin{equation}
+    P(x) = \frac{e^{\beta_0 + \beta_1 x_1 +\cdots + \beta_n x_n}}{1 + e^{\beta_0 + \beta_1 x_1 +\cdots + \beta_n x_n}}
+\end{equation}
+
+As chances da pessoa possuir um plano de saúde são aumentadas quando temos variáveis ($\beta$) positivas. O caso contrário também é válido, ou seja, as negativas diminuem a chance do indivíduo possuir plano de saúde.
