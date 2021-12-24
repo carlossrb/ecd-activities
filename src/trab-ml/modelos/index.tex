@@ -2,14 +2,13 @@
 \noindent \textcolor{COLOR2}{MODELOS E MÉTRICAS UTILIZADOS}
 \\
 
-Para o presente trabalho comparou-se os resultados obtivos com os modelos de predição: Análise discriminante, Regressão Logística, Árvore de Decisão e Random Forest, Naive Bayes e KNN.
+Para o presente trabalho comparou-se os resultados obtivos com os modelos de predição: Análise discriminante, Regressão Logística, Árvore de Decisão, Naive Bayes e KNN.
 
 \begin{enumerate}
     \item \textbf{Análise discriminante} - Essa técnica compara diferença entre grupos e classifica o dado analisado no grupo que tenha as características mais semelhantes a ele. Todas as variáveis utilziadas são categóricas, mesmo podendo ter mais de 2 categorias. No Python ele é implementado com pacote de uso livre da comunidade \textit{Sklearn}, usando o método \textcolor{COLOR1}{\texttt{LinearDiscriminantAnalysis()}};
     \item \textbf{Regressão Logística} - Para essa técnica é utilizado o método \textcolor{COLOR1}{\texttt{LogisticRegression()}} do pacote \textit{scikit-learn}. Nessa regressão, tem-se um modelo para prever valores que serão assumidos por uma varável categórica por meio de variáveis contínuas independentes;
     \item \textbf{Árvore de Decisão} - Para essa técnica é utilizado o pacote \textit{scikit-learn} e o método \textcolor{COLOR1}{\texttt{DecisionTreeClassifier()}}. A Árvore de Decisão também utiliza do aprendizado supervisionado para classificar e prever os dados e utiliza de uma árvore com ramificações variáveis de acordo com a quantidade de atributos e seus valores. Essa técnica busca identificar os atributos que fornecem a maioria das informações, removendo os raros, para melhorar o modelo;
     \item \textbf{Naive Bayes} - Para essa técnica é utilizado o método \textcolor{COLOR1}{\texttt{GaussianNB()}} do pacote \textit{scikit-learn}. Naive Bayes é um modelo de aprendizado supervisionado onde cada variável de análise recebe um peso em cada uma das classes, esses pesos serão somados e a classe com maior peso será a que classificará o novo objeto;
-    \item \textbf{Random Forest} - Para essa técnica é utilizado o método \textcolor{COLOR1}{\texttt{RandomForestClassifier()}} do pacote \textit{scikit-learn}. O Random Forest utiliza o modelo de árvore de decisão a partir de suconjuntos de atributos aleatoriamente selecionados e em seguida efetua a classificação da variável de interesse de acordo com a árvore que possui a melhor lógica e vantagens para tomar a decisão;
     \item \textbf{KNN} - Para essa técnica é utilizado o método \textcolor{COLOR1}{\texttt{KNeighborsClassifier()}} do pacote \textit{scikit-learn}. O KNN é um modelo de aprendizado supervisionado que utiliza a distância euclidiana entre os pontos de treinamento para classificar um novo objeto.
 \end{enumerate}
 
@@ -18,13 +17,16 @@ Além desses métodos, as seguintes métricas de avaliação foram utilizadas: M
 \begin{itemize}
     \item Matriz de confusão:
           \begin{itemize}
-              \item \textbf{TP} - Verdadeiro Positivo: Valores que são positivos no conjunto de testes e também positivos na predição;
+              \item \textbf{VP} - Verdadeiro Positivo: Valores que são positivos no conjunto de testes e também positivos na predição;
               \item \textbf{FN} - Falso Negativo: Valores que são positivos no conjunto de testes e negativos na predição;
               \item \textbf{FP} - Falso Positivo: Valores que são negativos no conjunto de testes e positivos na predição;
-              \item \textbf{TN} - Verdadeiro Negativo: Valores que são negativos no conjunto de testes e também negativos na predição.
+              \item \textbf{VN} - Verdadeiro Negativo: Valores que são negativos no conjunto de testes e também negativos na predição.
           \end{itemize}
-    \item Precisão: É a proporção dada como: $P = \frac{VP}{VP+FP}$;
+    \item Precisão (P): É a proporção dada como: $P = \frac{VP}{VP+FP}$;
     \item Coeficiente de Correlação de Matthews (MCC) - Interpreta aleatoriedade da relação. Sendo próximo de \textbf{1}, a classificação é perfeita. Próximo de \textbf{-1} a classificação é inversa e se próximo de \textbf{0} a classificação é aleatória;
-    \item Recall: É a proporção dada como: $P = \frac{VP}{VP+FN}$;
-    \item F-Score: Trade-off entre recall e Precisão e dado como: $F = \frac{2\times P\times R}{P+R}$;
+    \item Acurácia (ACC): É a proporção dada como: $ACC = \frac{VP+VN}{VP+FN+FP+VN}$;
+    \item Recall (R): É a proporção dada como: $R = \frac{VP}{VP+FN}$;
+    \item F-Score (F): Trade-off entre recall e Precisão e dado como: $F = \frac{2\times P\times R}{P+R}$;
 \end{itemize}
+
+Com esses modelos e métricas, analisou-se o conjunto de dados, em uma proporção de $70\%$ para treino e $30\%$ para teste e econtrou-se os seguintes resultados:
