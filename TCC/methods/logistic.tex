@@ -1,0 +1,18 @@
+\subsubsection{Regressão Logística}
+
+A regressão logística é um modelo estatístico robusto e eficiente, que permite a previsão da probabilidade de um evento binário de forma precisa e confiável \citep{hosmer2013applied}. Este tipo de evento é aquele que pode ocorrer ou não, ou que pode ser classificado em duas categorias distintas. Por exemplo, em uma análise de crédito, o cliente pode ser aprovado ou não. Na medicina, o evento pode ser a cura ou não de uma doença.
+
+Ela apresenta um modelo linear generalizado que utiliza a função logística para modelar a relação entre as variáveis independentes e a variável dependente \citep{kleinbaum2010logistic}. A função logística é uma função sigmoide que transforma uma variável linear em uma probabilidade. A equação da função logística é dada por:
+
+\begin{equation}
+    p = \frac{1}{1 + e^{-x}}
+\end{equation}
+
+Sendo $p$ a probabilidade do evento ocorrer, $x$ uma variável linear que representa a combinação linear das variáveis independentes, e $e$ a constante de Euler.
+
+A regressão logística utiliza a técnica de máxima verossimilhança para estimar os parâmetros do modelo a partir dos dados observados. A função de verossimilhança é maximizada para encontrar os valores dos coeficientes que melhor se ajustam aos dados. O modelo é ajustado para minimizar a diferença entre as probabilidades previstas pelo modelo e as probabilidades observadas nos dados \citep{mccullagh1989generalized}.
+
+A regressão logística tem sido amplamente utilizada em diversas áreas, como na análise de dados de sobrevivência, na análise de dados de saúde, na análise de dados financeiros, etc. Por exemplo, é utilizada na análise de dados de sobrevivência para modelar a probabilidade de um paciente sobreviver a uma doença com base em fatores como idade, sexo, nível de educação, etc. Na análise de dados financeiros, é utilizada para modelar a probabilidade de um cliente pagar ou não uma dívida com base em fatores como histórico de crédito, renda, etc.
+
+
+\input{./tikz/logistic.tikz.tex}

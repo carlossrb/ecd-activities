@@ -1,0 +1,92 @@
+\section{Materiais e métodos}
+\label{sec:materials}
+
+\subsection{Tipo de pesquisa}
+
+Para realização deste trabalho, realizou-se uma pesquisa quantitativa descritiva, uma vez que buscou-se analisar dados de forma minuciosa a partir de Databases seccionados e coletados de diversas lojas virtuais no Brasil. Isto é, a pesquisa descritiva compreende a observação, ao registro, a análise, a classificação, a interpretação e a padronização de dados com a finalidade de explicar a correspondência entre as variáveis investigadas.
+
+Em relação ao tratamento do problema, a pesquisa se caracterizou como quantitativa. Segundo \cite{malhotra2006pesquisa}, o objetivo da pesquisa quantitativa é quantificar os dados e aplicar ferramentas de análises estatísticas. O trabalho utilizou da tratativa, analise, correlação e apresentação de dados, além de aplicações de métodos estatísticos para criação de diferentes cenários, os quais têm como objetivo identificar possíveis tendência entre os dados utilizados e a satisfação do cliente na tomada de decisão em empresas que atuam nesse setor.
+
+Quanto à coleta de dados, este trabalho foi classificado como uma pesquisa documental. A pesquisa documental recorre a fontes mais diversificadas e dispersas, sem tratamento analítico, tais como: tabelas estatísticas, jornais, revistas, relatórios, documentos oficiais, cartas, filmes, fotografias, pinturas, tapeçarias, relatórios de empresas, vídeos de programas de televisão, etc. \citep{fonseca2002}. A pesquisa documental é um tipo de pesquisa que é baseada dados e informações que não passaram por um processo analítico e/ou sintético. Os dados deste trabalho, de diferentes E-commerces no Brasil, foram disponibilizados pela Olist e estão disponíveis na plataforma \textit{Kaggle}, com o nome \textit{Brazilian E-Commerce Public Dataset} \citep{KaggleOlist}.
+
+\subsection{Fonte e descrição dos dados}
+
+Olist é uma startup brasileira que atua no segmento de E-commerce, sobretudo por meio de \textit{marketplace}. De um lado, a Olist concentra vendedores que desejam anunciar em \textit{marketplaces} como Mercado Livre, B2W, Via Varejo, Amazon e etc. Por outro, concentra os produtos de todos os vendedores em uma loja única que fica visível ao consumidor final. Atualmente o negócio reúne mais de 800 colaboradores e mais de 9 mil lojistas, além de 2 milhões de consumidores únicos \citep{Olist}.
+
+A base de dados escolhida consiste em um conjunto de dados que descrevem a rotina de compra de um E-commerce. É possível visualizar diversas características de um produto, como o nome, preço, descrição, nota atribuída, comentários, local de compra, etc. Mais especificamente, para este trabalho, analisou-se os comentários avaliativos (\textit{review comment message}) e as notas dadas pelos clientes (\textit{review score}).
+
+\subsection{Ferramentas}
+
+Abaixo na \autoref{fig:process}, tem-se o fluxograma do processo de realização deste trabalho
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth, scale=0.6]{./figs/process_diagram.png}
+    \caption{Fluxograma do trabalho}
+    \label{fig:process}
+\end{figure}
+
+O esquema dos \textit{databases} disponibilizados pelo Olist é representado na \autoref{fig:dataset_schema}. Nele, utilizou-se apenas a tabela \textit{olist\_order\_review}, com os campos disponíveis na \autoref{tab:review}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.52]{./figs/database_schema.png}
+    \caption{Esquemas do dataset publicado pelo Olist, adaptado pelo autor (2022)}
+    \label{fig:dataset_schema}
+\end{figure}
+
+
+\begin{table}[]
+    \small
+    \begin{tabular}{ccccc}
+        \hline
+        { }     & { review\_id}   & { order\_id}   & { review\_comment\_title} & { review\_comment\_message} \\ \hline
+        { type} & { hash}         & { hash}        & { string|null}            & { string|null}              \\
+        { ex}   & { da79b0a377eb} & { df73dbeba33} & { bom, mas}               & { atende às expectativas}   \\ \hline
+    \end{tabular} \ldots
+    \newline
+    \vspace*{0.5 cm}
+    \newline
+    \begin{tabular}{cccc}
+        \hline
+        { }     & { review\_score} & { review\_creation\_date} & { review\_answer\_timestamp} \\ \hline
+        { type} & { number}        & { datestring}             & { datestring}                \\
+        { ex}   & { 3}             & { 2018-01-18 00:00:00}    & { 2018-01-18 21:00:00}       \\ \hline
+    \end{tabular}
+    \caption{Esquema da tabela \textit{olist\_order\_review}}
+    \label{tab:review}
+\end{table}
+
+Na primeira fase, utilizando a linguagem de programação Python, os databases em formato CSV foram extraídos e exportados para leitura e armazenamento em diferentes variáveis no intuito de limpar e adequar os dados para análises. Nesta etapa, itens duplicados, com valores nulos e valores discrepantes foram removidos. Além disso, separou-se dois \textit{datasets} contendo informações dos comentários dos clientes (\textit{review\_comment\_message}) e da sua nota de avaliação (\textit{review\_score}). Para o \textit{data\_bin} tem-se comentários associados categoricamente com valores binários (0 e 1) a partir das notas, com o valor atribuído de 0 para o intervalo (0,2] e de 1 para o intervalo de (2, 5]. No \textit{data\_cat} tem-se apenas os comentários e os reviews numéricos de 1 a 5. Ambas as bases são removidos os valores nulos. Tem-se a \autoref{tab:bin} e \autoref{tab:gen} exemplificando os casos citados.
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc}
+                & index  & text               & label   \\\hline\hline
+        type    & bigint & string             & boolean \\\hline
+        exemplo & 1      & produto muito ruim & 0
+    \end{tabular}
+    \caption{Esquema de geração do \textit{data\_bin}}
+    \label{tab:bin}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc}
+                & index  & text              & label  \\\hline\hline
+        type    & bigint & string            & number \\\hline
+        exemplo & 2      & produto muito bom & 4
+    \end{tabular}
+    \caption{Esquema de geração do \textit{data\_gen}}
+    \label{tab:gen}
+\end{table}
+
+\input{methods.tex}
+
+
+
+
+
+
+

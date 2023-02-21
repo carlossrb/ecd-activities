@@ -1,0 +1,32 @@
+
+
+\usetikzlibrary{fit,shapes.arrows,positioning}
+
+\tikzset{marrow/.style={midway,red,sloped,fill, minimum height=3cm, single arrow, single arrow
+            head extend=.5cm, single arrow head indent=.25cm,xscale=0.3,yscale=0.15,
+            allow upside down}}
+\begin{figure}[H]
+    \centering
+    \scalebox{0.48}{
+        \begin{forest}
+            for tree={l sep=3em, s sep=3em, anchor=center, inner sep=0.7em, fill=blue!50,
+            circle, font=\Large\sffamily,where level=1{no edge}{}}
+            [Dados de treinamento, draw, rectangle, rounded corners, orange, text=white,alias=TD
+            [,red!70,alias=a1[[,alias=a2][]][,red!70,edge label={node[above=1ex,marrow]{}}[[][]][,red!70,edge label={node[above=1ex,marrow]{}}[,red!70,edge label={node[below=1ex,marrow]{}}][,alias=a3]]]]
+            [,red!70,alias=b1[,red!70,edge label={node[below=1ex,marrow]{}}[[,alias=b2][]][,red!70,edge label={node[above=1ex,marrow]{}}]][[][[][,alias=b3]]]]
+            [~$\cdots$~,scale=4,no edge,fill=none,yshift=-1em]
+            [,red!70,alias=c1[[,alias=c2][]][,red!70,edge label={node[above=1ex,marrow]{}}[,red!70,edge label={node[above=1ex,marrow]{}}[,alias=c3][,red!70,edge label={node[above=1ex,marrow]{}}]][,alias=c4]]]
+            ]
+            \node[draw,fit=(a1)(a2)(a3)](f1){};
+            \node[draw,fit=(b1)(b2)(b3)](f2){};
+            \node[draw,fit=(c1)(c2)(c3)(c4)](f3){};
+            \path (f1.south west)--(f3.south east) node[midway,below=4em] (D) {Média};
+            \node[below=2em of D] (pred){Predição};
+            \foreach \X in {1,2,3}{\draw[-stealth] (TD) -- (f\X.north);
+                    \draw[-stealth] (f\X.south) -- (D);}
+            \draw[-stealth] (D) -- (pred);
+        \end{forest}
+    }
+    \caption{Esquema de funcionamento de uma floresta aleatória}
+    \label{plt:randomForest}
+\end{figure}

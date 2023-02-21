@@ -1,0 +1,31 @@
+\subsubsection{Redes Neurais}
+
+\input{tikz/neuralNetwork.tikz.tex}
+
+Redes Neurais Artificiais (RNAs) são modelos computacionais que se inspiram no funcionamento do cérebro humano e têm sido amplamente utilizadas para tarefas de classificação, previsão e reconhecimento de padrões em diferentes áreas do conhecimento. O conceito de RNA foi proposto por \cite{mcculloch1943logical}, mas foi apenas a partir da década de 1980, com o desenvolvimento de técnicas de treinamento de redes profundas, que as RNAs se tornaram uma ferramenta poderosa para análise de dados \cite{lecun2015deep}.
+
+Uma RNA é composta por camadas de neurônios artificiais, cada um com uma função de ativação que transforma a entrada recebida em uma saída. A primeira camada é a camada de entrada, que recebe os dados a serem processados. A última camada é a camada de saída, que produz a resposta final da RNA. Entre as camadas de entrada e saída, podem ser adicionadas várias camadas ocultas, que ajudam a extrair características dos dados de entrada.
+
+O processo de treinamento de uma RNA consiste em ajustar os pesos sinápticos entre os neurônios para que a rede produza a saída correta para cada entrada. O algoritmo mais comum de treinamento é o Backpropagation, proposto por \cite{rumelhart1986parallel}. O Backpropagation utiliza o método do gradiente descendente para minimizar a função de custo da RNA em relação aos pesos sinápticos.
+
+Uma das principais vantagens das RNAs é a capacidade de lidar com dados complexos e não lineares. Além disso, as RNAs podem ser utilizadas em problemas de classificação, previsão e reconhecimento de padrões em diferentes áreas, como visão computacional, processamento de fala, processamento de texto e bioinformática.
+
+No entanto, as RNAs possuem algumas desvantagens, como a dificuldade de interpretação dos resultados e o risco de overfitting, que ocorre quando a rede se ajusta demais aos dados de treinamento e não consegue generalizar para novos dados.
+
+As redes neurais artificiais são compostas por uma série de camadas de neurônios, que realizam operações matemáticas nas entradas recebidas para gerar saídas. A formulação matemática dessas operações pode variar de acordo com a arquitetura da rede, mas em geral envolvem uma combinação linear das entradas, seguida de uma função não linear de ativação.
+
+Abaixo tem-se as equações matemáticas para uma rede neural \textit{feedforward} de três camadas, com $n^{(l)}$ neurônios na camada $l$:
+
+\begin{equation}
+    \begin{aligned}
+         & z_j^{(2)} = \sum\limits_{i=1}^{n^{(1)}} w_{ij}^{(1)} x_i + b_j^{(1)}       \\
+         & h_j^{(2)} = f(z_j^{(2)})                                                   \\
+         & z_k^{(3)} = \sum\limits_{j=1}^{n^{(2)}} w_{jk}^{(2)} h_j^{(2)} + b_k^{(2)} \\
+         & y_k = f(z_k^{(3)})
+    \end{aligned}
+\end{equation}
+
+Na equação acima, $x_i$ representa a entrada na posição $i$, $w_{ij}^{(1)}$ representa o peso associado à conexão entre o neurônio $i$ da camada de entrada e o neurônio $j$ da camada oculta, $b_j^{(1)}$ é o viés associado ao neurônio $j$ da camada oculta, $f$ é a função de ativação, $h_j^{(2)}$ é a saída do neurônio $j$ da camada oculta, $w_{jk}^{(2)}$ é o peso associado à conexão entre o neurônio $j$ da camada oculta e o neurônio $k$ da camada de saída, $b_k^{(2)}$ é o viés associado ao neurônio $k$ da camada de saída e $y_k$ é a saída final da rede neural.
+
+É importante notar que a escolha da função de ativação pode influenciar significativamente o comportamento da rede neural, permitindo, por exemplo, que ela aprenda a modelar funções não-lineares complexas. Algumas funções de ativação comuns incluem a função sigmoide, a função tangente hiperbólica e a função ReLU (Rectified Linear Unit).
+

@@ -1,0 +1,169 @@
+%----------------------------------------------------------------------------------
+% Arquivo template *.tex para TCC da Especialização em Ciência de Dados e Big Data
+%----------------------------------------------------------------------------------
+
+% Classe do documento.
+\documentclass[12pt,a4paper]{article}
+
+%-----------------------------------------------------------------------
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
+\usepackage[pdftex,plainpages=false,pdfpagelabels,colorlinks=true,citecolor=blue,linkcolor=black,urlcolor=black,filecolor=red]{hyperref} 
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{amsmath}
+\usetikzlibrary{fit,positioning,trees}
+
+%-------------------------------------------------------------------------------%
+% Corpo do texto
+\begin{document}
+
+%-------------------------------------------------------------------------------%
+% Capa
+% ---------------------------------------------------------------------------- %
+
+
+\thispagestyle{empty}
+\newcommand{\autor}{Carlos Magno Santos Ribeiro de Brito}
+\newcommand{\orientador}{Eduardo Furtado de Simas Filho}
+\newcommand{\titulo}{Análise de sentimentos em avaliações de clientes do \textit{e-commerce} nacional e comparação de métodos tradicionais de \textit{machine learning} com Redes Neurais \textit{Long Short Term Memory} (LSTM)}
+\begin{center}
+
+    \vspace*{2.3cm}
+    \textbf{\Large{\titulo}}\\
+    
+    \vspace*{1.2cm}
+    \Large{\autor}
+    
+    \vskip 2cm
+    \textsc{
+        Trabalho de Conclussão de Curso \\[-0.25cm]
+        Apresentado ao\\[-0.25cm]
+        Instituto de Matemática e Estatística\\[-0.25cm]
+        da\\[-0.25cm]
+        Universidade Federal da Bahia\\[-0.25cm]
+        para\\[-0.25cm]
+        obtenção do título\\[-0.25cm]
+        de\\[-0.25cm]
+        Especialista em Ciência de Dados \\ e Big Data}
+    
+    \vskip 1.5cm
+    Orientador: Prof. Dr. \orientador \\
+    
+    \vskip 1cm
+    \normalsize{Durante o desenvolvimento desta tese e curso o autor do presente trabalho foi contemplado com uma bolsa para realização da especialização}
+    
+    \vskip 2.5cm
+    \normalsize{Salvador, \today}
+\end{center}
+
+% ---------------------------------------------------------------------------- %
+% Página de rosto (só para a versão final)
+% ---------------------------------------------------------------------------- %
+
+%\newpage
+%\thispagestyle{empty}
+%\begin{center}
+%\vspace*{2.3 cm}
+%\textbf{\Large{Título}}\\
+%\vspace*{2 cm}
+%\end{center}
+%
+%\vskip 2cm
+%
+%\begin{flushright}
+%
+%Esta versão definitiva do trabalho de conclusão de curso\\
+%contém as correções e alterações sugeridas pela\\
+%Comissão Julgadora durante a defesa realizada\\
+%por \textit{nome do alunos} em 02/12/2022.
+%
+%\vskip 2cm
+%
+%\end{flushright}
+%\vskip 4.2cm
+%
+%\begin{quote}
+%\noindent Comissão Julgadora:
+%
+%\begin{itemize}
+%\item Profa. Dr. Fulano (orientadora) - IME-UFBA
+%\item Prof. Dr. 
+%\item Prof. Dr. 
+%\end{itemize}
+%
+%\end{quote}
+\pagebreak
+
+% ---------------------------------------------------------------------------- %
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{\fancyplain{}{Especialização em Ciência de Dados e Big Data - ECD}}
+\rhead{\fancyplain{}{\href{http://www.ecd.ufba.br}{\textit{www.ecd.ufba.br}}}}
+\rfoot{\thepage}
+\setcounter{page}{1}
+
+\hspace{1.5em}
+
+\begin{center}
+    {\large \textbf{\titulo}}
+\end{center}
+
+\begin{flushleft}
+    \textbf{\autor}\footnote{Universidade Federal da Bahia, \textit{carlos.ribeiro.brito@hotmail.com}} \\
+    \textbf{\orientador}\footnote{Departamento de Engenharia Elétrica e de Computação, \textit{eduardo.simas@ufba.br}}\\
+\end{flushleft}
+
+\hspace{0.5em}
+\hrule
+
+\begin{center}
+    {\large \textbf{Resumo}}
+\end{center}
+Com o advento do coronavirus no mundo, o e-commerce e todo o comércio \textit{on-line} no Brasil entre 2020 e 2021 se expandiu e se tornou ainda mais competitivo. Nesse contexto, identificar as necessidades dos consumidores e prever tendencias de expansão de vendas é uma necessidade dos empreendedores no mercado atual para se tornar mais competitivo. Tendo como base isso, o presente trabalho objetivou analisar e comparar dados de diferentes E-commerces no Brasil com diferentes tipos de modelos conhecidos da ciência de dados, na inteção de que os negócios possam direcionar suas vendas de acordo com as preferências dos consumidores em diferentes nichos de mercados. Somando-se a isso, buscou-se indiretamente, desenvolver competências necessárias a prática profissional do cientista de dados, o qual projeta modelos e mecanismos de aprendizado orientados para os negócios e utiliza técnicas matemáticas para encontrar soluções de problemas de negócio ou científico.
+
+\begin{flushleft}
+    {\large \textbf{Palavras chaves:}} E-commerce; Machine Learning; Redes Neurais Artificiais.
+\end{flushleft}
+
+\hrule
+\hspace{0.5em}
+
+% ---------------------------------------------------------------------------- %
+\input{intro.tex}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\input{materials.tex}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\section{Resultados}
+\label{sec:resu}
+% ---------------------------------------------------------------------------- %
+
+Neste trabalho de tese propomos um modelo de regressão beta com erros de medida. Esta proposta é uma área inexplorada em modelos não lineares na presença de erros de medição. Abordamos metodologias de estimação, como máxima verossimilhança aproximada, máxima pseudo-vero\-ssi\-mi\-lhan\-ça aproximada e calibração da regressão. O método de máxima verossimilhança aproximada determina as estimativas maximizando diretamente o logaritmo da função de verossimilhança. O método de máxima pseudo-verossimilhança aproximada é utilizado quando a inferência em um determinado modelo envolve apenas alguns mas não todos os parâmetros. Nesse sentido, dizemos que o modelo apresenta parâmetros de interesse como também de perturbação. Quando substituímos a verdadeira covariável (variável não observada) por uma estimativa da esperança condicional da variável não observada dada a observada, o método é conhecido como calibração da regressão \citep{Mont2003}.
+
+% ---------------------------------------------------------------------------- %
+\section{Conclusões}
+\label{sec:conclu}
+% ---------------------------------------------------------------------------- %
+
+Neste trabalho de tese propomos um modelo de regressão beta com erros de medida. Esta proposta é uma área inexplorada em modelos não lineares na presença de erros de medição. Abordamos metodologias de estimação, como máxima verossimilhança aproximada, máxima pseudo-vero\-ssi\-mi\-lhan\-ça aproximada e calibração da regressão. O método de máxima verossimilhança aproximada determina as estimativas maximizando diretamente o logaritmo da função de verossimilhança. O método de máxima pseudo-verossimilhança aproximada é utilizado quando a inferência em um determinado modelo envolve apenas alguns mas não todos os parâmetros. Nesse sentido, dizemos que o modelo apresenta parâmetros de interesse como também de perturbação. Quando substituímos a verdadeira covariável (variável não observada) por uma estimativa da esperança condicional da variável \cite{Mont2003} não observada dada a observada, o método é conhecido como calibração da regressão.
+
+% ---------------------------------------------------------------------------- %
+% Bibliografia
+\bibliographystyle{natbib} % citação bibliográfica textual plainnat-ime,natbib
+\bibliography{ref}  % associado ao arquivo: 'bibliografia.bib'
+
+\end{document}

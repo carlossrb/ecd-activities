@@ -1,0 +1,21 @@
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[    axis lines=left,    xlabel=$x$,    ylabel=$y$,    ymin=0, ymax=1,    ytick={0,1},    xmin=-5, xmax=5,    legend pos=north west]
+            \addplot[domain=-5:5, samples=100, blue, thick] {1/(1+exp(-x))};
+            \addlegendentry{$\frac{1}{1+e^{-x}}$};
+            \draw[dashed] (axis cs:-5,0.5) -- (axis cs:5,0.5);
+            \addplot[only marks, mark=*, red] coordinates {
+                    (-4, 0.1)
+                    (-1, 0.3)
+                    (0, 0.6)
+                    (1, 0.8)
+                    (2, 0.9)
+                    (4, 0.96)
+                };
+            \addlegendentry{Dados}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Modelo gráfico da regressão logística (curva sigmoide)}
+    \label{plt:logistic}
+\end{figure}

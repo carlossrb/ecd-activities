@@ -1,0 +1,55 @@
+\subsubsection{Florestas aleatórias}
+
+De acordo com \cite{breiman2001random}, as florestas aleatórias são uma técnica de aprendizado de máquina que combina várias árvores de decisão para construir um modelo de classificação ou regressão. Cada árvore de decisão é construída a partir de um subconjunto aleatório dos dados de treinamento e um subconjunto aleatório dos recursos (também conhecidos como características ou atributos). Esses subconjuntos são criados para garantir que cada árvore de decisão seja diferente e que a floresta aleatória possa capturar várias relações entre os dados e recursos.
+
+A construção de uma árvore de decisão é feita por meio de uma série de etapas. Inicialmente, a árvore começa com um único nó que representa todo o conjunto de dados de treinamento. Em seguida, a árvore é dividida em nós menores usando uma função de divisão que escolhe um recurso e um ponto de divisão que minimiza a impureza dos dados. A impureza é uma medida da desorganização dos dados, que pode ser medida por diferentes critérios, como a entropia ou o índice Gini. O processo de divisão é repetido recursivamente até que os nós finais sejam puros ou um critério de parada seja atingido, como uma profundidade máxima da árvore \citep{cutler2001random}.
+
+Durante a fase de teste, a floresta aleatória retorna a classe mais comum ou a média das saídas das árvores individuais, dependendo se o problema é de classificação ou regressão, respectivamente.
+
+As florestas aleatórias apresentam várias vantagens em relação a outras técnicas de aprendizado de máquina. Em primeiro lugar, elas têm um bom desempenho em dados de alta dimensão, onde o número de recursos é grande em relação ao número de amostras. Em segundo lugar, elas são relativamente insensíveis a outliers e dados ausentes. Em terceiro lugar, elas são facilmente paralelizáveis, permitindo que grandes conjuntos de dados sejam processados em paralelo em clusters de computadores \citep{cutler2001random}.
+
+Em termos de aplicação, elas são amplamente utilizadas em uma variedade de problemas, como reconhecimento de padrões em imagens e sinais, detecção de fraudes em transações financeiras, análise de sentimentos em redes sociais, previsão de preços de ações e análise de dados genômicos \citep{breiman2001random}.
+
+As equações relacionadas às florestas aleatórias são principalmente as usadas na construção de cada árvore de decisão. Por exemplo, as equações para o cálculo da impureza dos dados, que é um dos principais critérios de divisão de nós em uma árvore de decisão são dadas:
+
+\begin{itemize}
+    \item O índice Gini:
+          \begin{equation}
+              G_i = \sum_{k=1}^{K} p_{i,k} (1-p_{i,k}),
+          \end{equation}
+
+          onde $K$ é o número de classes, $p_{i,k}$ é a proporção de observações da classe $k$ no nó $i$.
+    \item A entropia:
+          \begin{equation}
+              H_i = -\sum_{k=1}^{K} p_{i,k} \log(p_{i,k}),
+          \end{equation}
+
+          onde $K$ é o número de classes, $p_{i,k}$ é a proporção de observações da classe $k$ no nó $i$.
+
+    \item O critério de divisão de Gini é dado por:
+          \begin{equation}
+              G_{d} = \sum_{i=1}^{q}\frac{n_i}{n}G_i,
+          \end{equation}
+
+          onde $q$ é o número de nós filhos resultantes da divisão, $n_i$ é o número de observações no nó $i$ e $n$ é o número total de observações.
+
+    \item O critério de divisão de entropia é dado por:
+          \begin{equation}
+              H_{d} = -\sum_{i=1}^{q}\frac{n_i}{n}H_i,
+          \end{equation}
+
+          onde $q$ é o número de nós filhos resultantes da divisão, $n_i$ é o número de observações no nó $i$ e $n$ é o número total de observações.
+
+\end{itemize}
+
+Essas equações são usadas para calcular a impureza dos dados em cada nó da árvore de decisão e, assim, decidir qual recurso e ponto de divisão usar para dividir o nó em dois filhos. O processo de divisão é repetido recursivamente para construir a árvore de decisão completa. Em seguida, várias árvores de decisão são combinadas para formar a floresta aleatória.
+
+\input{tikz/forest.tikz.tex}
+
+
+
+
+
+
+
+

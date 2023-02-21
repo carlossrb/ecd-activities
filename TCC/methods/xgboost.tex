@@ -1,0 +1,49 @@
+\subsubsection{XGBoost}
+
+O XGBoost (\textit{Extreme Gradient Boosting}) é um método de aprendizado de máquina baseado em árvores de decisão, assim como as florestas aleatórias, mas com algumas diferenças importantes. Enquanto as florestas aleatórias usam um conjunto de árvores de decisão independentes para fazer uma previsão, o XGBoost usa um conjunto de árvores de decisão sequenciais que são criadas iterativamente. Cada nova árvore é ajustada aos resíduos do modelo anterior, tentando corrigir os erros cometidos pelo modelo atual.
+
+O algoritmo XGBoost foi desenvolvido por Tianqi Chen e Carlos Guestrin em 2016 \citep{Chen:2016} e é baseado na biblioteca de código aberto de mesmo nome. O XGBoost se tornou um dos algoritmos de aprendizado de máquina mais populares em competições de ciência de dados e é amplamente utilizado na indústria.
+
+O processo de construção do modelo XGBoost pode ser descrito por meio da seguinte equação:
+
+\begin{equation}
+    \hat{y_i} = \phi(\mathbf{x}_i) = \sum_{k=1}^{K}(\mathbf{x}_i)
+\end{equation}
+
+onde $\hat{y_i}$ é a previsão para a i-ésima instância, $\phi$ é a função de previsão, $\mathbf{x}_i$ é o vetor de características para a i-ésima instância, $K$ é o número total de árvores no modelo e $f_k$ é a k-ésima árvore de decisão.
+
+Para construir o modelo XGBoost, o algoritmo usa um processo iterativo de adição de árvores, onde cada nova árvore é ajustada aos resíduos do modelo anterior, tentando corrigir os erros cometidos pelo modelo atual. Esse processo é descrito pela seguinte equação:
+
+\begin{equation}
+    \mathbf{F}_k = \mathbf{F}_{k-1} + \gamma_k f_k
+\end{equation}
+
+onde $\mathbf{F}_k$ é a soma cumulativa das previsões das árvores anteriores até a k-ésima árvore, $\gamma_k$ é a taxa de aprendizado da k-ésima árvore e $f_k$ é a k-ésima árvore de decisão.
+
+O XGBoost também usa um conjunto de hiperparâmetros para ajustar o modelo e evitar overfitting. Alguns dos hiperparâmetros mais importantes incluem:
+
+\begin{itemize}
+    \item Número de árvores: o número total de árvores a serem criadas;
+    \item Profundidade máxima: o número máximo de camadas que cada árvore pode ter;
+    \item Taxa de aprendizado: a taxa na qual o modelo tenta corrigir os erros cometidos pelas árvores anteriores;
+    \item Subamostragem: a fração de amostras de treinamento a serem usadas para treinar cada árvore;
+    \item Colsample: a fração de recursos (características) a serem amostrados aleatoriamente para cada árvore.
+\end{itemize}
+
+Chen e Guestrin descrevem o algoritmo XGBoost em detalhes em seu artigo "XGBoost: A Scalable Tree Boosting System" \citep{Chen:2016}, onde eles mostram que o XGBoost pode superar outros algoritmos de aprendizado de máquina em uma variedade de conjuntos de dados e tarefas.
+
+Uma das principais vantagens do XGBoost é sua eficiência computacional. O algoritmo usa várias técnicas para reduzir o tempo de treinamento e a complexidade do modelo, incluindo a amostragem de características, a paralelização do processo de treinamento e o uso de uma estrutura de dados específica chamada "gradiente e Hessiano".
+
+O XGBoost é amplamente utilizado em competições de ciência de dados e em projetos de aprendizado de máquina na indústria. A biblioteca XGBoost é de código aberto e está disponível para várias linguagens de programação, incluindo Python, R e Java.
+
+As seguintes equações são usadas para calcular os valores dos gradientes e Hessiano para cada instância $i$:
+
+\begin{equation}
+    \begin{aligned}
+         & g_i = \frac{\partial L (y_i, \hat{y_i})}{\partial \hat{y_i}},      \\
+         & h_i = \frac{\partial^2 L (y_i, \hat{y_i})}{\partial \hat{y_{i}}^2}
+    \end{aligned}
+\end{equation}
+
+
+onde $L$ é a função de perda usada para avaliar a qualidade da previsão. O XGBoost usa esses valores de gradiente e Hessiano para ajustar as árvores do modelo, tentando minimizar a função de perda.
