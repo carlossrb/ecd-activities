@@ -1,4 +1,4 @@
-\subsubsection{Redes Neurais}
+\subsection{Redes Neurais}
 
 \input{tikz/neuralNetwork.tikz.tex}
 
@@ -29,3 +29,33 @@ Na equação acima, $x_i$ representa a entrada na posição $i$, $w_{ij}^{(1)}$ repr
 
 É importante notar que a escolha da função de ativação pode influenciar significativamente o comportamento da rede neural, permitindo, por exemplo, que ela aprenda a modelar funções não-lineares complexas. Algumas funções de ativação comuns incluem a função sigmoide, a função tangente hiperbólica e a função ReLU (Rectified Linear Unit).
 
+\subsubsection{Redes Neurais Artificiais LSTM }
+
+\input{tikz/lstm.tikz.tex}
+
+Uma rede neural artificial \textit{Long Short-Term Memory} (LSTM) é um tipo especializado de rede neural recorrente (RNN) projetada para lidar com o problema de dependência a longo prazo em sequências de dados. Foi proposta por \cite{hochreiter1997long} como uma solução para o problema de desvanecimento do gradiente em RNNs tradicionais.
+
+O problema de desvanecimento do gradiente ocorre quando o gradiente calculado durante o processo de retropropagação se torna muito pequeno à medida que se propaga pelas camadas da rede, o que dificulta o aprendizado de dependências a longo prazo. Isso limita a capacidade das RNNs tradicionais em lidar com sequências de dados que envolvem dependências a longo prazo, como em análise de séries temporais ou processamento de linguagem natural.
+
+A principal característica da LSTM é a presença de unidades de memória, que são capazes de lembrar informações relevantes por um período prolongado de tempo. Essas unidades são compostas por três portões principais: o portão de entrada, o portão de esquecimento e o portão de saída. O portão de entrada controla a quantidade de informação que é adicionada à unidade de memória, enquanto o portão de esquecimento controla a quantidade de informação que é descartada. O portão de saída controla a quantidade de informação que é enviada para a próxima unidade da rede.
+
+Durante o treinamento, a LSTM é capaz de aprender a modificar seus portões de entrada, esquecimento e saída, a fim de manter as informações relevantes na memória e descartar as informações irrelevantes. Os pesos das conexões entre as unidades de memória são atualizados usando o algoritmo de retropropagação através do tempo (BPTT).
+
+A arquitetura LSTM foi amplamente utilizada em diversas aplicações, incluindo processamento de linguagem natural, reconhecimento de fala e análise de séries temporais. Por exemplo, \cite{graves2013speech} utilizaram LSTMs para melhorar o reconhecimento de fala em 2013. Além disso, \cite{gers1999learning} propuseram uma abordagem de aprendizado contínuo com LSTMs, chamada de "learning to forget", que permite que a rede esqueça informações irrelevantes à medida que recebe novos dados.
+
+Abaixo está uma possível formulação matemática em Latex para uma unidade LSTM:
+
+\begin{equation}
+    \begin{aligned}
+        i_t        & = \sigma(W_i x_t + U_i h_{t-1} + b_i)      \\
+        f_t        & = \sigma(W_f x_t + U_f h_{t-1} + b_f)      \\
+        \tilde{c}t & = \text{tanh}(W_c x_t + U_c h{t-1} + b_c)  \\
+        c_t        & = f_t \odot c_{t-1} + i_t \odot \tilde{c}t \\
+        o_t        & = \sigma(W_o x_t + U_o h{t-1} + b_o)       \\
+        h_t        & = o_t \odot \text{tanh}(c_t)
+    \end{aligned}
+\end{equation}
+
+Nessa formulação, $x_t$ é a entrada na unidade LSTM no tempo $t$, $h_{t-1}$ é o estado oculto da unidade LSTM no tempo $t-1$, $i_t$, $f_t$, $\tilde{c}_t$, $c_t$, $o_t$ e $h_t$ são as portas de entrada, esquecimento, memória, saída e o estado oculto da unidade LSTM no tempo $t$, respectivamente. $\sigma$ é a função de ativação sigmóide, $\text{tanh}$ é a função tangente hiperbólica, $\odot$ denota a multiplicação elementar ponto-a-ponto (também conhecida como produto Hadamard) e $W$ e $U$ são matrizes de pesos que são aprendidas durante o treinamento, enquanto $b$ é o vetor de bias.
+
+Essa formulação é apenas um exemplo, já que existem várias variações da arquitetura LSTM, mas ela ilustra a ideia geral da arquitetura. A unidade LSTM é composta por portas que controlam a quantidade de informação que é adicionada, esquecida ou transmitida para a próxima unidade da rede. Além disso, a unidade LSTM mantém uma memória interna que pode ser atualizada ou esquecida ao longo do tempo.
