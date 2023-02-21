@@ -1,0 +1,30 @@
+\section{Conclusões}
+\label{sec:conclu}
+
+Com base na análise dos resultados, podemos concluir que a rede neural artificial LSTM apresentou a melhor performance em relação aos outros algoritmos de \textit{machine learning} avaliados. A acurácia da LSTM foi de $90\%$, o que indica que o modelo foi capaz de classificar corretamente a grande maioria dos dados.
+
+Ao avaliar a curva ROC, podemos observar que a LSTM também apresentou a maior área sob a curva, indicando uma maior capacidade de distinguir entre as classes. Esse resultado é consistente com a análise das matrizes de confusão, que mostraram que a LSTM teve o melhor desempenho na classificação correta das amostras.
+
+O XGBoost também apresentou resultados promissores, com uma acurácia de $82\%$ e uma área sob a curva ROC de 0,89. No entanto, as matrizes de confusão indicaram que o modelo cometeu mais erros do que a LSTM na classificação de algumas amostras.
+
+Por outro lado, a regressão logística e o Naive Bayes apresentaram as piores performances, com acurácias de $73\%$ e $61\%$, respectivamente, e áreas sob a curva ROC menores do que os outros modelos avaliados.
+
+No entanto, é importante ressaltar que a escolha do algoritmo de \textit{machine learning} depende do conjunto de dados e do problema em questão. Algoritmos mais simples podem ser mais eficazes em alguns cenários, enquanto algoritmos mais complexos, como redes neurais, podem ser necessários para lidar com dados mais complexos e variáveis. Em última análise, a escolha do algoritmo deve ser baseada em uma análise cuidadosa dos dados e das necessidades específicas do problema em questão.
+
+Outrossim, é necessário destacar que o XGBoost possui algumas vantagens em relação a redes neurais como a LSTM.
+
+Uma das delas é a sua capacidade de lidar com dados heterogêneos e faltantes de forma eficiente, o que pode ser um desafio para redes neurais. Além disso, com a visão de um negócio, onde a velocidade é importante, o XGBoost é um modelo mais simples e rápido de treinar do que redes neurais, o que pode ser uma vantagem em cenários em que o tempo e recursos computacionais são limitados.
+
+O XGBoost também apresenta interpretabilidade, uma vez que ele permite identificar as variáveis mais importantes para a classificação dos dados. As redes neurais, embora apresentem alta performance em muitas tarefas, são frequentemente consideradas caixas pretas, dificultando a interpretação dos resultados.
+
+Portanto, embora a LSTM tenha apresentado a melhor performance na análise classificatória realizada, o XGBoost pode ser uma boa opção em cenários em que a interpretabilidade e o processamento de dados faltantes são prioridades.
+
+Por outro lado, a LSTM consegue lidar com dados sequenciais e com dependências de longo prazo, o que pode ser um desafio para algoritmos de aprendizado de máquina tradicionais. Isso torna a LSTM uma escolha popular para tarefas de processamento de linguagem natural, reconhecimento de fala, análise de séries temporais, entre outras aplicações em que o histórico de dados é importante. Além disso, ela é capaz de aprender padrões complexos em dados sequenciais sem a necessidade de engenharia manual de características, o que pode ser um processo demorado e sujeito a erros nos outros algoritmos, incluindo o XGBoost. Isso pode resultar em um desempenho melhor para a LSTM em tarefas em que há uma grande quantidade de dados sequenciais.
+
+Outra vantagem da LSTM é a sua capacidade de lidar com dados de entrada de diferentes tipos e tamanhos, como sequências de palavras, imagens e dados numéricos. Isso torna a LSTM uma escolha popular em aplicações em que os dados podem ter diferentes formatos, como reconhecimento de fala e tradução automática.
+
+Em suma, para análise de sentimentos em reviews de usuários, a LSTM pode ser mais vantajosa do que o XGBoost. Isso ocorre porque as análises de sentimentos geralmente envolvem dados sequenciais, como sequências de palavras ou frases em uma revisão, e as LSTMs são projetadas especificamente para trabalhar com dados sequenciais e são capazes de aprender padrões em sequências de dados de maneira mais eficiente do que algoritmos de aprendizado de máquina.
+
+Além disso, as LSTMs têm a capacidade de capturar dependências de longo prazo nos dados sequenciais, o que pode ser importante para a análise de sentimentos em reviews de usuários, já que as opiniões dos usuários muitas vezes são expressas em frases e parágrafos complexos e detalhados.
+
+No entanto, é importante lembrar que a escolha do algoritmo depende do conjunto de dados específico e de outros fatores, como tempo e recursos disponíveis para treinamento do modelo. Portanto, é importante realizar uma análise cuidadosa dos dados e das necessidades do projeto antes de decidir qual algoritmo utilizar.
