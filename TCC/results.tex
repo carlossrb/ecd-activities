@@ -1,0 +1,32 @@
+\section{Resultados}
+\label{sec:results}
+
+Após a limpeza dos dados, iniciou-se o processo de análise dos mesmos. Com isso, algumas considerações poderam ser tomadas. Como dito \textit{a priori}, por ser tão abrangente, essa análise foi limitada ao sistema de avaliação feito pelos clientes após a confirmação de entrega do produto. Assim, o consumidor pode dar nota de 1 a 5 para o produto, sendo 1 o mais baixo e 5 o mais alto.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[trim={0cm 2cm 3cm 2cm},clip,scale=0.65]{./figs/eval.png}
+    \caption{Distribuição das avaliações}
+    \label{fig:evalDistribution}
+\end{figure}
+
+À primeira vista com o quantitativo de notas, é possível perceber que essa  distribuição é dada em forma de ``J" e é bastante típica em E-commerces. Grande  quantidade de avaliações 5, 4 e 1, pequena quantidade de 2 e 3.
+
+Este tipo de distribuição pode ocorrer por várias razões. Uma possível explicação é que os clientes que estão extremamente satisfeitos ou insatisfeitos com um produto são mais propensos a deixar uma avaliação do que aqueles que têm uma experiência neutra. Isso pode resultar em uma concentração maior de avaliações com classificações muito altas ou muito baixas.
+
+Outra possível explicação é que os clientes que têm uma experiência neutra com um produto podem não se sentir motivados a deixar uma avaliação. Eles podem sentir que o produto foi bom, mas não excepcional, e, portanto, não vale a pena dedicar tempo para escrever uma avaliação. Isso pode levar a um menor número de avaliações com classificações médias.
+
+A distribuição em forma de ``J" das avaliações pode ser importante para as empresas entenderem, pois pode fornecer informações sobre a satisfação do cliente e a qualidade do produto. Se um produto tiver uma alta concentração de avaliações muito positivas, pode ser um indicador de forte satisfação do cliente e um produto de alta qualidade. No entanto, também é importante considerar o número de avaliações e a média geral das classificações, já que um pequeno número de avaliações pode distorcer a distribuição.
+
+Seguidamente, plotou-se a distribuição binária das avaliações conforme foi seccionado na etapa de tratamento dos dados. De forma coerente com a \autoref{fig:evalDistribution} e com a divisão adotada, a maior parte das avaliações são positivas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[trim={0cm 2cm 3cm 2cm},clip,scale=0.6]{./figs/bin_eval.png}
+    \caption{Distribuição das avaliações binárias}
+    \label{fig:binEvalDistribution}
+\end{figure}
+
+
+% Além disso, os comentários avaliativos também foram considerados, sendo essas mensagens tokenizadas em listas de números e as avaliações numéricas [1,5] foram transformadas em variáveis categóricas binárias, sendo o valor de 1 atribuido para uma avaliação positiva variando de [3,5] e 0 para uma avaliação negativa variando de [1,2]. Com base nesses dois valores de entrada, analisou-se 4 modelos de aprendizado de máquina clássicos e comparou-lhes com uma rede neural recorrente (LSTM)
