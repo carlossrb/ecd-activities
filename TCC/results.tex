@@ -28,5 +28,40 @@ Seguidamente, plotou-se a distribuição binária das avaliações conforme foi secci
     \label{fig:binEvalDistribution}
 \end{figure}
 
+Uma nuvem de palavras então é gerada a partir de um conjunto de dados de texto referente aos comentários avaliativos dos clientes. As palavras são extraídas do texto e organizadas em uma nuvem, em que as palavras mais frequentes são maiores e as menos frequentes são menores. A nuvem de palavras pode ser usada para ajudar a identificar tópicos e padrões importantes em um conjunto de dados de texto e para comunicar visualmente essas informações.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{./figs/word_cloud.png}
+    \caption{Nuvem de palavras destacando os principais termos utilizados}
+    \label{fig:wordCloud}
+\end{figure}
+
+Essa técnica visual pode ser usada em vários campos, incluindo análise de sentimentos, mineração de opiniões, análise de redes sociais, pesquisa de mercado e análise de feedback de clientes como o caso em específico. Além disso, por ser uma forma visualmente atraente de resumir informações e destacar pontos importantes, é bastante útil para relatórios e análises.
+
+Tendo feito a tokenização das palavras, transformando-as em listas de numeros, filtrado pelas \textit{stopwords} e feito um processo de padronização textual, separou-se o dataset entre treino e teste e prosseguiu para as demais análises com os algorítmos de aprendizado de máquina e redes neurais.
+
+Dentre os algoritmos de machine learning, encontrou-se as seguintes acurácias:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|cccc}
+        \hline
+        { modelo}      & { Reg. Logística} & { F. Aleatórias} & { XGBoost} & { Naive Bayes} \\ \hline\hline
+        { treino (\%)} & { 73.9}           & { 99.6}          & { 93.5}    & { 74.0}        \\\hline
+        { teste (\%)}  & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}
+    \end{tabular}
+\end{table}
+
+Observa-se que nos modelos de Florestas Aleatórias e XGBoost apresentou-se discrepâncias significativas entre as suas respectivas acurácias de treino e de teste. Essa diferença entre a acurácia (ou outra métrica de desempenho) é conhecida como a discrepância de generalização. Isso pode ter acontecido por diferentes motivos:
+
+\begin{itemize}
+    \item Overfitting: O modelo pode memorizar o conjunto de treinamento em vez de aprender os padrões subjacentes dos dados. Isso pode resultar em uma acurácia alta no conjunto de treinamento, mas uma acurácia baixa no conjunto de teste. Para evitar o overfitting, é importante usar técnicas como a regularização, a seleção de características e o aumento de dados.
+    \item Diferenças entre os dados de treinamento e teste: Os dados de treinamento podem ser diferentes dos dados de teste, o que pode levar a discrepâncias na acurácia. Por exemplo, os dados de treinamento podem ter menos variabilidade do que os dados de teste, ou podem conter exemplos raros que não estão presentes no conjunto de teste.
+    \item Tamanho do conjunto de dados: Quando o conjunto de dados é pequeno, é possível que a variação estatística nos resultados seja grande, levando a diferenças na acurácia entre o treinamento e teste.
+\end{itemize}
+
+É importante entender que uma discrepância de generalização não é necessariamente ruim, pois é possível que o modelo esteja apenas se adaptando aos dados de treinamento de forma mais eficaz. No entanto, se a discrepância for muito grande, pode ser um sinal de que o modelo precisa de ajustes. O objetivo é ter um modelo que generalize bem para novos dados e não apenas memorize os dados de treinamento.
+
 
 % Além disso, os comentários avaliativos também foram considerados, sendo essas mensagens tokenizadas em listas de números e as avaliações numéricas [1,5] foram transformadas em variáveis categóricas binárias, sendo o valor de 1 atribuido para uma avaliação positiva variando de [3,5] e 0 para uma avaliação negativa variando de [1,2]. Com base nesses dois valores de entrada, analisou-se 4 modelos de aprendizado de máquina clássicos e comparou-lhes com uma rede neural recorrente (LSTM)
