@@ -63,5 +63,55 @@ Observa-se que nos modelos de Florestas Aleatórias e XGBoost apresentou-se discr
 
 É importante entender que uma discrepância de generalização não é necessariamente ruim, pois é possível que o modelo esteja apenas se adaptando aos dados de treinamento de forma mais eficaz. No entanto, se a discrepância for muito grande, pode ser um sinal de que o modelo precisa de ajustes. O objetivo é ter um modelo que generalize bem para novos dados e não apenas memorize os dados de treinamento.
 
+Para a rede neural, plotou-se o gráfico da relação das \textit{epochs} pela acuracia do dataset de teste e de treino. É importante salientar que o tempo total para geração e validação do modelo com 20 \textit{epochs} foi de 19 min e 35 segundos. Em comparação com os modelos de aprendizado de máquina que duraram em média 1 minuto cada.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.55]{./figs/lstm_acuracy.png}
+    \caption{Relação acurácia por \textit{epochs}}
+    \label{fig:lstmacuracy}
+\end{figure}
+
+Em redes neurais, uma \textit{epoch} refere-se a um ciclo completo de treinamento de todos os dados de treinamento disponíveis na rede. Durante cada um desses ciclos, os dados são passados pela rede em lotes (ou \textit{batch}), a rede faz previsões para cada lote, compara as previsões com as respostas corretas e atualiza os pesos e bias da rede para minimizar o erro (ou função de custo) entre as previsões e as respostas corretas.
+
+Após uma \textit{epoch} completa, a rede é capaz de fazer previsões melhores do que antes do treinamento começar. À medida que o treinamento continua avançando, as previsões melhoram gradualmente até que a rede esteja suficientemente treinada para fazer previsões precisas sobre novos dados.
+
+O número de \textit{epochs} que uma rede neural precisa para ser treinada depende do problema e da complexidade da rede. Um número muito baixo de \textit{epochs} pode resultar em previsões imprecisas, enquanto um número muito alto pode levar a um excesso de ajuste (overfitting) dos dados de treinamento.
+
+Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o dataset de treino.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.55]{./figs/comparative.png}
+    \caption{Comparação de acurácia entre modelos}
+    \label{fig:comparative}
+\end{figure}
+
+Embora a acurácia seja uma métrica importante, ela pode não ser suficiente para avaliar completamente o desempenho de um modelo em alguns casos. Por exemplo, em problemas de classificação desbalanceados, onde uma classe é muito mais comum do que a outra, a acurácia pode ser enganosa. Nesses casos, outras métricas, como a precisão, a recall e a F1-score podem ser mais úteis.
+
+Além disso, a acurácia não leva em consideração a gravidade dos erros de classificação. Por exemplo, em um problema de diagnóstico médico, um falso negativo pode ter consequências mais graves do que um falso positivo. Portanto, é importante avaliar o desempenho do modelo em relação a métricas que levam em consideração a gravidade dos erros de classificação, como a matriz de confusão.
+
+Isso posto, avaliou-se os modelos também pela matriz de confusão e curva ROC.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.72]{./figs/roc.png}
+    \caption{Curvas ROC dos modelos utilizados}
+    \label{fig:roccurve}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./figs/confusion.png}
+    \caption{Matrizes de confusão dos modelos utilizados}
+    \label{fig:mconfusion}
+\end{figure}
+
+A matriz de confusão é uma tabela que mostra o número de exemplos que foram classificados corretamente e incorretamente pelo modelo, divididos em quatro categorias: verdadeiro positivo (TP-00), verdadeiro negativo (TN-11), falso positivo (FP-10) e falso negativo (FN-01). A partir dessa matriz, várias métricas de desempenho podem ser calculadas, incluindo a acurácia, precisão e recall. A matriz de confusão pode ajudar a identificar padrões de erros comuns que o modelo está cometendo.
+
+Já a curva ROC (Receiver Operating Characteristic) é uma curva que mostra a relação entre a taxa de verdadeiros positivos (TPR) e a taxa de falsos positivos (FPR) para diferentes valores de limiar de classificação. Em outras palavras, a curva ROC mostra como o modelo se comporta em termos de sensibilidade e especificidade para diferentes pontos de corte de probabilidade de classificação. Quanto mais próxima a curva ROC estiver do canto superior esquerdo, melhor será o desempenho do modelo. A área sob a curva ROC (AUC-ROC) é uma medida resumida da performance do modelo, sendo que o valor máximo é 1,0, o que indica uma performance perfeita.
+
+A escolha entre usar a matriz de confusão e/ou a curva ROC depende do objetivo do problema e da preferência do usuário. Enquanto a matriz de confusão oferece informações detalhadas sobre o desempenho do modelo em cada classe, a curva ROC pode ser mais útil para escolher o melhor modelo entre vários modelos ou ajustar o ponto de corte de classificação para atingir um determinado objetivo, como minimizar a taxa de falsos positivos ou maximizar a taxa de verdadeiros positivos.
 
 % Além disso, os comentários avaliativos também foram considerados, sendo essas mensagens tokenizadas em listas de números e as avaliações numéricas [1,5] foram transformadas em variáveis categóricas binárias, sendo o valor de 1 atribuido para uma avaliação positiva variando de [3,5] e 0 para uma avaliação negativa variando de [1,2]. Com base nesses dois valores de entrada, analisou-se 4 modelos de aprendizado de máquina clássicos e comparou-lhes com uma rede neural recorrente (LSTM)
