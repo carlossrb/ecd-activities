@@ -28,15 +28,7 @@ Abaixo na \autoref{fig:process}, tem-se o fluxograma do processo de realização d
 
 O esquema dos \textit{databases} disponibilizados pelo Olist é representado na \autoref{fig:dataset_schema}. Nele, utilizou-se apenas a tabela \textit{olist\_order\_review}, com os campos disponíveis na \autoref{tab:review}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.52]{./figs/database_schema.png}
-    \caption{Esquemas do dataset publicado pelo Olist, adaptado pelo autor (2022)}
-    \label{fig:dataset_schema}
-\end{figure}
-
-
-\begin{table}[]
+\begin{table}[H]
     \small
     \begin{tabular}{ccccc}
         \hline
@@ -56,6 +48,15 @@ O esquema dos \textit{databases} disponibilizados pelo Olist é representado na \
     \caption{Esquema da tabela \textit{olist\_order\_review}}
     \label{tab:review}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.52]{./figs/database_schema.png}
+    \caption{Esquemas do dataset publicado pelo Olist, adaptado pelo autor (2022)}
+    \label{fig:dataset_schema}
+\end{figure}
+
+
 
 Na primeira fase, utilizando a linguagem de programação Python, os databases em formato CSV foram extraídos e exportados para leitura e armazenamento em diferentes variáveis no intuito de limpar e adequar os dados para análises. Nesta etapa, itens duplicados, com valores nulos e valores discrepantes foram removidos. Além disso, separou-se dois \textit{datasets} contendo informações dos comentários dos clientes (\textit{review\_comment\_message}) e da sua nota de avaliação (\textit{review\_score}). Para o \textit{data\_bin} tem-se comentários associados categoricamente com valores binários (0 e 1) a partir das notas, com o valor atribuído de 0 para o intervalo (0,2] e de 1 para o intervalo de (2, 5]. No \textit{data\_cat} tem-se apenas os comentários e os reviews numéricos de 1 a 5. Ambas as bases são removidos os valores nulos. Tem-se a \autoref{tab:bin} e \autoref{tab:gen} exemplificando os casos citados.
 
@@ -81,6 +82,13 @@ Na primeira fase, utilizando a linguagem de programação Python, os databases em 
     \caption{Esquema de geração do \textit{data\_gen}}
     \label{tab:gen}
 \end{table}
+
+
+\subsubsection{Máquina para processamento}
+
+Todos os métodos foram executados em fila, sequencialmente entre eles, onde cada um deles foi executado em ordem, um de cada vez e de maneira procedural.
+
+A máquina utilizada para todos eles foi o laptop Dell G3 com processador Intel Core i7 de 10ª geração, 16GB de RAM, 512GB de SSD e placa de vídeo NVIDIA RTX 2060 com 6GB de memória dedicada, incluindo o sistema operacional Windows 11 com WSL 2 instalado e Ubuntu 20.04 como ambiente de execução para as ferramentas de teste de software usadas.
 
 \input{methods.tex}
 

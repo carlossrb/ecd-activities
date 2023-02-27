@@ -63,8 +63,7 @@ Observa-se que nos modelos de Florestas Aleatórias e XGBoost apresentou-se discr
 
 É importante entender que uma discrepância de generalização não é necessariamente ruim, pois é possível que o modelo esteja apenas se adaptando aos dados de treinamento de forma mais eficaz. No entanto, se a discrepância for muito grande, pode ser um sinal de que o modelo precisa de ajustes. O objetivo é ter um modelo que generalize bem para novos dados e não apenas memorize os dados de treinamento.
 
-Para a rede neural, plotou-se o gráfico da relação das \textit{epochs} pela acuracia do dataset de teste e de treino. É importante salientar que o tempo total para geração e validação do modelo com 20 \textit{epochs} foi de 19 min e 35 segundos. Em comparação com os modelos de aprendizado de máquina que duraram em média 1 minuto cada.
-
+Para a rede neural, plotou-se o gráfico da relação das \textit{epochs} pela acuracia do dataset de teste e de treino.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.55]{./figs/lstm_acuracy.png}
@@ -78,7 +77,7 @@ Após uma \textit{epoch} completa, a rede é capaz de fazer previsões melhores do 
 
 O número de \textit{epochs} que uma rede neural precisa para ser treinada depende do problema e da complexidade da rede. Um número muito baixo de \textit{epochs} pode resultar em previsões imprecisas, enquanto um número muito alto pode levar a um excesso de ajuste (overfitting) dos dados de treinamento.
 
-Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o dataset de treino.
+Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o dataset de treino e tem-se a \autoref{tab:time} com o tempo de execução para cada um dos modelos.
 
 \begin{figure}[H]
     \centering
@@ -86,6 +85,18 @@ Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o datas
     \caption{Comparação de acurácia entre modelos}
     \label{fig:comparative}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccccl}
+        \hline
+        { modelo}        & { Reg. Logística} & { F. Aleatórias} & { XGBoost} & { Naive Bayes} & LSTM \\ \hline \hline
+        { Tempo (s)}     & { 21.5}           & { 1.5}           & { 3.0}     & { 0.1}         & 1500 \\ \hline
+        { Acurácia (\%)} & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 90.0 \\
+    \end{tabular}
+    \caption{Tempo de execução/Acurácia dos modelos avaliados}
+    \label{tab:time}
+\end{table}
 
 Embora a acurácia seja uma métrica importante, ela pode não ser suficiente para avaliar completamente o desempenho de um modelo em alguns casos. Por exemplo, em problemas de classificação desbalanceados, onde uma classe é muito mais comum do que a outra, a acurácia pode ser enganosa. Nesses casos, outras métricas, como a precisão, a recall e a F1-score podem ser mais úteis.
 
@@ -96,7 +107,7 @@ Isso posto, avaliou-se os modelos também pela matriz de confusão e curva ROC.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.72]{./figs/roc.png}
+    \includegraphics[scale=0.65]{./figs/roc.png}
     \caption{Curvas ROC dos modelos utilizados}
     \label{fig:roccurve}
 \end{figure}
@@ -114,4 +125,3 @@ Já a curva ROC (Receiver Operating Characteristic) é uma curva que mostra a rela
 
 A escolha entre usar a matriz de confusão e/ou a curva ROC depende do objetivo do problema e da preferência do usuário. Enquanto a matriz de confusão oferece informações detalhadas sobre o desempenho do modelo em cada classe, a curva ROC pode ser mais útil para escolher o melhor modelo entre vários modelos ou ajustar o ponto de corte de classificação para atingir um determinado objetivo, como minimizar a taxa de falsos positivos ou maximizar a taxa de verdadeiros positivos.
 
-% Além disso, os comentários avaliativos também foram considerados, sendo essas mensagens tokenizadas em listas de números e as avaliações numéricas [1,5] foram transformadas em variáveis categóricas binárias, sendo o valor de 1 atribuido para uma avaliação positiva variando de [3,5] e 0 para uma avaliação negativa variando de [1,2]. Com base nesses dois valores de entrada, analisou-se 4 modelos de aprendizado de máquina clássicos e comparou-lhes com uma rede neural recorrente (LSTM)
