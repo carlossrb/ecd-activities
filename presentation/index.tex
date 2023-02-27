@@ -1,0 +1,104 @@
+\documentclass[aspectratio=169]{Beamer} % Retire o aspectratio para adaptar a projetores antigos
+\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage[brazil]{babel}		% Idioma do documento
+\usepackage{float} 				% Fixa tabelas e figuras no local exato
+\usepackage{subfig}				% para inserir mais figuras
+\usepackage{amsmath}			% para alguns formatos de equações
+\usepackage{amssymb}			% para mais símbolos
+\usepackage{animate}			% para gifs
+\usepackage{pdflscape}			% Pdf landscape
+%------	%------	%------	%------	%------	%------	%------	
+\title[Especialização em Ciência de Dados e Big Data - ECD]{Análise de sentimentos em avaliações de clientes do \textit{e-commerce} nacional e comparação de métodos tradicionais de \textit{machine learning} com Redes Neurais \textit{Long Short Term Memory} (LSTM)}
+%------	%------	%------	%------	%------	%------	%------	
+\author[Carlos Magno de Brito]{{\Large Carlos Magno Santos Ribeiro de Brito}}
+%------	%------	%------	%------	%------	%------	%------	
+\institute[UFBA]{{\large Universidade Federal da Bahia}\\Departamento de Engenharia Elétrica e de Computação}
+%------	%------	%------	%------	%------	%------	%------	
+\date[UFBA 2018]
+
+\logo{\includegraphics[width=0.8 cm]{logo_ufba.eps}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
+%------	
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+%------ %------	%------	%------	%------	%------	%------
+\usefonttheme[onlymath]{serif}	
+%------ %------	%------	%------	%------	%------	%------
+\begin{document}
+% Definindo a capa
+\frame{\titlepage}
+% Definindo o sumário dividido na quantidade de slides necessária
+\frame{\tableofcontents[part=1]}
+\frame{\tableofcontents[part=2]}
+%------ %------	%------	%------	%------	%------	%------		
+\part{1}
+\section{Introdução}
+\nologo
+\frame{
+    \frametitle{Introdução}
+    \begin{itemize}
+        \item Busca de um modelo simplificado que represente com precisão suficiente a estrutura; \vskip1cm
+        \item Modelos mais robustos foram surgindo com o passar dos anos: mais graus de liberdade, maior discretização do modelo, etc.;\vskip1cm
+        \item Maior processamento computacional aumentaram as possibilidades de utilização;\vskip1cm
+        \item Método dos Elementos Finitos (MEF) -- \textit{Finite Element Method (FEM)}
+    \end{itemize}
+}
+\frame{
+    \frametitle{Introdução}
+    \begin{itemize}
+        \item Realiza-se a análise estática convencional e análise dinâmica:\vskip1cm
+              \begin{itemize}
+                  \item \textbf{Estática:} Forças internas dependem apenas da rigidez do material e não variam com o tempo
+                        \begin{equation}
+                            f=ku
+                        \end{equation}
+                  \item \textbf{Dinâmica:} Forças variantes com o tempo e dependem das forças inerciais e dissipativas
+                        \begin{equation}
+                            f(t)=ma+cv+ku
+                        \end{equation}
+              \end{itemize}
+        \item Não linearidades geométrica e física;
+    \end{itemize}
+}
+\subsection{Objetivos e Justificativa}
+\frame{
+    \frametitle{Objetivos e Justificativa}
+    \begin{block}{Objetivo principal}
+        Realizar estudos numéricos não lineares estáticos e dinâmicos
+    \end{block}
+    \begin{block}{Objetivo principal}
+        Implementar e simular elementos de treliça a fim de ter uma biblioteca capaz de reproduzir diferentes tipos de treliça
+    \end{block}
+    \begin{alertblock}{Objetivo secundário}
+        \begin{itemize}
+            \item 	Avaliar o comportamento não linear estático e dinâmico das treliças;
+            \item Avaliar diferentes tipos de carregamento;
+            \item Influência do amortecimento proporcional de Rayleigh.
+        \end{itemize}
+    \end{alertblock}
+}
+\frame{
+    \frametitle{Objetivos e Justificativa}
+    Dentre as principais justificativas para o estudo não linear de treliças, tem-se:\vskip0.5cm
+    \begin{itemize}
+        \item Treliças com menos barras, mais esbeltas e mais eficientes;\vskip1cm
+        \item Verificar diversas características de elementos mais complexo de forma menos custosa e vantajosa;\vskip1cm
+        \item Compreender e propor um estudo dinâmico acoplado a esta formulação.
+    \end{itemize}
+}
+
+\section{Conclusões}
+\frame{
+    \frametitle{Conclusões}
+    \begin{itemize}
+        \item Forma vetorial, se mostra como uma excelente alternativa aos métodos convencionais já consagrados;\vskip0.5cm
+        \item Método de newton impõe limites que podem ser superados com controle de carga e deslocamento ao mesmo tempo;\vskip0.5cm
+        \item Boa convergência em caso amortecido e não e intervalos diferenciados de tempo;\vskip0.5cm
+        \item É interessante analisar a presença do amortecimento na formulação em comparação com um estudo de um modelo real simplificado;\vskip0.5cm
+        \item Diferenças entre frequências atualizadas e não atualizadas são pequenas, mas podem causar o fenômeno de ressonância na estrutura caso desconsideradas no modelo.
+    \end{itemize}
+}
+
+\end{document}
