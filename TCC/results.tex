@@ -47,13 +47,13 @@ Dentre os algoritmos de machine learning, encontrou-se as seguintes acurácias:
     \centering
     \begin{tabular}{l|ccccc}
         \hline
-        { modelo}      & { Reg. Logística} & { F. Aleatórias} & { XGBoost} & { Naive Bayes} & lightGBM \\ \hline\hline
+        { modelo}      & { Reg. Logística} & { F. Aleatórias} & { XGBoost} & { Naive Bayes} & LightGBM \\ \hline\hline
         { treino (\%)} & { 73.9}           & { 99.6}          & { 93.5}    & { 74.0}        & 86.7     \\\hline
         { teste (\%)}  & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 81.3
     \end{tabular}
 \end{table}
 
-Observa-se que nos modelos XGBoost e lightGBM os valores foram muito próximos e apresentaram os melhores resultados em teste. Além disso, com as Florestas Aleatórias e XGBoost houve discrepâncias significativas entre as suas respectivas acurácias de treino e de teste. Essa diferença entre a acurácia (ou outra métrica de desempenho) é conhecida como a discrepância de generalização. Isso pode ter acontecido por diferentes motivos:
+Observa-se que nos modelos XGBoost e LightGBM os valores foram muito próximos e apresentaram os melhores resultados em teste. Além disso, com as Florestas Aleatórias e XGBoost houve discrepâncias significativas entre as suas respectivas acurácias de treino e de teste. Essa diferença entre a acurácia (ou outra métrica de desempenho) é conhecida como a discrepância de generalização. Isso pode ter acontecido por diferentes motivos:
 
 \begin{itemize}
     \item Overfitting: O modelo pode memorizar o conjunto de treinamento em vez de aprender os padrões subjacentes dos dados. Isso pode resultar em uma acurácia alta no conjunto de treinamento, mas uma acurácia baixa no conjunto de teste. Para evitar o overfitting, é importante usar técnicas como a regularização, a seleção de características e o aumento de dados.
@@ -91,7 +91,7 @@ Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o data
     \small
     \begin{tabular}{c|cccccc}
         \hline
-        { modelo}        & { Reg. Logística} & { F. Aleatórias} & { XGBoost} & { Naive Bayes} & lightGBM & LSTM \\ \hline \hline
+        { modelo}        & { Reg. Logística} & { F. Aleatórias} & { XGBoost} & { Naive Bayes} & LightGBM & LSTM \\ \hline \hline
         { Tempo (s)}     & { 21.5}           & { 1.5}           & { 3.0}     & { 0.1}         & {1.8}    & 1500 \\ \hline
         { Acurácia (\%)} & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 81.3     & 90.0 \\
     \end{tabular}
