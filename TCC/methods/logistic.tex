@@ -1,18 +1,18 @@
-\subsubsection{Regressão Logística}
+\subsubsection{RegressÃ£o LogÃ­stica}
 
-A regressão logística é um modelo estatístico robusto e eficiente, que permite a previsão da probabilidade de um evento binário de forma precisa e confiável \citep{hosmer2013applied}. Este tipo de evento é aquele que pode ocorrer ou não, ou que pode ser classificado em duas categorias distintas. Por exemplo, em uma análise de crédito, o cliente pode ser aprovado ou não. Na medicina, o evento pode ser a cura ou não de uma doença.
+A regressÃ£o logÃ­stica Ã© um modelo estatÃ­stico robusto e eficiente, que permite a previsÃ£o da probabilidade de um evento binÃ¡rio de forma precisa e confiÃ¡vel \citep{hosmer2013applied}. Este tipo de evento Ã© aquele que pode ocorrer ou nÃ£o, ou que pode ser classificado em duas categorias distintas. Por exemplo, em uma anÃ¡lise de crÃ©dito, o cliente pode ser aprovado ou nÃ£o. Na medicina, o evento pode ser a cura ou nÃ£o de uma doenÃ§a.
 
-Ela apresenta um modelo linear generalizado que utiliza a função logística para modelar a relação entre as variáveis independentes e a variável dependente \citep{kleinbaum2010logistic}. A função logística é uma função sigmoide que transforma uma variável linear em uma probabilidade. A equação da função logística é dada por:
+Ela apresenta um modelo linear generalizado que utiliza a funÃ§Ã£o logÃ­stica para modelar a relaÃ§Ã£o entre as variÃ¡veis independentes e a variÃ¡vel dependente \citep{kleinbaum2010logistic}. A funÃ§Ã£o logÃ­stica Ã© uma funÃ§Ã£o sigmoide que transforma uma variÃ¡vel linear em uma probabilidade. A equaÃ§Ã£o da funÃ§Ã£o logÃ­stica Ã© dada por:
 
 \begin{equation}
     p = \frac{1}{1 + e^{-x}}
 \end{equation}
 
-Sendo $p$ a probabilidade do evento ocorrer, $x$ uma variável linear que representa a combinação linear das variáveis independentes, e $e$ a constante de Euler.
+Sendo $p$ a probabilidade do evento ocorrer, $x$ uma variÃ¡vel linear que representa a combinaÃ§Ã£o linear das variÃ¡veis independentes, e $e$ a constante de Euler.
 
-A regressão logística utiliza a técnica de máxima verossimilhança para estimar os parâmetros do modelo a partir dos dados observados. A função de verossimilhança é maximizada para encontrar os valores dos coeficientes que melhor se ajustam aos dados. O modelo é ajustado para minimizar a diferença entre as probabilidades previstas pelo modelo e as probabilidades observadas nos dados \citep{mccullagh1989generalized}.
+A regressÃ£o logÃ­stica utiliza a tÃ©cnica de mÃ¡xima verossimilhanÃ§a para estimar os parÃ¢metros do modelo a partir dos dados observados. A funÃ§Ã£o de verossimilhanÃ§a Ã© maximizada para encontrar os valores dos coeficientes que melhor se ajustam aos dados. O modelo Ã© ajustado para minimizar a diferenÃ§a entre as probabilidades previstas pelo modelo e as probabilidades observadas nos dados \citep{mccullagh1989generalized}.
 
-A regressão logística tem sido amplamente utilizada em diversas áreas, como na análise de dados de sobrevivência, na análise de dados de saúde, na análise de dados financeiros, etc. Por exemplo, é utilizada na análise de dados de sobrevivência para modelar a probabilidade de um paciente sobreviver a uma doença com base em fatores como idade, sexo, nível de educação, etc. Na análise de dados financeiros, é utilizada para modelar a probabilidade de um cliente pagar ou não uma dívida com base em fatores como histórico de crédito, renda, etc.
+A regressÃ£o logÃ­stica tem sido amplamente utilizada em diversas Ã¡reas, como na anÃ¡lise de dados de sobrevivÃªncia, na anÃ¡lise de dados de saÃºde, na anÃ¡lise de dados financeiros, etc. Por exemplo, Ã© utilizada na anÃ¡lise de dados de sobrevivÃªncia para modelar a probabilidade de um paciente sobreviver a uma doenÃ§a com base em fatores como idade, sexo, nÃ­vel de educaÃ§Ã£o, etc. Na anÃ¡lise de dados financeiros, Ã© utilizada para modelar a probabilidade de um cliente pagar ou nÃ£o uma dÃ­vida com base em fatores como histÃ³rico de crÃ©dito, renda, etc.
 
 
 \input{./tikz/logistic.tikz.tex}

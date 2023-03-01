@@ -1,5 +1,5 @@
 %----------------------------------------------------------------------------------
-% Arquivo template *.tex para TCC da Especialização em Ciência de Dados e Big Data
+% Arquivo template *.tex para TCC da EspecializaÃ§Ã£o em CiÃªncia de Dados e Big Data
 %----------------------------------------------------------------------------------
 
 % Classe do documento.
@@ -8,7 +8,7 @@
 %-----------------------------------------------------------------------
 
 \usepackage[brazil]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
 \usepackage[pdftex,plainpages=false,pdfpagelabels,colorlinks=true,citecolor=blue,linkcolor=black,urlcolor=black,filecolor=red]{hyperref} 
 \usepackage{multirow}
@@ -22,6 +22,7 @@
 \usepackage{tikz}
 \usepackage{forest}
 \usepackage{amsmath}
+\pgfplotsset{compat=1.16}
 \usetikzlibrary{fit,positioning,trees}
 
 %-------------------------------------------------------------------------------%
@@ -36,7 +37,7 @@
 \thispagestyle{empty}
 \newcommand{\autor}{Carlos Magno Santos Ribeiro de Brito}
 \newcommand{\orientador}{Eduardo Furtado de Simas Filho}
-\newcommand{\titulo}{Análise de sentimentos em avaliações de clientes do \textit{e-commerce} nacional e comparação de métodos tradicionais de \textit{machine learning} com Redes Neurais \textit{Long Short Term Memory} (LSTM)}
+\newcommand{\titulo}{AnÃ¡lise de sentimentos em avaliaÃ§Ãµes de clientes do \textit{e-commerce} nacional e comparaÃ§Ã£o de mÃ©todos tradicionais de \textit{machine learning} com Redes Neurais \textit{Long Short Term Memory} (LSTM)}
 \begin{center}
 
     \vspace*{2.3cm}
@@ -47,35 +48,35 @@
     
     \vskip 2cm
     \textsc{
-        Trabalho de Conclussão de Curso \\[-0.25cm]
+        Trabalho de ConclussÃ£o de Curso \\[-0.25cm]
         Apresentado ao\\[-0.25cm]
-        Instituto de Matemática e Estatística\\[-0.25cm]
+        Instituto de MatemÃ¡tica e EstatÃ­stica\\[-0.25cm]
         da\\[-0.25cm]
         Universidade Federal da Bahia\\[-0.25cm]
         para\\[-0.25cm]
-        obtenção do título\\[-0.25cm]
+        obtenÃ§Ã£o do tÃ­tulo\\[-0.25cm]
         de\\[-0.25cm]
-        Especialista em Ciência de Dados \\ e Big Data}
+        Especialista em CiÃªncia de Dados \\ e Big Data}
     
     \vskip 1.5cm
     Orientador: Prof. Dr. \orientador \\
     
     \vskip 1cm
-    \normalsize{Durante o desenvolvimento desta tese e curso o autor do presente trabalho foi contemplado com uma bolsa para realização da especialização}
+    \normalsize{Durante o desenvolvimento desta tese e curso o autor do presente trabalho foi contemplado com uma bolsa para realizaÃ§Ã£o da especializaÃ§Ã£o}
     
     \vskip 2.5cm
     \normalsize{Salvador, \today}
 \end{center}
 
 % ---------------------------------------------------------------------------- %
-% Página de rosto (só para a versão final)
+% PÃ¡gina de rosto (sÃ³ para a versÃ£o final)
 % ---------------------------------------------------------------------------- %
 
 %\newpage
 %\thispagestyle{empty}
 %\begin{center}
 %\vspace*{2.3 cm}
-%\textbf{\Large{Título}}\\
+%\textbf{\Large{TÃ­tulo}}\\
 %\vspace*{2 cm}
 %\end{center}
 %
@@ -83,9 +84,9 @@
 %
 %\begin{flushright}
 %
-%Esta versão definitiva do trabalho de conclusão de curso\\
-%contém as correções e alterações sugeridas pela\\
-%Comissão Julgadora durante a defesa realizada\\
+%Esta versÃ£o definitiva do trabalho de conclusÃ£o de curso\\
+%contÃ©m as correÃ§Ãµes e alteraÃ§Ãµes sugeridas pela\\
+%ComissÃ£o Julgadora durante a defesa realizada\\
 %por \textit{nome do alunos} em 02/12/2022.
 %
 %\vskip 2cm
@@ -94,7 +95,7 @@
 %\vskip 4.2cm
 %
 %\begin{quote}
-%\noindent Comissão Julgadora:
+%\noindent ComissÃ£o Julgadora:
 %
 %\begin{itemize}
 %\item Profa. Dr. Fulano (orientadora) - IME-UFBA
@@ -108,7 +109,7 @@
 % ---------------------------------------------------------------------------- %
 \pagestyle{fancyplain}
 \fancyhf{}
-\lhead{\fancyplain{}{Especialização em Ciência de Dados e Big Data - ECD}}
+\lhead{\fancyplain{}{EspecializaÃ§Ã£o em CiÃªncia de Dados e Big Data - ECD}}
 \rhead{\fancyplain{}{\href{http://www.ecd.ufba.br}{\textit{www.ecd.ufba.br}}}}
 \rfoot{\thepage}
 \setcounter{page}{1}
@@ -121,7 +122,7 @@
 
 \begin{flushleft}
     \textbf{\autor}\footnote{Universidade Federal da Bahia, \textit{carlos.ribeiro.brito@hotmail.com}} \\
-    \textbf{\orientador}\footnote{Departamento de Engenharia Elétrica e de Computação, \textit{eduardo.simas@ufba.br}}\\
+    \textbf{\orientador}\footnote{Departamento de Engenharia ElÃ©trica e de ComputaÃ§Ã£o, \textit{eduardo.simas@ufba.br}}\\
 \end{flushleft}
 
 \hspace{0.5em}
@@ -130,7 +131,7 @@
 \begin{center}
     {\large \textbf{Resumo}}
 \end{center}
-Com o advento do coronavirus no mundo, o e-commerce e todo o comércio \textit{on-line} no Brasil entre 2020 e 2021 se expandiu e se tornou ainda mais competitivo. Nesse contexto, identificar as necessidades dos consumidores e prever tendencias de expansão de vendas é uma necessidade dos empreendedores no mercado atual para se tornar mais competitivo. Tendo como base isso, o presente trabalho objetivou analisar e comparar dados de diferentes E-commerces no Brasil com diferentes tipos de modelos conhecidos da ciência de dados, na inteção de que os negócios possam ter bons \textit{tradeoffs} de seus modelos em aplicações e direcionar suas vendas de acordo com as preferências dos consumidores em diferentes nichos de mercados. Somando-se a isso, buscou-se indiretamente, desenvolver competências necessárias a prática profissional do cientista de dados, o qual projeta modelos e mecanismos de aprendizado orientados para os negócios e utiliza técnicas matemáticas para encontrar soluções de problemas de negócio ou científico.
+Com o advento do coronavirus no mundo, o e-commerce e todo o comÃ©rcio \textit{on-line} no Brasil entre 2020 e 2021 se expandiu e se tornou ainda mais competitivo. Nesse contexto, identificar as necessidades dos consumidores e prever tendencias de expansÃ£o de vendas Ã© uma necessidade dos empreendedores no mercado atual para se tornar mais competitivo. Tendo como base isso, o presente trabalho objetivou analisar e comparar dados de diferentes E-commerces no Brasil com diferentes tipos de modelos conhecidos da ciÃªncia de dados, na inteÃ§Ã£o de que os negÃ³cios possam ter bons \textit{tradeoffs} de seus modelos em aplicaÃ§Ãµes e direcionar suas vendas de acordo com as preferÃªncias dos consumidores em diferentes nichos de mercados. Somando-se a isso, buscou-se indiretamente, desenvolver competÃªncias necessÃ¡rias a prÃ¡tica profissional do cientista de dados, o qual projeta modelos e mecanismos de aprendizado orientados para os negÃ³cios e utiliza tÃ©cnicas matemÃ¡ticas para encontrar soluÃ§Ãµes de problemas de negÃ³cio ou cientÃ­fico.
 
 \begin{flushleft}
     {\large \textbf{Palavras chaves:}} E-commerce; Machine Learning; Redes Neurais Artificiais.
@@ -155,7 +156,7 @@ Com o advento do coronavirus no mundo, o e-commerce e todo o comércio \textit{on
 
 % ---------------------------------------------------------------------------- %
 % Bibliografia
-\bibliographystyle{natbib} % citação bibliográfica textual plainnat-ime,natbib
+\bibliographystyle{natbib} % citaÃ§Ã£o bibliogrÃ¡fica textual plainnat-ime,natbib
 \bibliography{ref}  % associado ao arquivo: 'bibliografia.bib'
 \nocite{*}
 

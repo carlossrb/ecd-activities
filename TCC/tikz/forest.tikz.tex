@@ -20,13 +20,13 @@
             \node[draw,fit=(a1)(a2)(a3)](f1){};
             \node[draw,fit=(b1)(b2)(b3)](f2){};
             \node[draw,fit=(c1)(c2)(c3)(c4)](f3){};
-            \path (f1.south west)--(f3.south east) node[midway,below=4em] (D) {Média};
-            \node[below=2em of D] (pred){Predição};
+            \path (f1.south west)--(f3.south east) node[midway,below=4em] (D) {MÃ©dia};
+            \node[below=2em of D] (pred){PrediÃ§Ã£o};
             \foreach \X in {1,2,3}{\draw[-stealth] (TD) -- (f\X.north);
                     \draw[-stealth] (f\X.south) -- (D);}
             \draw[-stealth] (D) -- (pred);
         \end{forest}
     }
-    \caption{Esquema de funcionamento de uma floresta aleatória}
+    \caption{Esquema de funcionamento de uma floresta aleatÃ³ria}
     \label{plt:randomForest}
 \end{figure}

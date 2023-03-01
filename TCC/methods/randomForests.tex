@@ -1,48 +1,48 @@
-\subsubsection{Florestas aleatórias}
+\subsubsection{Florestas aleatÃ³rias}
 
-De acordo com \cite{breiman2001random}, as florestas aleatórias são uma técnica de aprendizado de máquina que combina várias árvores de decisão para construir um modelo de classificação ou regressão. Cada árvore de decisão é construída a partir de um subconjunto aleatório dos dados de treinamento e um subconjunto aleatório dos recursos (também conhecidos como características ou atributos). Esses subconjuntos são criados para garantir que cada árvore de decisão seja diferente e que a floresta aleatória possa capturar várias relações entre os dados e recursos.
+De acordo com \cite{breiman2001random}, as florestas aleatÃ³rias sÃ£o uma tÃ©cnica de aprendizado de mÃ¡quina que combina vÃ¡rias Ã¡rvores de decisÃ£o para construir um modelo de classificaÃ§Ã£o ou regressÃ£o. Cada Ã¡rvore de decisÃ£o Ã© construÃ­da a partir de um subconjunto aleatÃ³rio dos dados de treinamento e um subconjunto aleatÃ³rio dos recursos (tambÃ©m conhecidos como caracterÃ­sticas ou atributos). Esses subconjuntos sÃ£o criados para garantir que cada Ã¡rvore de decisÃ£o seja diferente e que a floresta aleatÃ³ria possa capturar vÃ¡rias relaÃ§Ãµes entre os dados e recursos.
 
-A construção de uma árvore de decisão é feita por meio de uma série de etapas. Inicialmente, a árvore começa com um único nó que representa todo o conjunto de dados de treinamento. Em seguida, a árvore é dividida em nós menores usando uma função de divisão que escolhe um recurso e um ponto de divisão que minimiza a impureza dos dados. A impureza é uma medida da desorganização dos dados, que pode ser medida por diferentes critérios, como a entropia ou o índice Gini. O processo de divisão é repetido recursivamente até que os nós finais sejam puros ou um critério de parada seja atingido, como uma profundidade máxima da árvore \citep{cutler2001random}.
+A construÃ§Ã£o de uma Ã¡rvore de decisÃ£o Ã© feita por meio de uma sÃ©rie de etapas. Inicialmente, a Ã¡rvore comeÃ§a com um Ãºnico nÃ³ que representa todo o conjunto de dados de treinamento. Em seguida, a Ã¡rvore Ã© dividida em nÃ³s menores usando uma funÃ§Ã£o de divisÃ£o que escolhe um recurso e um ponto de divisÃ£o que minimiza a impureza dos dados. A impureza Ã© uma medida da desorganizaÃ§Ã£o dos dados, que pode ser medida por diferentes critÃ©rios, como a entropia ou o Ã­ndice Gini. O processo de divisÃ£o Ã© repetido recursivamente atÃ© que os nÃ³s finais sejam puros ou um critÃ©rio de parada seja atingido, como uma profundidade mÃ¡xima da Ã¡rvore \citep{cutler2001random}.
 
-Durante a fase de teste, a floresta aleatória retorna a classe mais comum ou a média das saídas das árvores individuais, dependendo se o problema é de classificação ou regressão, respectivamente.
+Durante a fase de teste, a floresta aleatÃ³ria retorna a classe mais comum ou a mÃ©dia das saÃ­das das Ã¡rvores individuais, dependendo se o problema Ã© de classificaÃ§Ã£o ou regressÃ£o, respectivamente.
 
-As florestas aleatórias apresentam várias vantagens em relação a outras técnicas de aprendizado de máquina. Em primeiro lugar, elas têm um bom desempenho em dados de alta dimensão, onde o número de recursos é grande em relação ao número de amostras. Em segundo lugar, elas são relativamente insensíveis a outliers e dados ausentes. Em terceiro lugar, elas são facilmente paralelizáveis, permitindo que grandes conjuntos de dados sejam processados em paralelo em clusters de computadores \citep{cutler2001random}.
+As florestas aleatÃ³rias apresentam vÃ¡rias vantagens em relaÃ§Ã£o a outras tÃ©cnicas de aprendizado de mÃ¡quina. Em primeiro lugar, elas tÃªm um bom desempenho em dados de alta dimensÃ£o, onde o nÃºmero de recursos Ã© grande em relaÃ§Ã£o ao nÃºmero de amostras. Em segundo lugar, elas sÃ£o relativamente insensÃ­veis a outliers e dados ausentes. Em terceiro lugar, elas sÃ£o facilmente paralelizÃ¡veis, permitindo que grandes conjuntos de dados sejam processados em paralelo em clusters de computadores \citep{cutler2001random}.
 
-Em termos de aplicação, elas são amplamente utilizadas em uma variedade de problemas, como reconhecimento de padrões em imagens e sinais, detecção de fraudes em transações financeiras, análise de sentimentos em redes sociais, previsão de preços de ações e análise de dados genômicos \citep{breiman2001random}.
+Em termos de aplicaÃ§Ã£o, elas sÃ£o amplamente utilizadas em uma variedade de problemas, como reconhecimento de padrÃµes em imagens e sinais, detecÃ§Ã£o de fraudes em transaÃ§Ãµes financeiras, anÃ¡lise de sentimentos em redes sociais, previsÃ£o de preÃ§os de aÃ§Ãµes e anÃ¡lise de dados genÃ´micos \citep{breiman2001random}.
 
-As equações relacionadas às florestas aleatórias são principalmente as usadas na construção de cada árvore de decisão. Por exemplo, as equações para o cálculo da impureza dos dados, que é um dos principais critérios de divisão de nós em uma árvore de decisão são dadas:
+As equaÃ§Ãµes relacionadas Ã s florestas aleatÃ³rias sÃ£o principalmente as usadas na construÃ§Ã£o de cada Ã¡rvore de decisÃ£o. Por exemplo, as equaÃ§Ãµes para o cÃ¡lculo da impureza dos dados, que Ã© um dos principais critÃ©rios de divisÃ£o de nÃ³s em uma Ã¡rvore de decisÃ£o sÃ£o dadas:
 
 \begin{itemize}
-    \item O índice Gini:
+    \item O Ã­ndice Gini:
           \begin{equation}
               G_i = \sum_{k=1}^{K} p_{i,k} (1-p_{i,k}),
           \end{equation}
 
-          onde $K$ é o número de classes, $p_{i,k}$ é a proporção de observações da classe $k$ no nó $i$.
+          onde $K$ Ã© o nÃºmero de classes, $p_{i,k}$ Ã© a proporÃ§Ã£o de observaÃ§Ãµes da classe $k$ no nÃ³ $i$.
     \item A entropia:
           \begin{equation}
               H_i = -\sum_{k=1}^{K} p_{i,k} \log(p_{i,k}),
           \end{equation}
 
-          onde $K$ é o número de classes, $p_{i,k}$ é a proporção de observações da classe $k$ no nó $i$.
+          onde $K$ Ã© o nÃºmero de classes, $p_{i,k}$ Ã© a proporÃ§Ã£o de observaÃ§Ãµes da classe $k$ no nÃ³ $i$.
 
-    \item O critério de divisão de Gini é dado por:
+    \item O critÃ©rio de divisÃ£o de Gini Ã© dado por:
           \begin{equation}
               G_{d} = \sum_{i=1}^{q}\frac{n_i}{n}G_i,
           \end{equation}
 
-          onde $q$ é o número de nós filhos resultantes da divisão, $n_i$ é o número de observações no nó $i$ e $n$ é o número total de observações.
+          onde $q$ Ã© o nÃºmero de nÃ³s filhos resultantes da divisÃ£o, $n_i$ Ã© o nÃºmero de observaÃ§Ãµes no nÃ³ $i$ e $n$ Ã© o nÃºmero total de observaÃ§Ãµes.
 
-    \item O critério de divisão de entropia é dado por:
+    \item O critÃ©rio de divisÃ£o de entropia Ã© dado por:
           \begin{equation}
               H_{d} = -\sum_{i=1}^{q}\frac{n_i}{n}H_i,
           \end{equation}
 
-          onde $q$ é o número de nós filhos resultantes da divisão, $n_i$ é o número de observações no nó $i$ e $n$ é o número total de observações.
+          onde $q$ Ã© o nÃºmero de nÃ³s filhos resultantes da divisÃ£o, $n_i$ Ã© o nÃºmero de observaÃ§Ãµes no nÃ³ $i$ e $n$ Ã© o nÃºmero total de observaÃ§Ãµes.
 
 \end{itemize}
 
-Essas equações são usadas para calcular a impureza dos dados em cada nó da árvore de decisão e, assim, decidir qual recurso e ponto de divisão usar para dividir o nó em dois filhos. O processo de divisão é repetido recursivamente para construir a árvore de decisão completa. Em seguida, várias árvores de decisão são combinadas para formar a floresta aleatória.
+Essas equaÃ§Ãµes sÃ£o usadas para calcular a impureza dos dados em cada nÃ³ da Ã¡rvore de decisÃ£o e, assim, decidir qual recurso e ponto de divisÃ£o usar para dividir o nÃ³ em dois filhos. O processo de divisÃ£o Ã© repetido recursivamente para construir a Ã¡rvore de decisÃ£o completa. Em seguida, vÃ¡rias Ã¡rvores de decisÃ£o sÃ£o combinadas para formar a floresta aleatÃ³ria.
 
 \input{tikz/forest.tikz.tex}
 

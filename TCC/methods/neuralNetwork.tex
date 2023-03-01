@@ -2,19 +2,19 @@
 
 \input{tikz/neuralNetwork.tikz.tex}
 
-Redes Neurais Artificiais (RNAs) são modelos computacionais que se inspiram no funcionamento do cérebro humano e têm sido amplamente utilizadas para tarefas de classificação, previsão e reconhecimento de padrões em diferentes áreas do conhecimento. O conceito de RNA foi proposto por \cite{mcculloch1943logical}, mas foi apenas a partir da década de 1980, com o desenvolvimento de técnicas de treinamento de redes profundas, que as RNAs se tornaram uma ferramenta poderosa para análise de dados \cite{lecun2015deep}.
+Redes Neurais Artificiais (RNAs) sÃ£o modelos computacionais que se inspiram no funcionamento do cÃ©rebro humano e tÃªm sido amplamente utilizadas para tarefas de classificaÃ§Ã£o, previsÃ£o e reconhecimento de padrÃµes em diferentes Ã¡reas do conhecimento. O conceito de RNA foi proposto por \cite{mcculloch1943logical}, mas foi apenas a partir da dÃ©cada de 1980, com o desenvolvimento de tÃ©cnicas de treinamento de redes profundas, que as RNAs se tornaram uma ferramenta poderosa para anÃ¡lise de dados \cite{lecun2015deep}.
 
-Uma RNA é composta por camadas de neurônios artificiais, cada um com uma função de ativação que transforma a entrada recebida em uma saída. A primeira camada é a camada de entrada, que recebe os dados a serem processados. A última camada é a camada de saída, que produz a resposta final da RNA. Entre as camadas de entrada e saída, podem ser adicionadas várias camadas ocultas, que ajudam a extrair características dos dados de entrada.
+Uma RNA Ã© composta por camadas de neurÃ´nios artificiais, cada um com uma funÃ§Ã£o de ativaÃ§Ã£o que transforma a entrada recebida em uma saÃ­da. A primeira camada Ã© a camada de entrada, que recebe os dados a serem processados. A Ãºltima camada Ã© a camada de saÃ­da, que produz a resposta final da RNA. Entre as camadas de entrada e saÃ­da, podem ser adicionadas vÃ¡rias camadas ocultas, que ajudam a extrair caracterÃ­sticas dos dados de entrada.
 
-O processo de treinamento de uma RNA consiste em ajustar os pesos sinápticos entre os neurônios para que a rede produza a saída correta para cada entrada. O algoritmo mais comum de treinamento é o Backpropagation, proposto por \cite{rumelhart1986parallel}. O Backpropagation utiliza o método do gradiente descendente para minimizar a função de custo da RNA em relação aos pesos sinápticos.
+O processo de treinamento de uma RNA consiste em ajustar os pesos sinÃ¡pticos entre os neurÃ´nios para que a rede produza a saÃ­da correta para cada entrada. O algoritmo mais comum de treinamento Ã© o Backpropagation, proposto por \cite{rumelhart1986parallel}. O Backpropagation utiliza o mÃ©todo do gradiente descendente para minimizar a funÃ§Ã£o de custo da RNA em relaÃ§Ã£o aos pesos sinÃ¡pticos.
 
-Uma das principais vantagens das RNAs é a capacidade de lidar com dados complexos e não lineares. Além disso, as RNAs podem ser utilizadas em problemas de classificação, previsão e reconhecimento de padrões em diferentes áreas, como visão computacional, processamento de fala, processamento de texto e bioinformática.
+Uma das principais vantagens das RNAs Ã© a capacidade de lidar com dados complexos e nÃ£o lineares. AlÃ©m disso, as RNAs podem ser utilizadas em problemas de classificaÃ§Ã£o, previsÃ£o e reconhecimento de padrÃµes em diferentes Ã¡reas, como visÃ£o computacional, processamento de fala, processamento de texto e bioinformÃ¡tica.
 
-No entanto, elas possuem algumas desvantagens, como a dificuldade de interpretação dos resultados e o risco de overfitting, que ocorre quando a rede se ajusta demais aos dados de treinamento e não consegue generalizar para novos dados.
+No entanto, elas possuem algumas desvantagens, como a dificuldade de interpretaÃ§Ã£o dos resultados e o risco de overfitting, que ocorre quando a rede se ajusta demais aos dados de treinamento e nÃ£o consegue generalizar para novos dados.
 
-As redes neurais artificiais são compostas por uma série de camadas de neurônios, que realizam operações matemáticas nas entradas recebidas para gerar saídas. A formulação matemática dessas operações pode variar de acordo com a arquitetura da rede, mas em geral envolvem uma combinação linear das entradas, seguida de uma função não linear de ativação.
+As redes neurais artificiais sÃ£o compostas por uma sÃ©rie de camadas de neurÃ´nios, que realizam operaÃ§Ãµes matemÃ¡ticas nas entradas recebidas para gerar saÃ­das. A formulaÃ§Ã£o matemÃ¡tica dessas operaÃ§Ãµes pode variar de acordo com a arquitetura da rede, mas em geral envolvem uma combinaÃ§Ã£o linear das entradas, seguida de uma funÃ§Ã£o nÃ£o linear de ativaÃ§Ã£o.
 
-Abaixo tem-se as equações matemáticas para uma rede neural \textit{feedforward} de três camadas, com $n^{(l)}$ neurônios na camada $l$:
+Abaixo tem-se as equaÃ§Ãµes matemÃ¡ticas para uma rede neural \textit{feedforward} de trÃªs camadas, com $n^{(l)}$ neurÃ´nios na camada $l$:
 
 \begin{equation}
     \begin{aligned}
@@ -25,25 +25,25 @@ Abaixo tem-se as equações matemáticas para uma rede neural \textit{feedforward} 
     \end{aligned}
 \end{equation}
 
-Na equação acima, $x_i$ representa a entrada na posição $i$, $w_{ij}^{(1)}$ representa o peso associado à conexão entre o neurônio $i$ da camada de entrada e o neurônio $j$ da camada oculta, $b_j^{(1)}$ é o viés associado ao neurônio $j$ da camada oculta, $f$ é a função de ativação, $h_j^{(2)}$ é a saída do neurônio $j$ da camada oculta, $w_{jk}^{(2)}$ é o peso associado à conexão entre o neurônio $j$ da camada oculta e o neurônio $k$ da camada de saída, $b_k^{(2)}$ é o viés associado ao neurônio $k$ da camada de saída e $y_k$ é a saída final da rede neural.
+Na equaÃ§Ã£o acima, $x_i$ representa a entrada na posiÃ§Ã£o $i$, $w_{ij}^{(1)}$ representa o peso associado Ã  conexÃ£o entre o neurÃ´nio $i$ da camada de entrada e o neurÃ´nio $j$ da camada oculta, $b_j^{(1)}$ Ã© o viÃ©s associado ao neurÃ´nio $j$ da camada oculta, $f$ Ã© a funÃ§Ã£o de ativaÃ§Ã£o, $h_j^{(2)}$ Ã© a saÃ­da do neurÃ´nio $j$ da camada oculta, $w_{jk}^{(2)}$ Ã© o peso associado Ã  conexÃ£o entre o neurÃ´nio $j$ da camada oculta e o neurÃ´nio $k$ da camada de saÃ­da, $b_k^{(2)}$ Ã© o viÃ©s associado ao neurÃ´nio $k$ da camada de saÃ­da e $y_k$ Ã© a saÃ­da final da rede neural.
 
-É importante notar que a escolha da função de ativação pode influenciar significativamente o comportamento da rede neural, permitindo, por exemplo, que ela aprenda a modelar funções não-lineares complexas. Algumas funções de ativação comuns incluem a função sigmoide, a função tangente hiperbólica e a função ReLU (Rectified Linear Unit).
+Ã‰ importante notar que a escolha da funÃ§Ã£o de ativaÃ§Ã£o pode influenciar significativamente o comportamento da rede neural, permitindo, por exemplo, que ela aprenda a modelar funÃ§Ãµes nÃ£o-lineares complexas. Algumas funÃ§Ãµes de ativaÃ§Ã£o comuns incluem a funÃ§Ã£o sigmoide, a funÃ§Ã£o tangente hiperbÃ³lica e a funÃ§Ã£o ReLU (Rectified Linear Unit).
 
 \subsubsection{Redes Neurais Artificiais LSTM }
 
 \input{tikz/lstm.tikz.tex}
 
-Uma rede neural artificial \textit{Long Short-Term Memory} (LSTM) é um tipo especializado de rede neural recorrente (RNN) projetada para lidar com o problema de dependência a longo prazo em sequências de dados. Foi proposta por \cite{hochreiter1997long} como uma solução para o problema de desvanecimento do gradiente em RNNs tradicionais.
+Uma rede neural artificial \textit{Long Short-Term Memory} (LSTM) Ã© um tipo especializado de rede neural recorrente (RNN) projetada para lidar com o problema de dependÃªncia a longo prazo em sequÃªncias de dados. Foi proposta por \cite{hochreiter1997long} como uma soluÃ§Ã£o para o problema de desvanecimento do gradiente em RNNs tradicionais.
 
-O problema de desvanecimento do gradiente ocorre quando o gradiente calculado durante o processo de retropropagação se torna muito pequeno à medida que se propaga pelas camadas da rede, o que dificulta o aprendizado de dependências a longo prazo. Isso limita a capacidade das RNNs tradicionais em lidar com sequências de dados que envolvem dependências a longo prazo, como em análise de séries temporais ou processamento de linguagem natural.
+O problema de desvanecimento do gradiente ocorre quando o gradiente calculado durante o processo de retropropagaÃ§Ã£o se torna muito pequeno Ã  medida que se propaga pelas camadas da rede, o que dificulta o aprendizado de dependÃªncias a longo prazo. Isso limita a capacidade das RNNs tradicionais em lidar com sequÃªncias de dados que envolvem dependÃªncias a longo prazo, como em anÃ¡lise de sÃ©ries temporais ou processamento de linguagem natural.
 
-A principal característica da LSTM é a presença de unidades de memória, que são capazes de lembrar informações relevantes por um período prolongado de tempo. Essas unidades são compostas por três portões principais: o portão de entrada, o portão de esquecimento e o portão de saída. O portão de entrada controla a quantidade de informação que é adicionada à unidade de memória, enquanto o portão de esquecimento controla a quantidade de informação que é descartada. O portão de saída controla a quantidade de informação que é enviada para a próxima unidade da rede.
+A principal caracterÃ­stica da LSTM Ã© a presenÃ§a de unidades de memÃ³ria, que sÃ£o capazes de lembrar informaÃ§Ãµes relevantes por um perÃ­odo prolongado de tempo. Essas unidades sÃ£o compostas por trÃªs portÃµes principais: o portÃ£o de entrada, o portÃ£o de esquecimento e o portÃ£o de saÃ­da. O portÃ£o de entrada controla a quantidade de informaÃ§Ã£o que Ã© adicionada Ã  unidade de memÃ³ria, enquanto o portÃ£o de esquecimento controla a quantidade de informaÃ§Ã£o que Ã© descartada. O portÃ£o de saÃ­da controla a quantidade de informaÃ§Ã£o que Ã© enviada para a prÃ³xima unidade da rede.
 
-Durante o treinamento, a LSTM é capaz de aprender a modificar seus portões de entrada, esquecimento e saída, a fim de manter as informações relevantes na memória e descartar as informações irrelevantes. Os pesos das conexões entre as unidades de memória são atualizados usando o algoritmo de retropropagação através do tempo (BPTT).
+Durante o treinamento, a LSTM Ã© capaz de aprender a modificar seus portÃµes de entrada, esquecimento e saÃ­da, a fim de manter as informaÃ§Ãµes relevantes na memÃ³ria e descartar as informaÃ§Ãµes irrelevantes. Os pesos das conexÃµes entre as unidades de memÃ³ria sÃ£o atualizados usando o algoritmo de retropropagaÃ§Ã£o atravÃ©s do tempo (BPTT).
 
-A arquitetura LSTM foi amplamente utilizada em diversas aplicações, incluindo processamento de linguagem natural, reconhecimento de fala e análise de séries temporais. Por exemplo, \cite{graves2013speech} utilizaram LSTMs para melhorar o reconhecimento de fala em 2013. Além disso, \cite{gers1999learning} propuseram uma abordagem de aprendizado contínuo com LSTMs, chamada de "learning to forget", que permite que a rede esqueça informações irrelevantes à medida que recebe novos dados.
+A arquitetura LSTM foi amplamente utilizada em diversas aplicaÃ§Ãµes, incluindo processamento de linguagem natural, reconhecimento de fala e anÃ¡lise de sÃ©ries temporais. Por exemplo, \cite{graves2013speech} utilizaram LSTMs para melhorar o reconhecimento de fala em 2013. AlÃ©m disso, \cite{gers1999learning} propuseram uma abordagem de aprendizado contÃ­nuo com LSTMs, chamada de "learning to forget", que permite que a rede esqueÃ§a informaÃ§Ãµes irrelevantes Ã  medida que recebe novos dados.
 
-Abaixo está uma possível formulação matemática em Latex para uma unidade LSTM:
+Abaixo estÃ¡ uma possÃ­vel formulaÃ§Ã£o matemÃ¡tica em Latex para uma unidade LSTM:
 
 \begin{equation}
     \begin{aligned}
@@ -56,6 +56,6 @@ Abaixo está uma possível formulação matemática em Latex para uma unidade LSTM:
     \end{aligned}
 \end{equation}
 
-Nessa formulação, $x_t$ é a entrada na unidade LSTM no tempo $t$, $h_{t-1}$ é o estado oculto da unidade LSTM no tempo $t-1$, $i_t$, $f_t$, $\tilde{c}_t$, $c_t$, $o_t$ e $h_t$ são as portas de entrada, esquecimento, memória, saída e o estado oculto da unidade LSTM no tempo $t$, respectivamente. $\sigma$ é a função de ativação sigmóide, $\text{tanh}$ é a função tangente hiperbólica, $\odot$ denota a multiplicação elementar ponto-a-ponto (também conhecida como produto Hadamard) e $W$ e $U$ são matrizes de pesos que são aprendidas durante o treinamento, enquanto $b$ é o vetor de bias.
+Nessa formulaÃ§Ã£o, $x_t$ Ã© a entrada na unidade LSTM no tempo $t$, $h_{t-1}$ Ã© o estado oculto da unidade LSTM no tempo $t-1$, $i_t$, $f_t$, $\tilde{c}_t$, $c_t$, $o_t$ e $h_t$ sÃ£o as portas de entrada, esquecimento, memÃ³ria, saÃ­da e o estado oculto da unidade LSTM no tempo $t$, respectivamente. $\sigma$ Ã© a funÃ§Ã£o de ativaÃ§Ã£o sigmÃ³ide, $\text{tanh}$ Ã© a funÃ§Ã£o tangente hiperbÃ³lica, $\odot$ denota a multiplicaÃ§Ã£o elementar ponto-a-ponto (tambÃ©m conhecida como produto Hadamard) e $W$ e $U$ sÃ£o matrizes de pesos que sÃ£o aprendidas durante o treinamento, enquanto $b$ Ã© o vetor de bias.
 
-Essa formulação é apenas um exemplo, já que existem várias variações da arquitetura LSTM, mas ela ilustra a ideia geral da arquitetura. A unidade LSTM é composta por portas que controlam a quantidade de informação que é adicionada, esquecida ou transmitida para a próxima unidade da rede. Além disso, a unidade LSTM mantém uma memória interna que pode ser atualizada ou esquecida ao longo do tempo.
+Essa formulaÃ§Ã£o Ã© apenas um exemplo, jÃ¡ que existem vÃ¡rias variaÃ§Ãµes da arquitetura LSTM, mas ela ilustra a ideia geral da arquitetura. A unidade LSTM Ã© composta por portas que controlam a quantidade de informaÃ§Ã£o que Ã© adicionada, esquecida ou transmitida para a prÃ³xima unidade da rede. AlÃ©m disso, a unidade LSTM mantÃ©m uma memÃ³ria interna que pode ser atualizada ou esquecida ao longo do tempo.

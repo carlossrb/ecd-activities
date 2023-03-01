@@ -1,34 +1,34 @@
 \section{Resultados}
 \label{sec:results}
 
-ApÛs a limpeza dos dados, iniciou-se o processo de an·lise dos mesmos. Com isso, algumas consideraÁıes poderam ser tomadas. Como dito \textit{a priori}, por ser t„o abrangente, essa an·lise foi limitada ao sistema de avaliaÁ„o feito pelos clientes apÛs a confirmaÁ„o de entrega do produto. Assim, o consumidor pode dar nota de 1 a 5 para o produto, sendo 1 o mais baixo e 5 o mais alto.
+Ap√≥s a limpeza dos dados, iniciou-se o processo de an√°lise dos mesmos. Com isso, algumas considera√ß√µes poderam ser tomadas. Como dito \textit{a priori}, por ser t√£o abrangente, essa an√°lise foi limitada ao sistema de avalia√ß√£o feito pelos clientes ap√≥s a confirma√ß√£o de entrega do produto. Assim, o consumidor pode dar nota de 1 a 5 para o produto, sendo 1 o mais baixo e 5 o mais alto.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[trim={0cm 2cm 3cm 2cm},clip,scale=0.65]{./figs/eval.png}
-    \caption{DistribuiÁ„o das avaliaÁıes}
+    \caption{Distribui√ß√£o das avalia√ß√µes}
     \label{fig:evalDistribution}
 \end{figure}
 
-¿ primeira vista com o quantitativo de notas, È possÌvel perceber que essa  distribuiÁ„o È dada em forma de ``J" e È bastante tÌpica em E-commerces. Grande  quantidade de avaliaÁıes 5, 4 e 1, pequena quantidade de 2 e 3.
+√Ä primeira vista com o quantitativo de notas, √© poss√≠vel perceber que essa  distribui√ß√£o √© dada em forma de ``J" e √© bastante t√≠pica em E-commerces. Grande  quantidade de avalia√ß√µes 5, 4 e 1, pequena quantidade de 2 e 3.
 
-Este tipo de distribuiÁ„o pode ocorrer por v·rias razıes. Uma possÌvel explicaÁ„o È que os clientes que est„o extremamente satisfeitos ou insatisfeitos com um produto s„o mais propensos a deixar uma avaliaÁ„o do que aqueles que tÍm uma experiÍncia neutra. Isso pode resultar em uma concentraÁ„o maior de avaliaÁıes com classificaÁıes muito altas ou muito baixas.
+Este tipo de distribui√ß√£o pode ocorrer por v√°rias raz√µes. Uma poss√≠vel explica√ß√£o √© que os clientes que est√£o extremamente satisfeitos ou insatisfeitos com um produto s√£o mais propensos a deixar uma avalia√ß√£o do que aqueles que t√™m uma experi√™ncia neutra. Isso pode resultar em uma concentra√ß√£o maior de avalia√ß√µes com classifica√ß√µes muito altas ou muito baixas.
 
-Outra possÌvel explicaÁ„o È que os clientes que tÍm uma experiÍncia neutra com um produto podem n„o se sentir motivados a deixar uma avaliaÁ„o. Eles podem sentir que o produto foi bom, mas n„o excepcional, e, portanto, n„o vale a pena dedicar tempo para escrever uma avaliaÁ„o. Isso pode levar a um menor n˙mero de avaliaÁıes com classificaÁıes mÈdias.
+Outra poss√≠vel explica√ß√£o √© que os clientes que t√™m uma experi√™ncia neutra com um produto podem n√£o se sentir motivados a deixar uma avalia√ß√£o. Eles podem sentir que o produto foi bom, mas n√£o excepcional, e, portanto, n√£o vale a pena dedicar tempo para escrever uma avalia√ß√£o. Isso pode levar a um menor n√∫mero de avalia√ß√µes com classifica√ß√µes m√©dias.
 
-A distribuiÁ„o em forma de ``J" das avaliaÁıes pode ser importante para as empresas entenderem, pois pode fornecer informaÁıes sobre a satisfaÁ„o do cliente e a qualidade do produto. Se um produto tiver uma alta concentraÁ„o de avaliaÁıes muito positivas, pode ser um indicador de forte satisfaÁ„o do cliente e um produto de alta qualidade. No entanto, tambÈm È importante considerar o n˙mero de avaliaÁıes e a mÈdia geral das classificaÁıes, j· que um pequeno n˙mero de avaliaÁıes pode distorcer a distribuiÁ„o.
+A distribui√ß√£o em forma de ``J" das avalia√ß√µes pode ser importante para as empresas entenderem, pois pode fornecer informa√ß√µes sobre a satisfa√ß√£o do cliente e a qualidade do produto. Se um produto tiver uma alta concentra√ß√£o de avalia√ß√µes muito positivas, pode ser um indicador de forte satisfa√ß√£o do cliente e um produto de alta qualidade. No entanto, tamb√©m √© importante considerar o n√∫mero de avalia√ß√µes e a m√©dia geral das classifica√ß√µes, j√° que um pequeno n√∫mero de avalia√ß√µes pode distorcer a distribui√ß√£o.
 
-Seguidamente, plotou-se a distribuiÁ„o bin·ria das avaliaÁıes conforme foi seccionado na etapa de tratamento dos dados. De forma coerente com a \autoref{fig:evalDistribution} e com a divis„o adotada, a maior parte das avaliaÁıes s„o positivas.
+Seguidamente, plotou-se a distribui√ß√£o bin√°ria das avalia√ß√µes conforme foi seccionado na etapa de tratamento dos dados. De forma coerente com a \autoref{fig:evalDistribution} e com a divis√£o adotada, a maior parte das avalia√ß√µes s√£o positivas.
 
 \begin{figure}[H]
     \centering
     \includegraphics[trim={0cm 2cm 3cm 2cm},clip,scale=0.6]{./figs/bin_eval.png}
-    \caption{DistribuiÁ„o das avaliaÁıes bin·rias}
+    \caption{Distribui√ß√£o das avalia√ß√µes bin√°rias}
     \label{fig:binEvalDistribution}
 \end{figure}
 
-Uma nuvem de palavras ent„o È gerada a partir de um conjunto de dados de texto referente aos coment·rios avaliativos dos clientes. As palavras s„o extraÌdas do texto e organizadas em uma nuvem, em que as palavras mais frequentes s„o maiores e as menos frequentes s„o menores. A nuvem de palavras pode ser usada para ajudar a identificar tÛpicos e padrıes importantes em um conjunto de dados de texto e para comunicar visualmente essas informaÁıes.
+Uma nuvem de palavras ent√£o √© gerada a partir de um conjunto de dados de texto referente aos coment√°rios avaliativos dos clientes. As palavras s√£o extra√≠das do texto e organizadas em uma nuvem, em que as palavras mais frequentes s√£o maiores e as menos frequentes s√£o menores. A nuvem de palavras pode ser usada para ajudar a identificar t√≥picos e padr√µes importantes em um conjunto de dados de texto e para comunicar visualmente essas informa√ß√µes.
 
 \begin{figure}[H]
     \centering
@@ -37,77 +37,78 @@ Uma nuvem de palavras ent„o È gerada a partir de um conjunto de dados de texto r
     \label{fig:wordCloud}
 \end{figure}
 
-Essa tÈcnica visual pode ser usada em v·rios campos, incluindo an·lise de sentimentos, mineraÁ„o de opiniıes, an·lise de redes sociais, pesquisa de mercado e an·lise de feedback de clientes como o caso em especÌfico. AlÈm disso, por ser uma forma visualmente atraente de resumir informaÁıes e destacar pontos importantes, È bastante ˙til para relatÛrios e an·lises.
+Essa t√©cnica visual pode ser usada em v√°rios campos, incluindo an√°lise de sentimentos, minera√ß√£o de opini√µes, an√°lise de redes sociais, pesquisa de mercado e an√°lise de feedback de clientes como o caso em espec√≠fico. Al√©m disso, por ser uma forma visualmente atraente de resumir informa√ß√µes e destacar pontos importantes, √© bastante √∫til para relat√≥rios e an√°lises.
 
-Tendo feito a tokenizaÁ„o das palavras, transformando-as em listas de numeros, filtrado pelas \textit{stopwords} e feito um processo de padronizaÁ„o textual, separou-se o dataset entre treino e teste e prosseguiu para as demais an·lises com os algorÌtmos de aprendizado de m·quina e redes neurais.
+Tendo feito a tokeniza√ß√£o das palavras, transformando-as em listas de numeros, filtrado pelas \textit{stopwords} e feito um processo de padroniza√ß√£o textual, separou-se o dataset entre treino e teste e prosseguiu para as demais an√°lises com os algor√≠tmos de aprendizado de m√°quina e redes neurais.
 
-Dentre os algoritmos de machine learning, encontrou-se as seguintes acur·cias:
+Dentre os algoritmos de machine learning, encontrou-se as seguintes acur√°cias:
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|cccc}
+    \begin{tabular}{l|ccccc}
         \hline
-        { modelo}      & { Reg. LogÌstica} & { F. AleatÛrias} & { XGBoost} & { Naive Bayes} \\ \hline\hline
-        { treino (\%)} & { 73.9}           & { 99.6}          & { 93.5}    & { 74.0}        \\\hline
-        { teste (\%)}  & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}
+        { modelo}      & { Reg. Log√≠stica} & { F. Aleat√≥rias} & { XGBoost} & { Naive Bayes} & lightGBM \\ \hline\hline
+        { treino (\%)} & { 73.9}           & { 99.6}          & { 93.5}    & { 74.0}        & 86.7     \\\hline
+        { teste (\%)}  & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 81.3
     \end{tabular}
 \end{table}
 
-Observa-se que nos modelos de Florestas AleatÛrias e XGBoost apresentou-se discrep‚ncias significativas entre as suas respectivas acur·cias de treino e de teste. Essa diferenÁa entre a acur·cia (ou outra mÈtrica de desempenho) È conhecida como a discrep‚ncia de generalizaÁ„o. Isso pode ter acontecido por diferentes motivos:
+Observa-se que nos modelos XGBoost e lightGBM os valores foram muito pr√≥ximos e apresentaram os melhores resultados em teste. Al√©m disso, com as Florestas Aleat√≥rias e XGBoost houve discrep√¢ncias significativas entre as suas respectivas acur√°cias de treino e de teste. Essa diferen√ßa entre a acur√°cia (ou outra m√©trica de desempenho) √© conhecida como a discrep√¢ncia de generaliza√ß√£o. Isso pode ter acontecido por diferentes motivos:
 
 \begin{itemize}
-    \item Overfitting: O modelo pode memorizar o conjunto de treinamento em vez de aprender os padrıes subjacentes dos dados. Isso pode resultar em uma acur·cia alta no conjunto de treinamento, mas uma acur·cia baixa no conjunto de teste. Para evitar o overfitting, È importante usar tÈcnicas como a regularizaÁ„o, a seleÁ„o de caracterÌsticas e o aumento de dados.
-    \item DiferenÁas entre os dados de treinamento e teste: Os dados de treinamento podem ser diferentes dos dados de teste, o que pode levar a discrep‚ncias na acur·cia. Por exemplo, os dados de treinamento podem ter menos variabilidade do que os dados de teste, ou podem conter exemplos raros que n„o est„o presentes no conjunto de teste.
-    \item Tamanho do conjunto de dados: Quando o conjunto de dados È pequeno, È possÌvel que a variaÁ„o estatÌstica nos resultados seja grande, levando a diferenÁas na acur·cia entre o treinamento e teste.
+    \item Overfitting: O modelo pode memorizar o conjunto de treinamento em vez de aprender os padr√µes subjacentes dos dados. Isso pode resultar em uma acur√°cia alta no conjunto de treinamento, mas uma acur√°cia baixa no conjunto de teste. Para evitar o overfitting, √© importante usar t√©cnicas como a regulariza√ß√£o, a sele√ß√£o de caracter√≠sticas e o aumento de dados.
+    \item Diferen√ßas entre os dados de treinamento e teste: Os dados de treinamento podem ser diferentes dos dados de teste, o que pode levar a discrep√¢ncias na acur√°cia. Por exemplo, os dados de treinamento podem ter menos variabilidade do que os dados de teste, ou podem conter exemplos raros que n√£o est√£o presentes no conjunto de teste.
+    \item Tamanho do conjunto de dados: Quando o conjunto de dados √© pequeno, √© poss√≠vel que a varia√ß√£o estat√≠stica nos resultados seja grande, levando a diferen√ßas na acur√°cia entre o treinamento e teste.
 \end{itemize}
 
-… importante entender que uma discrep‚ncia de generalizaÁ„o n„o È necessariamente ruim, pois È possÌvel que o modelo esteja apenas se adaptando aos dados de treinamento de forma mais eficaz. No entanto, se a discrep‚ncia for muito grande, pode ser um sinal de que o modelo precisa de ajustes. O objetivo È ter um modelo que generalize bem para novos dados e n„o apenas memorize os dados de treinamento.
+√â importante entender que uma discrep√¢ncia de generaliza√ß√£o n√£o √© necessariamente ruim, pois √© poss√≠vel que o modelo esteja apenas se adaptando aos dados de treinamento de forma mais eficaz. No entanto, se a discrep√¢ncia for muito grande, pode ser um sinal de que o modelo precisa de ajustes. O objetivo √© ter um modelo que generalize bem para novos dados e n√£o apenas memorize os dados de treinamento.
 
-Para a rede neural, plotou-se o gr·fico da relaÁ„o das \textit{epochs} pela acuracia do dataset de teste e de treino.
+Para a rede neural, plotou-se o gr√°fico da rela√ß√£o das \textit{epochs} pela acuracia do dataset de teste e de treino.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.55]{./figs/lstm_acuracy.png}
-    \caption{RelaÁ„o acur·cia por \textit{epochs}}
+    \caption{Rela√ß√£o acur√°cia por \textit{epochs}}
     \label{fig:lstmacuracy}
 \end{figure}
 
-Em redes neurais, uma \textit{epoch} refere-se a um ciclo completo de treinamento de todos os dados de treinamento disponÌveis na rede. Durante cada um desses ciclos, os dados s„o passados pela rede em lotes (ou \textit{batch}), a rede faz previsıes para cada lote, compara as previsıes com as respostas corretas e atualiza os pesos e bias da rede para minimizar o erro (ou funÁ„o de custo) entre as previsıes e as respostas corretas.
+Em redes neurais, uma \textit{epoch} refere-se a um ciclo completo de treinamento de todos os dados de treinamento dispon√≠veis na rede. Durante cada um desses ciclos, os dados s√£o passados pela rede em lotes (ou \textit{batch}), a rede faz previs√µes para cada lote, compara as previs√µes com as respostas corretas e atualiza os pesos e bias da rede para minimizar o erro (ou fun√ß√£o de custo) entre as previs√µes e as respostas corretas.
 
-ApÛs uma \textit{epoch} completa, a rede È capaz de fazer previsıes melhores do que antes do treinamento comeÁar. ¿ medida que o treinamento continua avanÁando, as previsıes melhoram gradualmente atÈ que a rede esteja suficientemente treinada para fazer previsıes precisas sobre novos dados.
+Ap√≥s uma \textit{epoch} completa, a rede √© capaz de fazer previs√µes melhores do que antes do treinamento come√ßar. √Ä medida que o treinamento continua avan√ßando, as previs√µes melhoram gradualmente at√© que a rede esteja suficientemente treinada para fazer previs√µes precisas sobre novos dados.
 
-O n˙mero de \textit{epochs} que uma rede neural precisa para ser treinada depende do problema e da complexidade da rede. Um n˙mero muito baixo de \textit{epochs} pode resultar em previsıes imprecisas, enquanto um n˙mero muito alto pode levar a um excesso de ajuste (overfitting) dos dados de treinamento.
+O n√∫mero de \textit{epochs} que uma rede neural precisa para ser treinada depende do problema e da complexidade da rede. Um n√∫mero muito baixo de \textit{epochs} pode resultar em previs√µes imprecisas, enquanto um n√∫mero muito alto pode levar a um excesso de ajuste (overfitting) dos dados de treinamento.
 
-Por fim, faz-se um comparativo entre a acur·cia de todos os modelos para o dataset de treino e tem-se a \autoref{tab:time} com o tempo de execuÁ„o para cada um dos modelos.
+Por fim, faz-se um comparativo entre a acur√°cia de todos os modelos para o dataset de treino e tem-se a \autoref{tab:time} com o tempo de execu√ß√£o para cada um dos modelos.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.55]{./figs/comparative.png}
-    \caption{ComparaÁ„o de acur·cia entre modelos}
+    \caption{Compara√ß√£o de acur√°cia entre modelos}
     \label{fig:comparative}
 \end{figure}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{c|ccccl}
+    \small
+    \begin{tabular}{c|cccccc}
         \hline
-        { modelo}        & { Reg. LogÌstica} & { F. AleatÛrias} & { XGBoost} & { Naive Bayes} & LSTM \\ \hline \hline
-        { Tempo (s)}     & { 21.5}           & { 1.5}           & { 3.0}     & { 0.1}         & 1500 \\ \hline
-        { Acur·cia (\%)} & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 90.0 \\
+        { modelo}        & { Reg. Log√≠stica} & { F. Aleat√≥rias} & { XGBoost} & { Naive Bayes} & lightGBM & LSTM \\ \hline \hline
+        { Tempo (s)}     & { 21.5}           & { 1.5}           & { 3.0}     & { 0.1}         & {1.8}    & 1500 \\ \hline
+        { Acur√°cia (\%)} & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 81.3     & 90.0 \\
     \end{tabular}
-    \caption{Tempo de execuÁ„o/Acur·cia dos modelos avaliados}
+    \caption{Tempo de execu√ß√£o/Acur√°cia dos modelos avaliados em teste}
     \label{tab:time}
 \end{table}
 
-Embora a acur·cia seja uma mÈtrica importante, ela pode n„o ser suficiente para avaliar completamente o desempenho de um modelo em alguns casos. Por exemplo, em problemas de classificaÁ„o desbalanceados, onde uma classe È muito mais comum do que a outra, a acur·cia pode ser enganosa. Nesses casos, outras mÈtricas, como a precis„o, a recall e a F1-score podem ser mais ˙teis.
+Embora a acur√°cia seja uma m√©trica importante, ela pode n√£o ser suficiente para avaliar completamente o desempenho de um modelo em alguns casos. Por exemplo, em problemas de classifica√ß√£o desbalanceados, onde uma classe √© muito mais comum do que a outra, a acur√°cia pode ser enganosa. Nesses casos, outras m√©tricas, como a precis√£o, a recall e a F1-score podem ser mais √∫teis.
 
-AlÈm disso, a acur·cia n„o leva em consideraÁ„o a gravidade dos erros de classificaÁ„o. Por exemplo, em um problema de diagnÛstico mÈdico, um falso negativo pode ter consequÍncias mais graves do que um falso positivo. Portanto, È importante avaliar o desempenho do modelo em relaÁ„o a mÈtricas que levam em consideraÁ„o a gravidade dos erros de classificaÁ„o, como a matriz de confus„o.
+Al√©m disso, a acur√°cia n√£o leva em considera√ß√£o a gravidade dos erros de classifica√ß√£o. Por exemplo, em um problema de diagn√≥stico m√©dico, um falso negativo pode ter consequ√™ncias mais graves do que um falso positivo. Portanto, √© importante avaliar o desempenho do modelo em rela√ß√£o a m√©tricas que levam em considera√ß√£o a gravidade dos erros de classifica√ß√£o, como a matriz de confus√£o.
 
-Isso posto, avaliou-se os modelos tambÈm pela matriz de confus„o e curva ROC.
+Isso posto, avaliou-se os modelos tamb√©m pela matriz de confus√£o e curva ROC.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.65]{./figs/roc.png}
+    \includegraphics[scale=0.6]{./figs/roc_v.png}
     \caption{Curvas ROC dos modelos utilizados}
     \label{fig:roccurve}
 \end{figure}
@@ -115,13 +116,13 @@ Isso posto, avaliou-se os modelos tambÈm pela matriz de confus„o e curva ROC.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{./figs/confusion.png}
-    \caption{Matrizes de confus„o dos modelos utilizados}
+    \caption{Matrizes de confus√£o dos modelos utilizados}
     \label{fig:mconfusion}
 \end{figure}
 
-A matriz de confus„o È uma tabela que mostra o n˙mero de exemplos que foram classificados corretamente e incorretamente pelo modelo, divididos em quatro categorias: verdadeiro positivo (TP-00), verdadeiro negativo (TN-11), falso positivo (FP-10) e falso negativo (FN-01). A partir dessa matriz, v·rias mÈtricas de desempenho podem ser calculadas, incluindo a acur·cia, precis„o e recall. A matriz de confus„o pode ajudar a identificar padrıes de erros comuns que o modelo est· cometendo.
+A matriz de confus√£o √© uma tabela que mostra o n√∫mero de exemplos que foram classificados corretamente e incorretamente pelo modelo, divididos em quatro categorias: verdadeiro positivo (TP-00), verdadeiro negativo (TN-11), falso positivo (FP-10) e falso negativo (FN-01). A partir dessa matriz, v√°rias m√©tricas de desempenho podem ser calculadas, incluindo a acur√°cia, precis√£o e recall. A matriz de confus√£o pode ajudar a identificar padr√µes de erros comuns que o modelo est√° cometendo.
 
-J· a curva ROC (Receiver Operating Characteristic) È uma curva que mostra a relaÁ„o entre a taxa de verdadeiros positivos (TPR) e a taxa de falsos positivos (FPR) para diferentes valores de limiar de classificaÁ„o. Em outras palavras, a curva ROC mostra como o modelo se comporta em termos de sensibilidade e especificidade para diferentes pontos de corte de probabilidade de classificaÁ„o. Quanto mais prÛxima a curva ROC estiver do canto superior esquerdo, melhor ser· o desempenho do modelo. A ·rea sob a curva ROC (AUC-ROC) È uma medida resumida da performance do modelo, sendo que o valor m·ximo È 1,0, o que indica uma performance perfeita.
+J√° a curva ROC (Receiver Operating Characteristic) √© uma curva que mostra a rela√ß√£o entre a taxa de verdadeiros positivos (TPR) e a taxa de falsos positivos (FPR) para diferentes valores de limiar de classifica√ß√£o. Em outras palavras, a curva ROC mostra como o modelo se comporta em termos de sensibilidade e especificidade para diferentes pontos de corte de probabilidade de classifica√ß√£o. Quanto mais pr√≥xima a curva ROC estiver do canto superior esquerdo, melhor ser√° o desempenho do modelo. A √°rea sob a curva ROC (AUC-ROC) √© uma medida resumida da performance do modelo, sendo que o valor m√°ximo √© 1,0, o que indica uma performance perfeita.
 
-A escolha entre usar a matriz de confus„o e/ou a curva ROC depende do objetivo do problema e da preferÍncia do usu·rio. Enquanto a matriz de confus„o oferece informaÁıes detalhadas sobre o desempenho do modelo em cada classe, a curva ROC pode ser mais ˙til para escolher o melhor modelo entre v·rios modelos ou ajustar o ponto de corte de classificaÁ„o para atingir um determinado objetivo, como minimizar a taxa de falsos positivos ou maximizar a taxa de verdadeiros positivos.
+A escolha entre usar a matriz de confus√£o e/ou a curva ROC depende do objetivo do problema e da prefer√™ncia do usu√°rio. Enquanto a matriz de confus√£o oferece informa√ß√µes detalhadas sobre o desempenho do modelo em cada classe, a curva ROC pode ser mais √∫til para escolher o melhor modelo entre v√°rios modelos ou ajustar o ponto de corte de classifica√ß√£o para atingir um determinado objetivo, como minimizar a taxa de falsos positivos ou maximizar a taxa de verdadeiros positivos.
 

@@ -1,0 +1,39 @@
+\subsubsection{lightGBM}
+
+LightGBM é um algoritmo de aprendizado de máquina baseado em árvore, desenvolvido pela Microsoft, que utiliza um método de treinamento baseado em gradientes para melhorar a velocidade e a eficiência de modelos baseados em árvore. O algoritmo utiliza uma técnica de amostragem por folha, que pode levar a melhorias significativas no tempo de treinamento e na precisão do modelo.
+
+Segundo \cite{ke2017lightgbm}, o LightGBM apresenta melhorias significativas em relação a outros algoritmos de aprendizado de máquina baseados em árvore, como o XGBoost, tanto em termos de tempo de treinamento quanto de desempenho preditivo. O LightGBM é particularmente eficaz em conjuntos de dados grandes e esparsos, e tem sido amplamente utilizado em aplicações de classificação e regressão.
+
+Uma das principais vantagens do LightGBM é a sua eficiência computacional. Esta técnica de amostragem por folha, em que cada folha da árvore é treinada com um subconjunto aleatório dos dados de treinamento permite que o algoritmo treine árvores mais profundas e complexas sem aumentar significativamente o tempo de treinamento. Além disso, o LightGBM utiliza uma técnica de paralelização de histogramas, que divide os dados em intervalos discretos e constrói histogramas para cada recurso, permitindo que as operações de treinamento sejam executadas em paralelo.
+
+O LightGBM também apresenta melhorias significativas no desempenho preditivo em relação a outros algoritmos de aprendizado de máquina baseados em árvore. \cite{ke2017lightgbm} mostraram que o LightGBM supera o XGBoost em várias métricas de desempenho, incluindo tempo de treinamento, tempo de previsão e precisão preditiva em vários conjuntos de dados. O LightGBM também é capaz de lidar com conjuntos de dados grandes e esparsos, que são comuns em muitas aplicações do mundo real.
+
+Em relação às suas principais equações definidoras, tem-se:
+
+A) A função objetivo (\textit{loss function}) utilizada pelo LightGBM que é dada por:
+\begin{equation}
+    L(\theta) = \sum_{i=1}^n l(y_i, f(\mathbf{x_i};\theta)) + \sum_{k=1}^K \Omega(f_k)
+\end{equation}
+
+Onde $l$ é a função de perda, $y_i$ é o rótulo do exemplo de treinamento $i$, $f(\mathbf{x_i};\theta)$ é a predição do modelo para o exemplo $\mathbf{x_i}$, $\theta$ é o conjunto de parâmetros do modelo, $K$ é o número de árvores utilizadas pelo modelo, e $\Omega(f_k)$ é a função de regularização utilizada para controlar a complexidade do modelo.
+
+B) O algoritmo utiliza o método de boosting para construir o modelo. Em cada iteração $t$, o LightGBM adiciona uma nova árvore $f_t$ ao modelo. A predição do modelo após $T$ iterações é dada por:
+
+\begin{equation}
+    f_T(\mathbf{x}) = \sum_{t=1}^T f_t(\mathbf{x})
+\end{equation}
+
+C) A técnica de gradientes para atualizar os parâmetros do modelo em cada iteração. A atualização dos parâmetros é realizada utilizando o seguinte algoritmo:
+
+\begin{enumerate}
+    \item Computar os gradientes para cada exemplo de treinamento:
+          \begin{equation}
+              g_i = \frac{\partial l(y_i, f(\mathbf{x_i};\theta))}{\partial f(\mathbf{x_i};\theta)}
+          \end{equation}
+    \item Construir uma nova árvore $f_t$ que minimize a função objetivo:
+          \begin{equation}
+              f_t = \arg \min_{f} \sum_{i=1}^n g_i f(\mathbf{x_i};\theta_{t-1}) + \frac{1}{2} h f^2(\mathbf{x_i}) + \Omega(f)
+          \end{equation}
+
+          Onde $h$ é a taxa de aprendizagem (learning rate) utilizada para controlar a magnitude da atualização dos parâmetros.
+\end{enumerate}

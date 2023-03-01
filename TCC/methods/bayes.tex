@@ -1,18 +1,18 @@
 \subsubsection{Naive Bayes}
 
-A classificaÁ„o Naive Bayes È um algoritmo de aprendizado de m·quina supervisionado que utiliza o teorema de Bayes para classificar inst‚ncias em classes discretas. A principal vantagem do algoritmo Naive Bayes È a sua simplicidade e eficiÍncia computacional, o que o torna uma escolha popular para problemas de classificaÁ„o em grande escala \citep{mitchell1997machine}.
+A classifica√ß√£o Naive Bayes √© um algoritmo de aprendizado de m√°quina supervisionado que utiliza o teorema de Bayes para classificar inst√¢ncias em classes discretas. A principal vantagem do algoritmo Naive Bayes √© a sua simplicidade e efici√™ncia computacional, o que o torna uma escolha popular para problemas de classifica√ß√£o em grande escala \citep{mitchell1997machine}.
 
-O algoritmo Naive Bayes È baseado no teorema de Bayes, que fornece uma maneira de calcular a probabilidade condicional de uma hipÛtese, dado um conjunto de evidÍncias. Na classificaÁ„o, a hipÛtese corresponde ‡ classe da inst‚ncia e as evidÍncias correspondem ‡s caracterÌsticas observadas da inst‚ncia. O algoritmo calcula a probabilidade condicional de cada classe, dado as caracterÌsticas observadas da inst‚ncia, e atribui a inst‚ncia ‡ classe com a maior probabilidade condicional.
+O algoritmo Naive Bayes √© baseado no teorema de Bayes, que fornece uma maneira de calcular a probabilidade condicional de uma hip√≥tese, dado um conjunto de evid√™ncias. Na classifica√ß√£o, a hip√≥tese corresponde √† classe da inst√¢ncia e as evid√™ncias correspondem √†s caracter√≠sticas observadas da inst√¢ncia. O algoritmo calcula a probabilidade condicional de cada classe, dado as caracter√≠sticas observadas da inst√¢ncia, e atribui a inst√¢ncia √† classe com a maior probabilidade condicional.
 
-Segundo \cite{domingos1997optimality}, a principal suposiÁ„o por tr·s do algoritmo Naive Bayes È a independÍncia condicional das caracterÌsticas, ou seja, cada caracterÌstica contribui independentemente para a probabilidade condicional de cada classe. Embora essa suposiÁ„o seja muitas vezes violada na pr·tica, o algoritmo Naive Bayes ainda funciona bem em muitos casos e pode ser especialmente ˙til quando h· muitas caracterÌsticas.
+Segundo \cite{domingos1997optimality}, a principal suposi√ß√£o por tr√°s do algoritmo Naive Bayes √© a independ√™ncia condicional das caracter√≠sticas, ou seja, cada caracter√≠stica contribui independentemente para a probabilidade condicional de cada classe. Embora essa suposi√ß√£o seja muitas vezes violada na pr√°tica, o algoritmo Naive Bayes ainda funciona bem em muitos casos e pode ser especialmente √∫til quando h√° muitas caracter√≠sticas.
 
-O algoritmo Naive Bayes tem sido aplicado em muitas ·reas, incluindo reconhecimento de fala, processamento de texto e detecÁ„o de spam de e-mail. … particularmente ˙til em aplicaÁıes onde h· muitas caracterÌsticas e as inst‚ncias s„o discretas ou categÛricas. Um estudo empÌrico sobre o desempenho do algoritmo Naive Bayes em diferentes conjuntos de dados pode ser encontrado em \citep{rish2001empirical}.
+O algoritmo Naive Bayes tem sido aplicado em muitas √°reas, incluindo reconhecimento de fala, processamento de texto e detec√ß√£o de spam de e-mail. √â particularmente √∫til em aplica√ß√µes onde h√° muitas caracter√≠sticas e as inst√¢ncias s√£o discretas ou categ√≥ricas. Um estudo emp√≠rico sobre o desempenho do algoritmo Naive Bayes em diferentes conjuntos de dados pode ser encontrado em \citep{rish2001empirical}.
 
-Embora o algoritmo Naive Bayes seja uma tÈcnica de classificaÁ„o simples e eficiente, ele tambÈm tem algumas limitaÁıes. Por exemplo, a suposiÁ„o de independÍncia condicional das caracterÌsticas pode ser inadequada em algumas situaÁıes, e a performance do algoritmo pode ser afetada por dados ausentes ou dados ruidosos \citep{mitchell1997machine}.
+Embora o algoritmo Naive Bayes seja uma t√©cnica de classifica√ß√£o simples e eficiente, ele tamb√©m tem algumas limita√ß√µes. Por exemplo, a suposi√ß√£o de independ√™ncia condicional das caracter√≠sticas pode ser inadequada em algumas situa√ß√µes, e a performance do algoritmo pode ser afetada por dados ausentes ou dados ruidosos \citep{mitchell1997machine}.
 
-As equaÁıes abaixo representam a base matem·tica do algoritmo de classificaÁ„o Naive Bayes:
+As equa√ß√µes abaixo representam a base matem√°tica do algoritmo de classifica√ß√£o Naive Bayes:
 
-Dada uma inst‚ncia $X = {x_1, x_2, \dots, x_n}$ com caracterÌsticas observadas, o objetivo do algoritmo È determinar a probabilidade condicional $P(C_k|X)$ da inst‚ncia pertencer a cada classe $C_k$.
+Dada uma inst√¢ncia $X = {x_1, x_2, \dots, x_n}$ com caracter√≠sticas observadas, o objetivo do algoritmo √© determinar a probabilidade condicional $P(C_k|X)$ da inst√¢ncia pertencer a cada classe $C_k$.
 
 O teorema de Bayes fornece uma maneira de calcular a probabilidade condicional $P(C_k|X)$ em termos das probabilidades a priori $P(C_k)$ e das probabilidades condicionais $P(X|C_k)$, como segue:
 
@@ -20,22 +20,22 @@ O teorema de Bayes fornece uma maneira de calcular a probabilidade condicional $
     P(C_k|X)=\frac{P(X|C_k)P(C_k)}{P(X)}
 \end{equation}
 
-Aqui, $P(C_k)$ È a probabilidade a priori da classe $C_k$ e $P(X|C_k)$ È a probabilidade condicional de observar a inst‚ncia $X$ dada a classe $C_k$.
+Aqui, $P(C_k)$ √© a probabilidade a priori da classe $C_k$ e $P(X|C_k)$ √© a probabilidade condicional de observar a inst√¢ncia $X$ dada a classe $C_k$.
 
-O classificador Naive Bayes assume a independÍncia condicional das caracterÌsticas dadas a classe, isto È, $P(x_i|C_k, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i|C_k)$. Isso permite simplificar a probabilidade condicional $P(X|C_k)$ como:
+O classificador Naive Bayes assume a independ√™ncia condicional das caracter√≠sticas dadas a classe, isto √©, $P(x_i|C_k, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i|C_k)$. Isso permite simplificar a probabilidade condicional $P(X|C_k)$ como:
 
 \begin{equation}
     P(X|C_k)=P(x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n|C_k)=\prod_{i=1}^{n}P(x_i|C_k)
 \end{equation}
 
-Substituindo essa express„o na equaÁ„o anterior, tem-se:
+Substituindo essa express√£o na equa√ß√£o anterior, tem-se:
 
 \begin{equation}
     P(C_k|X)=\frac{\prod_{i=1}^{n}P(x_i|C_k)P(C_k)}{P(X)}
 \end{equation}
 
-Como a probabilidade $P(X)$ È constante para todas as classes, È possÌvel comparar apenas as probabilidades $P(C_k)\prod_{i=1}^n P(x_i|C_k)$ para determinar a classe mais prov·vel para a inst‚ncia $X$.
+Como a probabilidade $P(X)$ √© constante para todas as classes, √© poss√≠vel comparar apenas as probabilidades $P(C_k)\prod_{i=1}^n P(x_i|C_k)$ para determinar a classe mais prov√°vel para a inst√¢ncia $X$.
 
-O desenho ilustra as vari·veis aleatÛrias $x_1, x_2, x_3, x_4$ e a classe $C_k$. As setas que partem das probabilidades condicionais e a priori indicam as fÛrmulas para o c·lculo das probabilidades conjuntas $P(x_1, x_2, x_3, x_4, C_k)$ e, consequentemente, para a classificaÁ„o de uma inst‚ncia.
+O desenho ilustra as vari√°veis aleat√≥rias $x_1, x_2, x_3, x_4$ e a classe $C_k$. As setas que partem das probabilidades condicionais e a priori indicam as f√≥rmulas para o c√°lculo das probabilidades conjuntas $P(x_1, x_2, x_3, x_4, C_k)$ e, consequentemente, para a classifica√ß√£o de uma inst√¢ncia.
 
 \input{./tikz/bayes.tikz.tex}
