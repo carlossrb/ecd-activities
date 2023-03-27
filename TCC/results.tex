@@ -11,7 +11,7 @@ Após a limpeza dos dados, iniciou-se o processo de análise dos mesmos. Com iss
     \label{fig:evalDistribution}
 \end{figure}
 
-À primeira vista com o quantitativo de notas, é possível perceber que essa  distribuição é dada em forma de ``J" e é bastante típica em E-commerces. Grande  quantidade de avaliações 5, 4 e 1, pequena quantidade de 2 e 3.
+À primeira vista com o quantitativo de notas, é possível perceber que essa  distribuição é dada em forma de ``J" e é bastante típica em \textit{e-commerces}. Grande  quantidade de avaliações 5, 4 e 1, pequena quantidade de 2 e 3.
 
 Este tipo de distribuição pode ocorrer por várias razões. Uma possível explicação é que os clientes que estão extremamente satisfeitos ou insatisfeitos com um produto são mais propensos a deixar uma avaliação do que aqueles que têm uma experiência neutra. Isso pode resultar em uma concentração maior de avaliações com classificações muito altas ou muito baixas.
 
@@ -37,11 +37,11 @@ Uma nuvem de palavras então é gerada a partir de um conjunto de dados de texto
     \label{fig:wordCloud}
 \end{figure}
 
-Essa técnica visual pode ser usada em vários campos, incluindo análise de sentimentos, mineração de opiniões, análise de redes sociais, pesquisa de mercado e análise de feedback de clientes como o caso em específico. Além disso, por ser uma forma visualmente atraente de resumir informações e destacar pontos importantes, é bastante útil para relatórios e análises.
+Essa técnica visual pode ser usada em vários campos, incluindo análise de sentimentos, mineração de opiniões, análise de redes sociais, pesquisa de mercado e análise de \textit{feedback} de clientes como o caso em específico. Além disso, por ser uma forma visualmente atraente de resumir informações e destacar pontos importantes, é bastante útil para relatórios e análises.
 
-Tendo feito a tokenização das palavras, transformando-as em listas de numeros, filtrado pelas \textit{stopwords} e feito um processo de padronização textual, separou-se o dataset entre treino e teste e prosseguiu para as demais análises com os algorítmos de aprendizado de máquina e redes neurais.
+Tendo feito a tokenização das palavras, isto é, um processo de transformação de todas as palabras de entrada em listas de numeros, filtrado pelas \textit{stopwords} e feito um processo de padronização textual, separou-se o \textit{dataset} entre treino e teste e prosseguiu para as demais análises com os algorítmos de aprendizado de máquina e redes neurais.
 
-Dentre os algoritmos de machine learning, encontrou-se as seguintes acurácias:
+Dentre os algoritmos de aprendizado de máquina, encontrou-se as seguintes acurácias conforme a \autoref{tab:accur}.
 
 \begin{table}[H]
     \centering
@@ -51,9 +51,15 @@ Dentre os algoritmos de machine learning, encontrou-se as seguintes acurácias:
         { treino (\%)} & { 73.9}           & { 99.6}          & { 93.5}    & { 74.0}        & 86.7     \\\hline
         { teste (\%)}  & { 73.3}           & { 78.2}          & { 82.1}    & { 74.0}        & 81.3
     \end{tabular}
+    \caption{Comapração entre teste e treino nos modelos de aprendizado de máquina}
+    \label{tab:accur}
 \end{table}
 
-Observa-se que nos modelos XGBoost e LightGBM os valores foram muito próximos e apresentaram os melhores resultados em teste. Além disso, com as Florestas Aleatórias e XGBoost houve discrepâncias significativas entre as suas respectivas acurácias de treino e de teste. Essa diferença entre a acurácia (ou outra métrica de desempenho) é conhecida como a discrepância de generalização. Isso pode ter acontecido por diferentes motivos:
+Observa-se que nos modelos XGBoost e LightGBM os valores foram muito próximos e apresentaram os melhores resultados em teste.
+
+A regressão logística tem um tempo de execução muito maior do que os outros modelos, o que pode ser um fator limitante em muitas aplicações. Por outro lado, o Naive Bayes tem um tempo de execução muito curto, mas também tem a menor acurácia entre os modelos apresentados.
+
+Além disso, com as Florestas Aleatórias e XGBoost houve discrepâncias significativas entre as suas respectivas acurácias de treino e de teste. Essa diferença entre a acurácia (ou outra métrica de desempenho) é conhecida como a discrepância de generalização. Isso pode ter acontecido por diferentes motivos:
 
 \begin{itemize}
     \item Overfitting: O modelo pode memorizar o conjunto de treinamento em vez de aprender os padrões subjacentes dos dados. Isso pode resultar em uma acurácia alta no conjunto de treinamento, mas uma acurácia baixa no conjunto de teste. Para evitar o overfitting, é importante usar técnicas como a regularização, a seleção de características e o aumento de dados.
@@ -63,7 +69,8 @@ Observa-se que nos modelos XGBoost e LightGBM os valores foram muito próximos e
 
 É importante entender que uma discrepância de generalização não é necessariamente ruim, pois é possível que o modelo esteja apenas se adaptando aos dados de treinamento de forma mais eficaz. No entanto, se a discrepância for muito grande, pode ser um sinal de que o modelo precisa de ajustes. O objetivo é ter um modelo que generalize bem para novos dados e não apenas memorize os dados de treinamento.
 
-Para a rede neural, plotou-se o gráfico da relação das \textit{epochs} pela acuracia do dataset de teste e de treino.
+Para a rede neural, plotou-se o gráfico da relação das \textit{epochs} pela acuracia do \textit{dataset} de teste e de treino.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.55]{./figs/lstm_acuracy.png}
@@ -71,13 +78,15 @@ Para a rede neural, plotou-se o gráfico da relação das \textit{epochs} pela a
     \label{fig:lstmacuracy}
 \end{figure}
 
-Em redes neurais, uma \textit{epoch} refere-se a um ciclo completo de treinamento de todos os dados de treinamento disponíveis na rede. Durante cada um desses ciclos, os dados são passados pela rede em lotes (ou \textit{batch}), a rede faz previsões para cada lote, compara as previsões com as respostas corretas e atualiza os pesos e bias da rede para minimizar o erro (ou função de custo) entre as previsões e as respostas corretas.
+A rede neural LSTM tem uma acurácia muito alta, mas um tempo de execução extremamente longo, o que pode torná-la impraticável para muitas aplicações em tempo real. No entanto, para aplicações onde a precisão é o fator mais importante, como diagnóstico médico ou detecção de fraudes financeiras, esse modelo pode ser a melhor opção.
 
-Após uma \textit{epoch} completa, a rede é capaz de fazer previsões melhores do que antes do treinamento começar. À medida que o treinamento continua avançando, as previsões melhoram gradualmente até que a rede esteja suficientemente treinada para fazer previsões precisas sobre novos dados.
+Em redes neurais, uma época refere-se a um ciclo completo de treinamento de todos os dados de treinamento disponíveis na rede. Durante cada um desses ciclos, os dados são passados pela rede em lotes (ou \textit{batch}), a rede faz previsões para cada lote, compara as previsões com as respostas corretas e atualiza os pesos e bias da rede para minimizar o erro (ou função de custo) entre as previsões e as respostas corretas.
+
+Após uma época completa, a rede é capaz de fazer previsões melhores do que antes do treinamento começar. À medida que o treinamento continua avançando, as previsões melhoram gradualmente até que a rede esteja suficientemente treinada para fazer previsões precisas sobre novos dados.
 
 O número de \textit{epochs} que uma rede neural precisa para ser treinada depende do problema e da complexidade da rede. Um número muito baixo de \textit{epochs} pode resultar em previsões imprecisas, enquanto um número muito alto pode levar a um excesso de ajuste (overfitting) dos dados de treinamento.
 
-Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o dataset de treino e tem-se a \autoref{tab:time} com o tempo de execução para cada um dos modelos.
+Por fim, faz-se um comparativo entre a acurácia de todos os modelos para o \textit{dataset} de treino e tem-se a \autoref{tab:time} com o tempo de execução para cada um dos modelos.
 
 \begin{figure}[H]
     \centering
@@ -122,7 +131,27 @@ Isso posto, avaliou-se os modelos também pela matriz de confusão e curva ROC.
 
 A matriz de confusão é uma tabela que mostra o número de exemplos que foram classificados corretamente e incorretamente pelo modelo, divididos em quatro categorias: verdadeiro positivo (TP-00), verdadeiro negativo (TN-11), falso positivo (FP-10) e falso negativo (FN-01). A partir dessa matriz, várias métricas de desempenho podem ser calculadas, incluindo a acurácia, precisão e recall. A matriz de confusão pode ajudar a identificar padrões de erros comuns que o modelo está cometendo.
 
-Já a curva ROC (Receiver Operating Characteristic) é uma curva que mostra a relação entre a taxa de verdadeiros positivos (TPR) e a taxa de falsos positivos (FPR) para diferentes valores de limiar de classificação. Em outras palavras, a curva ROC mostra como o modelo se comporta em termos de sensibilidade e especificidade para diferentes pontos de corte de probabilidade de classificação. Quanto mais próxima a curva ROC estiver do canto superior esquerdo, melhor será o desempenho do modelo. A área sob a curva ROC (AUC-ROC) é uma medida resumida da performance do modelo, sendo que o valor máximo é 1,0, o que indica uma performance perfeita.
+Essas três equações podem ser representadas da seguinte forma:
+
+\begin{equation}
+    \text{Acurácia} = \frac{\text{VP} + \text{VN}}{\text{VP} + \text{FP} + \text{VN} + \text{FN}}
+\end{equation}
+
+\begin{equation}
+    \text{Precisão} = \frac{\text{VP}}{\text{VP} + \text{FP}}
+\end{equation}
+
+\begin{equation}
+    \text{Recall} = \frac{\text{VP}}{\text{VP} + \text{FN}}
+\end{equation}
+
+Já a curva ROC (\textit{Receiver Operating Characteristic}) é uma curva que mostra a relação entre a taxa de verdadeiros positivos (TPR) e a taxa de falsos positivos (FPR) para diferentes valores de limiar de classificação. Em outras palavras, a curva ROC mostra como o modelo se comporta em termos de sensibilidade e especificidade para diferentes pontos de corte de probabilidade de classificação. Quanto mais próxima a curva ROC estiver do canto superior esquerdo, melhor será o desempenho do modelo. A área sob a curva ROC (AUC-ROC) é uma medida resumida da performance do modelo, sendo que o valor máximo é 1,0, o que indica uma performance perfeita.
+
+Ao avaliar a curva ROC, podemos observar que a LSTM também apresentou a maior área sob a curva, indicando uma maior capacidade de distinguir entre as classes. Esse resultado é consistente com a análise das matrizes de confusão, que mostraram que a LSTM teve o melhor desempenho na classificação correta das amostras.
+
+O XGBoost e LightGBM também apresentaram resultados promissores, tendo o XGBoost uma acurácia um pouco melhor de $82\%$ e uma área sob a curva ROC de 0,89. No entanto, as matrizes de confusão indicaram que os modelos cometeram mais erros do que a LSTM na classificação de algumas amostras.
+
+Por outro lado, a regressão logística e o Naive Bayes apresentaram as piores performances, com acurácias de $73\%$ e $74\%$, respectivamente, e áreas sob a curva ROC menores do que os outros modelos avaliados.
 
 A escolha entre usar a matriz de confusão e/ou a curva ROC depende do objetivo do problema e da preferência do usuário. Enquanto a matriz de confusão oferece informações detalhadas sobre o desempenho do modelo em cada classe, a curva ROC pode ser mais útil para escolher o melhor modelo entre vários modelos ou ajustar o ponto de corte de classificação para atingir um determinado objetivo, como minimizar a taxa de falsos positivos ou maximizar a taxa de verdadeiros positivos.
 

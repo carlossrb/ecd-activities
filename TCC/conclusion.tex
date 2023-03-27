@@ -3,21 +3,11 @@
 
 Com base na análise dos resultados, podemos concluir que a rede neural artificial LSTM apresentou a melhor performance em relação aos outros algoritmos de \textit{machine learning} avaliados. A acurácia da LSTM foi de $90\%$, o que indica que o modelo foi capaz de classificar corretamente a grande maioria dos dados.
 
-Ao avaliar a curva ROC, podemos observar que a LSTM também apresentou a maior área sob a curva, indicando uma maior capacidade de distinguir entre as classes. Esse resultado é consistente com a análise das matrizes de confusão, que mostraram que a LSTM teve o melhor desempenho na classificação correta das amostras.
-
-O XGBoost e LightGBM também apresentaram resultados promissores, tendo o XGBoost uma acurácia um pouco melhor de $82\%$ e uma área sob a curva ROC de 0,89. No entanto, as matrizes de confusão indicaram que os modelos cometeram mais erros do que a LSTM na classificação de algumas amostras.
-
-Por outro lado, a regressão logística e o Naive Bayes apresentaram as piores performances, com acurácias de $73\%$ e $74\%$, respectivamente, e áreas sob a curva ROC menores do que os outros modelos avaliados.
-
 Se tratando de \textit{tradeoff}, na prática, muitas vezes é necessário encontrar um equilíbrio entre a rapidez da resposta e a precisão do modelo. Isso ocorre porque muitas aplicações em tempo real exigem que a resposta seja obtida em um curto espaço de tempo, enquanto outras aplicações, como pesquisa médica ou financeira, priorizam a precisão.
 
 A escolha do modelo ideal depende de vários fatores, como o tamanho dos dados, a complexidade do problema e a disponibilidade de recursos de computação. Modelos mais complexos, como as redes neurais, podem ter uma acurácia muito alta, mas exigem uma grande quantidade de tempo de processamento, enquanto modelos mais simples, como regressão logística ou Naive Bayes, têm tempos de processamento menores, mas podem ter uma acurácia menor.
 
 As Florestas Aleatórias e o XGBoost são modelos intermediários em termos de complexidade e tempo de execução. Já o LightGBM possui um baixo tempo de execução no geral. Esses modelos podem ser mais adequados para muitas aplicações, pois têm uma acurácia razoável e são ágeis o suficiente para muitas tarefas em tempo real.
-
-No caso específico apresentado no trabalho, a regressão logística tem um tempo de execução muito maior do que os outros modelos, o que pode ser um fator limitante em muitas aplicações. Por outro lado, o Naive Bayes tem um tempo de execução muito curto, mas também tem a menor acurácia entre os modelos apresentados.
-
-A rede neural LSTM tem uma acurácia muito alta, mas um tempo de execução extremamente longo, o que pode torná-la impraticável para muitas aplicações em tempo real. No entanto, para aplicações onde a precisão é o fator mais importante, como diagnóstico médico ou detecção de fraudes financeiras, esse modelo pode ser a melhor opção.
 
 Outrossim, é necessário destacar que o XGBoost e LightGBM possuem algumas vantagens em relação a redes neurais como a LSTM.
 
@@ -40,3 +30,13 @@ Para análise de sentimentos em reviews de usuários, a LSTM pode ser mais vanta
 Além disso, as LSTMs têm a capacidade de capturar dependências de longo prazo nos dados sequenciais, o que pode ser importante para a análise de sentimentos em reviews de usuários, já que as opiniões dos usuários muitas vezes são expressas em frases e parágrafos complexos e detalhados. Isso possivelmente pode ser percebido como o único modelo que mostrou maior quantidade de resultados de avaliações negativas corretamente, conforme a sua matriz de confusão. Os demais modelos tiveram dificuldade em classificar corretamente as avaliações negativas dos consumidores.
 
 No entanto, é importante ressaltar que a escolha do algoritmo de \textit{machine learning} depende do conjunto de dados e do problema em questão. Algoritmos mais simples podem ser mais eficazes em alguns cenários, enquanto algoritmos mais complexos, como redes neurais, podem ser necessários para lidar com dados mais complexos e variáveis. Em última análise, a escolha do algoritmo deve ser baseada em uma análise cuidadosa dos dados e das necessidades específicas do problema em questão.
+
+Como sugestão para trabalhos fututos pode-se citar os seguintes:
+
+\begin{itemize}
+    \item Investigação da aplicabilidade dos modelos avaliados em diferentes conjuntos de dados e tipos de problema, para avaliar se os resultados obtidos se mantêm consistentes em diferentes cenários.
+    \item Avaliação de outras métricas de desempenho além da acurácia e área sob a curva ROC, como F1-score, precisão e recall, para avaliar melhor o desempenho dos modelos em diferentes situações.
+    \item Investigação de técnicas de interpretabilidade em redes neurais, como SHAP e LIME, para tornar os resultados desses modelos mais compreensíveis e confiáveis em aplicações práticas.
+    \item Exploração de técnicas de otimização de tempo de execução para redes neurais, como a utilização de GPUs ou técnicas de redução de dimensionalidade, para tornar esses modelos mais práticos para aplicações em tempo real.
+    \item Comparação de diferentes versões dos modelos avaliados, como o uso de árvores de decisão em vez de florestas aleatórias, para avaliar se algumas variações são mais adequadas para determinados tipos de dados ou problemas.
+\end{itemize}
